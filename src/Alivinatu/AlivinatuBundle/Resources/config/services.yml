@@ -1,0 +1,7 @@
+parameters:
+#    alivinatu.example.class: Alivinatu\AlivinatuBundle\Example
+
+services:
+#    alivinatu.example:
+#        class: %alivinatu.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
