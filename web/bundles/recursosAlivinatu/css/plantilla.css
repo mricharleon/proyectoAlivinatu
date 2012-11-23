@@ -1,0 +1,12 @@
+h1{
+    font-family: impact;
+    color: red;
+    margin: auto;
+}
+
+#barMenu{
+    margin: -8px;    
+    background-color: olivedrab;
+    height: 75px;
+    text-align: center;
+}
