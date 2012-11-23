@@ -1,5 +1,5 @@
 alivinatu_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: AlivinatuBundle:Default:index }
+    pattern:  /
+    defaults: { _controller: AlivinatuBundle:Controlador:index }
 
 
