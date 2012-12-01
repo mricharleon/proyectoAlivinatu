@@ -1,20 +1,151 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Proyecto Alivinatu</title>
-        {#<link rel="icon" sizes="16x16" href="{{ asset('favicond.ico') }}" />#}
-        <link rel="stylesheet" href="{{ asset('bundles/recursosAlivinatu/css/plantilla.css') }}" />
-    </head>
-    <body>
-        <header>
-            <div id="barMenu">
-                <h1>plantilla</h1>
-                {%block content%}
-                {%endblock%}
-            </div>
-        </header>
-            
-    </body>
-</html>
+{% extends '::base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/recursosAlivinatu/css/plantilla.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/recursosAlivinatu/css/lightbox.css') }}" />
+{% endblock %}
+    
+{% block jquery %}
+    <script src="{{ asset('bundles/recursosAlivinatu/js/jquery-1.8.3.min.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/recursosAlivinatu/js/lightbox.js')}}" type="text/javascript"> </script>
+{% endblock %}
+
+{% block headerLogo %}
+    <div id="contMenu">
+        <div id="barraLogo">
+            <a href="http://localhost/proyectoAlivinatu/web/app_dev.php">
+                <img src="{{ asset('bundles/recursosAlivinatu/images/logoAlivinatu.png') }}" title="Spa terapéutico Alivinatu" />
+            </a>
+        </div>
+{% endblock %}
+    
+{% block nav %}
+    <ul>
+        <li><a class="active" href="#">Inicio</a></li>
+        <li><a href="#">Misión</a></li>
+        <li><a href="#">Visión</a></li>
+        <li>
+            <a href="#">Servicios</a>
+            <ul class="children">
+                <li><a href="#">Masajes</a></li>
+                <li><a href="#">Baño de cajón</a></li>
+                <li><a href="#">Hidroterapia</a></li>
+                <li><a href="#">Limpieza facial</a></li>
+                <li><a href="#">Masajes</a></li>
+                <li><a href="#">Ver todos...</a></li>
+
+            </ul>
+        </li>
+        <li><a href="#">Contactanos</a></li>
+        <li><a href="#">Ofertas</a></li>
+        <li><a href="#">Login</a></li>
+    </ul>
+{% endblock %}
+            
+{% block headerBusqueda%}
+<div id="contBusqueda">
+    <form action="">
+        <input type="text" class="cajaBusqueda" name="" placeholder="Ingresa tu Búsqueda"/>
+        <input type="image" src="{{ asset('bundles/recursosAlivinatu/images/buscar.png') }}" class="cajaBusqueda_submit" title="Buscar"/>
+    </form>
+</div>
+
+</div>
+{% endblock %}
+    
+{% block footer %}
+    <div id="contFooter">
+        <div id="columna">
+            <span id="tituloFooter">
+                {% filter upper %}
+                    Visitanos...!
+                {% endfilter %}
+            </span>
+            <ul class="social">
+                <li class="twitter"><a href="http://www.twitter.com" title="Twitter"></a></li>
+                <li class="facebook"><a href="http://www.facebook.com" title="Facebook"></a></li>
+                <li class="gplus"><a href="https://plus.google.com" title="Google Plus"></a></li>
+                <li class="youtube"><a href="https://youtube.com" title="YouTube"></a></li>
+                <li class="vimeo"><a href="https://vimeo.com" title="Vimeo"></a></li>
+            </ul>
+
+            <span id="textoFooter">
+                Siguenos en las Redes Sociales para que te mantengas informado.
+            </span>
+                <br>
+            <span id="textoDerechos">
+                © 2012 ALIVINATU. <br>
+                ALL RIGHTS RESERVED.
+            </span>
+
+        </div>
+
+        <div id="columna">
+            <span id="tituloFooter">
+                {% filter upper %}
+                    Noticias...
+                {% endfilter %}
+            </span>
+            <span id="textoCuadroFooter">
+                Te brindamos una serie de servicios para tu confort, no te arrepentiras.
+            </span>
+            <a href="">
+                <span id="botonFooter">
+                     Servicios
+                </span>
+            </a>
+
+            <span id="textoCuadroFooter">
+                Te recordamos que puedes crear tu cuenta Alivinatu, totalmente gratis..!
+            </span>
+            <a href="">
+                <span id="botonFooter">
+                     Registrarse
+                </span>
+            </a>
+
+        </div>
+
+        <div id="columna">
+            <span id="tituloFooter">
+                {% filter upper %}
+                    Visista Nuestra Galeria
+                {% endfilter %}
+            </span>
+            <span id="galeriaFooter">
+                <a href="{{ asset('bundles/recursosAlivinatu/images/servicios/galeria1.jpg')}}" title="Hidromasaje" rel="lightbox[galeria]">
+                    <img src="{{ asset('bundles/recursosAlivinatu/images/servicios/galeria1.jpg')}}" class="galeria">
+                </a>
+
+                <a href="{{ asset('bundles/recursosAlivinatu/images/servicios/galeria2.jpg')}}" title="Biomagnetismo" rel="lightbox[galeria]">
+                    <img src="{{ asset('bundles/recursosAlivinatu/images/servicios/galeria2.jpg')}}" class="galeria">
+                </a>
+                <a href="{{ asset('bundles/recursosAlivinatu/images/servicios/galeria3.jpg')}}" title="Baños de Barro" rel="lightbox[galeria]">
+                    <img src="{{ asset('bundles/recursosAlivinatu/images/servicios/galeria3.jpg')}}" class="galeria">
+                </a>
+                <a href="{{ asset('bundles/recursosAlivinatu/images/servicios/galeria4.jpg')}}" title="MIcrodermoabrasión" rel="lightbox[galeria]">
+                    <img src="{{ asset('bundles/recursosAlivinatu/images/servicios/galeria4.jpg')}}" class="galeria">
+                </a><br>
+                <a href="{{ asset('bundles/recursosAlivinatu/images/servicios/galeria5.jpg')}}" title="Masajes Relajantes" rel="lightbox[galeria]">
+                    <img src="{{ asset('bundles/recursosAlivinatu/images/servicios/galeria5.jpg')}}" class="galeria">
+                </a>
+                <a href="{{ asset('bundles/recursosAlivinatu/images/servicios/galeria6.jpg')}}" title="Baños de Cajón" rel="lightbox[galeria]">
+                    <img src="{{ asset('bundles/recursosAlivinatu/images/servicios/galeria6.jpg')}}" class="galeria">
+                </a>
+                <a href="{{ asset('bundles/recursosAlivinatu/images/servicios/galeria7.jpg')}}" title="Baños de Asciento" rel="lightbox[galeria]">
+                    <img src="{{ asset('bundles/recursosAlivinatu/images/servicios/galeria7.jpg')}}" class="galeria">
+                </a>
+                <a href="{{ asset('bundles/recursosAlivinatu/images/servicios/galeria8.jpg')}}" title="Aqua Detox" rel="lightbox[galeria]">
+                    <img src="{{ asset('bundles/recursosAlivinatu/images/servicios/galeria8.jpg')}}" class="galeria">
+                </a>
+            </span>
+            <a href="">
+                <span id="botonFooter">
+                     Ver más...
+                </span>
+            </a>
+
+        </div>
+
+    </div>
+{% endblock %}

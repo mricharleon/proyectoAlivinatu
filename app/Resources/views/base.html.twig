@@ -2,12 +2,24 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Bienvenid@{% endblock %} | Alivinatu</title>
         {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block jquery %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('alivinatu.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block body %}
+            <header>
+                {% block headerLogo %} {% endblock %}
+                    <nav>
+                        {% block nav %} {% endblock %}
+                    </nav>    
+                {% block headerBusqueda %} {% endblock %}
+            </header>
+            
+            <footer>
+                {% block footer%} {% endblock%}
+            </footer>
+        {% endblock %}
     </body>
 </html>
