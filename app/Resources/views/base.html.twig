@@ -12,10 +12,20 @@
             <header>
                 {% block headerLogo %} {% endblock %}
                     <nav>
-                        {% block nav %} {% endblock %}
+                        {% block nav %} 
+                            {% block login %} {% endblock %}
+                        {% endblock %}
                     </nav>    
                 {% block headerBusqueda %} {% endblock %}
+                {% block headerLogin %} {% endblock %}
             </header>
+            
+            {% block contPrincipal %}
+                {% block imagenPrincipal %} {% endblock %}
+                {% block contenido%}
+                    {% block ofertaTexto %} {% endblock %}
+                {% endblock %}
+            {% endblock %}
             
             <footer>
                 {% block footer%} {% endblock%}

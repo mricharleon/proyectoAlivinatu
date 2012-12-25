@@ -16,7 +16,13 @@ class __TwigTemplate_ac2302f03bf7f9a8a8d908f5feae7d8e extends Twig_Template
             'body' => array($this, 'block_body'),
             'headerLogo' => array($this, 'block_headerLogo'),
             'nav' => array($this, 'block_nav'),
+            'login' => array($this, 'block_login'),
             'headerBusqueda' => array($this, 'block_headerBusqueda'),
+            'headerLogin' => array($this, 'block_headerLogin'),
+            'contPrincipal' => array($this, 'block_contPrincipal'),
+            'imagenPrincipal' => array($this, 'block_imagenPrincipal'),
+            'contenido' => array($this, 'block_contenido'),
+            'ofertaTexto' => array($this, 'block_ofertaTexto'),
             'footer' => array($this, 'block_footer'),
         );
     }
@@ -47,7 +53,7 @@ class __TwigTemplate_ac2302f03bf7f9a8a8d908f5feae7d8e extends Twig_Template
         ";
         // line 11
         $this->displayBlock('body', $context, $blocks);
-        // line 24
+        // line 34
         echo "    </body>
 </html>
 ";
@@ -82,19 +88,27 @@ class __TwigTemplate_ac2302f03bf7f9a8a8d908f5feae7d8e extends Twig_Template
                         ";
         // line 15
         $this->displayBlock('nav', $context, $blocks);
-        // line 16
+        // line 18
         echo "                    </nav>    
                 ";
-        // line 17
+        // line 19
         $this->displayBlock('headerBusqueda', $context, $blocks);
-        // line 18
+        // line 20
+        echo "                ";
+        $this->displayBlock('headerLogin', $context, $blocks);
+        // line 21
         echo "            </header>
             
+            ";
+        // line 23
+        $this->displayBlock('contPrincipal', $context, $blocks);
+        // line 29
+        echo "            
             <footer>
                 ";
-        // line 21
+        // line 31
         $this->displayBlock('footer', $context, $blocks);
-        // line 22
+        // line 32
         echo "            </footer>
         ";
     }
@@ -108,16 +122,68 @@ class __TwigTemplate_ac2302f03bf7f9a8a8d908f5feae7d8e extends Twig_Template
     // line 15
     public function block_nav($context, array $blocks = array())
     {
+        echo " 
+                            ";
+        // line 16
+        $this->displayBlock('login', $context, $blocks);
+        // line 17
+        echo "                        ";
+    }
+
+    // line 16
+    public function block_login($context, array $blocks = array())
+    {
         echo " ";
     }
 
-    // line 17
+    // line 19
     public function block_headerBusqueda($context, array $blocks = array())
     {
         echo " ";
     }
 
-    // line 21
+    // line 20
+    public function block_headerLogin($context, array $blocks = array())
+    {
+        echo " ";
+    }
+
+    // line 23
+    public function block_contPrincipal($context, array $blocks = array())
+    {
+        // line 24
+        echo "                ";
+        $this->displayBlock('imagenPrincipal', $context, $blocks);
+        // line 25
+        echo "                ";
+        $this->displayBlock('contenido', $context, $blocks);
+        // line 28
+        echo "            ";
+    }
+
+    // line 24
+    public function block_imagenPrincipal($context, array $blocks = array())
+    {
+        echo " ";
+    }
+
+    // line 25
+    public function block_contenido($context, array $blocks = array())
+    {
+        // line 26
+        echo "                    ";
+        $this->displayBlock('ofertaTexto', $context, $blocks);
+        // line 27
+        echo "                ";
+    }
+
+    // line 26
+    public function block_ofertaTexto($context, array $blocks = array())
+    {
+        echo " ";
+    }
+
+    // line 31
     public function block_footer($context, array $blocks = array())
     {
         echo " ";
@@ -135,6 +201,6 @@ class __TwigTemplate_ac2302f03bf7f9a8a8d908f5feae7d8e extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  119 => 21,  113 => 17,  107 => 15,  101 => 13,  96 => 22,  94 => 21,  89 => 18,  87 => 17,  84 => 16,  82 => 15,  79 => 14,  77 => 13,  74 => 12,  71 => 11,  66 => 7,  61 => 6,  55 => 5,  49 => 24,  47 => 11,  40 => 8,  37 => 7,  35 => 6,  31 => 5,  25 => 1,);
+        return array (  185 => 31,  179 => 26,  175 => 27,  172 => 26,  169 => 25,  163 => 24,  159 => 28,  156 => 25,  153 => 24,  150 => 23,  144 => 20,  138 => 19,  132 => 16,  128 => 17,  126 => 16,  121 => 15,  115 => 13,  110 => 32,  104 => 29,  102 => 23,  93 => 19,  90 => 18,  88 => 15,  85 => 14,  83 => 13,  80 => 12,  77 => 11,  72 => 7,  67 => 6,  61 => 5,  55 => 34,  53 => 11,  46 => 8,  43 => 7,  41 => 6,  108 => 31,  105 => 59,  100 => 74,  98 => 21,  95 => 20,  92 => 57,  49 => 17,  37 => 5,  31 => 1,  28 => 3,);
     }
 }

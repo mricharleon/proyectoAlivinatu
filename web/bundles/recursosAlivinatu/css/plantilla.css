@@ -164,7 +164,9 @@ nav ul li:hover ul.children{
     float: left;
     margin-top: 25px;
     padding:0px;
+    opacity: .9;
 }
+
 
 /* Estilo de la caja de busqueda activa */
 .cajaBusqueda{
@@ -201,7 +203,9 @@ footer{
     height: 165px;
     margin-top: 25px;
     padding: 30px 0;
+    display: inline-block;
 }
+
 
 div#contFooter{
     height: 100%;
@@ -209,10 +213,10 @@ div#contFooter{
     width: 948px;   
 }
 
-#columna {
+#contFooter #columna {
     width: 316px;
     float: left;
-    text-align: justify;
+    text-align: center;
     position: relative;
 }
 
@@ -303,14 +307,19 @@ div#contFooter{
 
 
 #tituloFooter{
-    font: bold 12px verdana;
-    color: #0a9ad1;
-    padding: 0px 0px 0px 38px;
+    box-shadow: 0px 0px 1px 0px #2e6384;
+    font: normal 12px verdana;
+    color: #fff;
+    padding: 5px;
+    margin: 0px 15px 0px 15px;
+    background-color:  #10212b;
+    border-radius: 4px;
+    
 }
 
 #textoFooter{
     display: block;
-    color: #fff;
+    color: #aaa;
     font: normal 12px verdana;
     padding: 0px 57px 0px 38px;  
 }
@@ -330,29 +339,29 @@ div#contFooter{
 }
 
 #textoCuadroFooter{
+    border-radius: 5px;
     display: block;
-    color: #fff;
+    color: #999;
     font: normal 12px verdana;
     padding: 7px 15px 15px 15px;
     margin: 14px 25px 0px 25px;
-    background-color: #1d3746;
+    background-color: #172b38;
 }
 
 #botonFooter{
-    font: normal 12px verdana;
-    width: content-box;
-    height: 15px;
-    background-color: #33a0cb;
+    font: normal 13px "verdana", arial;
+    background-color: #22465a;
     color: #fff;
-    text-align: center;
-    padding: 3px 7px 3px 7px;;
+    padding: 3px 14px 3px 14px; 
+    float: right;
     position: absolute;
     right: 35px;
     margin: -10px -5px 0px 25px;
+    
 }
 
 #botonFooter:hover{
-    background-color: #11759d;
+    background-color: #696c6d;
 }
 
 #galeriaFooter{
@@ -372,20 +381,4 @@ div#contFooter{
     -moz-transition: all 250ms ease-out;
     -o-transition: all 250ms ease-out;
     transition: all 250ms ease-out; 
-}
-
-
-
-
-hr{
-    height: 1px;
-    border: 0;
-    background-color: #22343f;
-}
-
-
-h1{
-    color: red;
-    font-size: 20px;
-    text-align: center;
 }

@@ -14,11 +14,12 @@ class __TwigTemplate_a043fb0ea515e4f3ca78bd6d524bb84e extends Twig_Template
             'jquery' => array($this, 'block_jquery'),
             'headerLogo' => array($this, 'block_headerLogo'),
             'nav' => array($this, 'block_nav'),
+            'login' => array($this, 'block_login'),
             'headerBusqueda' => array($this, 'block_headerBusqueda'),
             'footer' => array($this, 'block_footer'),
-            '__internal_dd79f628e836c7c163e3c96adc3ecb061328012c' => array($this, 'block___internal_dd79f628e836c7c163e3c96adc3ecb061328012c'),
-            '__internal_afce837815cc088265a487c82387430fedb7a765' => array($this, 'block___internal_afce837815cc088265a487c82387430fedb7a765'),
-            '__internal_42f5ab75791f414c6a645efb7a178b4b0140ff45' => array($this, 'block___internal_42f5ab75791f414c6a645efb7a178b4b0140ff45'),
+            '__internal_f1dc6368e30deaca34a563e55a8fddc7db84eebb' => array($this, 'block___internal_f1dc6368e30deaca34a563e55a8fddc7db84eebb'),
+            '__internal_0fa91e3fd2d3009e5da25a6810a013bae532a233' => array($this, 'block___internal_0fa91e3fd2d3009e5da25a6810a013bae532a233'),
+            '__internal_63b5cfc070cccbbee1d64f159ea14236b8b6f123' => array($this, 'block___internal_63b5cfc070cccbbee1d64f159ea14236b8b6f123'),
         );
     }
 
@@ -43,32 +44,41 @@ class __TwigTemplate_a043fb0ea515e4f3ca78bd6d524bb84e extends Twig_Template
         // line 5
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/css/lightbox.css"), "html", null, true);
         echo "\" />
+    <link rel=\"stylesheet\" href=\"";
+        // line 6
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/css/presentacion.css"), "html", null, true);
+        echo "\" />
 ";
     }
 
-    // line 8
+    // line 9
     public function block_jquery($context, array $blocks = array())
     {
-        // line 9
+        // line 10
         echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/js/jquery-1.8.3.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <script src=\"";
-        // line 10
+        // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/js/lightbox.js"), "html", null, true);
-        echo "\" type=\"text/javascript\"> </script>
+        echo "\" type=\"text/javascript\"></script>
+    <script src=\"";
+        // line 12
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/js/jquery.js"), "html", null, true);
+        echo "\" type=\"text/javascript\"></script>
+    
 ";
     }
 
-    // line 13
+    // line 16
     public function block_headerLogo($context, array $blocks = array())
     {
-        // line 14
+        // line 17
         echo "    <div id=\"contMenu\">
         <div id=\"barraLogo\">
             <a href=\"http://localhost/proyectoAlivinatu/web/app_dev.php\">
                 <img src=\"";
-        // line 17
+        // line 20
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/logoAlivinatu.png"), "html", null, true);
         echo "\" title=\"Spa terapéutico Alivinatu\" />
             </a>
@@ -76,10 +86,10 @@ class __TwigTemplate_a043fb0ea515e4f3ca78bd6d524bb84e extends Twig_Template
 ";
     }
 
-    // line 22
+    // line 25
     public function block_nav($context, array $blocks = array())
     {
-        // line 23
+        // line 26
         echo "    <ul>
         <li><a class=\"active\" href=\"#\">Inicio</a></li>
         <li><a href=\"#\">Misión</a></li>
@@ -98,20 +108,31 @@ class __TwigTemplate_a043fb0ea515e4f3ca78bd6d524bb84e extends Twig_Template
         </li>
         <li><a href=\"#\">Contactanos</a></li>
         <li><a href=\"#\">Ofertas</a></li>
-        <li><a href=\"#\">Login</a></li>
-    </ul>
+        ";
+        // line 44
+        $this->displayBlock('login', $context, $blocks);
+        // line 47
+        echo "    </ul>
 ";
     }
 
-    // line 45
+    // line 44
+    public function block_login($context, array $blocks = array())
+    {
+        // line 45
+        echo "            <li><a href=\"#\">Login</a></li>
+        ";
+    }
+
+    // line 50
     public function block_headerBusqueda($context, array $blocks = array())
     {
-        // line 46
+        // line 51
         echo "<div id=\"contBusqueda\">
     <form action=\"\">
         <input type=\"text\" class=\"cajaBusqueda\" name=\"\" placeholder=\"Ingresa tu Búsqueda\"/>
         <input type=\"image\" src=\"";
-        // line 49
+        // line 54
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/buscar.png"), "html", null, true);
         echo "\" class=\"cajaBusqueda_submit\" title=\"Buscar\"/>
     </form>
@@ -121,18 +142,18 @@ class __TwigTemplate_a043fb0ea515e4f3ca78bd6d524bb84e extends Twig_Template
 ";
     }
 
-    // line 56
+    // line 61
     public function block_footer($context, array $blocks = array())
     {
-        // line 57
+        // line 62
         echo "    <div id=\"contFooter\">
         <div id=\"columna\">
-            <span id=\"tituloFooter\">
+            <div id=\"tituloFooter\">
                 ";
-        // line 60
-        echo twig_escape_filter($this->env, twig_upper_filter($this->env, (string) $this->renderBlock("__internal_dd79f628e836c7c163e3c96adc3ecb061328012c", $context, $blocks)), "html", null, true);
-        // line 63
-        echo "            </span>
+        // line 65
+        echo twig_escape_filter($this->env, twig_upper_filter($this->env, (string) $this->renderBlock("__internal_f1dc6368e30deaca34a563e55a8fddc7db84eebb", $context, $blocks)), "html", null, true);
+        // line 68
+        echo "            </div>
             <ul class=\"social\">
                 <li class=\"twitter\"><a href=\"http://www.twitter.com\" title=\"Twitter\"></a></li>
                 <li class=\"facebook\"><a href=\"http://www.facebook.com\" title=\"Facebook\"></a></li>
@@ -153,12 +174,12 @@ class __TwigTemplate_a043fb0ea515e4f3ca78bd6d524bb84e extends Twig_Template
         </div>
 
         <div id=\"columna\">
-            <span id=\"tituloFooter\">
+            <div id=\"tituloFooter\">
                 ";
-        // line 85
-        echo twig_escape_filter($this->env, twig_upper_filter($this->env, (string) $this->renderBlock("__internal_afce837815cc088265a487c82387430fedb7a765", $context, $blocks)), "html", null, true);
-        // line 88
-        echo "            </span>
+        // line 90
+        echo twig_escape_filter($this->env, twig_upper_filter($this->env, (string) $this->renderBlock("__internal_0fa91e3fd2d3009e5da25a6810a013bae532a233", $context, $blocks)), "html", null, true);
+        // line 93
+        echo "            </div>
             <span id=\"textoCuadroFooter\">
                 Te brindamos una serie de servicios para tu confort, no te arrepentiras.
             </span>
@@ -180,83 +201,83 @@ class __TwigTemplate_a043fb0ea515e4f3ca78bd6d524bb84e extends Twig_Template
         </div>
 
         <div id=\"columna\">
-            <span id=\"tituloFooter\">
+            <div id=\"tituloFooter\">
                 ";
-        // line 111
-        echo twig_escape_filter($this->env, twig_upper_filter($this->env, (string) $this->renderBlock("__internal_42f5ab75791f414c6a645efb7a178b4b0140ff45", $context, $blocks)), "html", null, true);
-        // line 114
-        echo "            </span>
+        // line 116
+        echo twig_escape_filter($this->env, twig_upper_filter($this->env, (string) $this->renderBlock("__internal_63b5cfc070cccbbee1d64f159ea14236b8b6f123", $context, $blocks)), "html", null, true);
+        // line 119
+        echo "            </div>
             <span id=\"galeriaFooter\">
                 <a href=\"";
-        // line 116
+        // line 121
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/galeria1.jpg"), "html", null, true);
         echo "\" title=\"Hidromasaje\" rel=\"lightbox[galeria]\">
                     <img src=\"";
-        // line 117
+        // line 122
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/galeria1.jpg"), "html", null, true);
         echo "\" class=\"galeria\">
                 </a>
 
                 <a href=\"";
-        // line 120
+        // line 125
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/galeria2.jpg"), "html", null, true);
         echo "\" title=\"Biomagnetismo\" rel=\"lightbox[galeria]\">
                     <img src=\"";
-        // line 121
+        // line 126
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/galeria2.jpg"), "html", null, true);
         echo "\" class=\"galeria\">
                 </a>
                 <a href=\"";
-        // line 123
+        // line 128
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/galeria3.jpg"), "html", null, true);
         echo "\" title=\"Baños de Barro\" rel=\"lightbox[galeria]\">
                     <img src=\"";
-        // line 124
+        // line 129
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/galeria3.jpg"), "html", null, true);
         echo "\" class=\"galeria\">
                 </a>
                 <a href=\"";
-        // line 126
+        // line 131
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/galeria4.jpg"), "html", null, true);
         echo "\" title=\"MIcrodermoabrasión\" rel=\"lightbox[galeria]\">
                     <img src=\"";
-        // line 127
+        // line 132
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/galeria4.jpg"), "html", null, true);
         echo "\" class=\"galeria\">
                 </a><br>
                 <a href=\"";
-        // line 129
+        // line 134
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/galeria5.jpg"), "html", null, true);
         echo "\" title=\"Masajes Relajantes\" rel=\"lightbox[galeria]\">
                     <img src=\"";
-        // line 130
+        // line 135
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/galeria5.jpg"), "html", null, true);
         echo "\" class=\"galeria\">
                 </a>
                 <a href=\"";
-        // line 132
+        // line 137
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/galeria6.jpg"), "html", null, true);
         echo "\" title=\"Baños de Cajón\" rel=\"lightbox[galeria]\">
                     <img src=\"";
-        // line 133
+        // line 138
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/galeria6.jpg"), "html", null, true);
         echo "\" class=\"galeria\">
                 </a>
                 <a href=\"";
-        // line 135
+        // line 140
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/galeria7.jpg"), "html", null, true);
         echo "\" title=\"Baños de Asciento\" rel=\"lightbox[galeria]\">
                     <img src=\"";
-        // line 136
+        // line 141
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/galeria7.jpg"), "html", null, true);
         echo "\" class=\"galeria\">
                 </a>
                 <a href=\"";
-        // line 138
+        // line 143
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/galeria8.jpg"), "html", null, true);
         echo "\" title=\"Aqua Detox\" rel=\"lightbox[galeria]\">
                     <img src=\"";
-        // line 139
+        // line 144
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/galeria8.jpg"), "html", null, true);
         echo "\" class=\"galeria\">
                 </a>
@@ -273,26 +294,26 @@ class __TwigTemplate_a043fb0ea515e4f3ca78bd6d524bb84e extends Twig_Template
 ";
     }
 
-    // line 60
-    public function block___internal_dd79f628e836c7c163e3c96adc3ecb061328012c($context, array $blocks = array())
+    // line 65
+    public function block___internal_f1dc6368e30deaca34a563e55a8fddc7db84eebb($context, array $blocks = array())
     {
-        // line 61
-        echo "                    Visitanos...!
+        // line 66
+        echo "                        Visitanos...!
                 ";
     }
 
-    // line 85
-    public function block___internal_afce837815cc088265a487c82387430fedb7a765($context, array $blocks = array())
+    // line 90
+    public function block___internal_0fa91e3fd2d3009e5da25a6810a013bae532a233($context, array $blocks = array())
     {
-        // line 86
+        // line 91
         echo "                    Noticias...
                 ";
     }
 
-    // line 111
-    public function block___internal_42f5ab75791f414c6a645efb7a178b4b0140ff45($context, array $blocks = array())
+    // line 116
+    public function block___internal_63b5cfc070cccbbee1d64f159ea14236b8b6f123($context, array $blocks = array())
     {
-        // line 112
+        // line 117
         echo "                    Visista Nuestra Galeria
                 ";
     }
@@ -309,6 +330,6 @@ class __TwigTemplate_a043fb0ea515e4f3ca78bd6d524bb84e extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  294 => 112,  291 => 111,  286 => 86,  283 => 85,  278 => 61,  275 => 60,  258 => 139,  254 => 138,  249 => 136,  245 => 135,  240 => 133,  236 => 132,  231 => 130,  227 => 129,  222 => 127,  218 => 126,  213 => 124,  209 => 123,  204 => 121,  200 => 120,  194 => 117,  190 => 116,  186 => 114,  184 => 111,  159 => 88,  157 => 85,  133 => 63,  131 => 60,  126 => 57,  123 => 56,  113 => 49,  108 => 46,  105 => 45,  81 => 23,  78 => 22,  70 => 17,  65 => 14,  62 => 13,  56 => 10,  51 => 9,  48 => 8,  42 => 5,  37 => 4,  34 => 3,);
+        return array (  315 => 117,  312 => 116,  307 => 91,  304 => 90,  299 => 66,  296 => 65,  279 => 144,  275 => 143,  270 => 141,  266 => 140,  261 => 138,  257 => 137,  252 => 135,  248 => 134,  243 => 132,  239 => 131,  234 => 129,  230 => 128,  225 => 126,  221 => 125,  215 => 122,  207 => 119,  205 => 116,  180 => 93,  178 => 90,  154 => 68,  152 => 65,  147 => 62,  144 => 61,  134 => 54,  129 => 51,  126 => 50,  121 => 45,  118 => 44,  113 => 47,  111 => 44,  91 => 26,  80 => 20,  75 => 17,  72 => 16,  65 => 12,  61 => 11,  56 => 10,  53 => 9,  47 => 6,  43 => 5,  38 => 4,  35 => 3,  358 => 275,  331 => 251,  302 => 225,  282 => 208,  262 => 191,  242 => 174,  211 => 121,  182 => 120,  153 => 94,  132 => 76,  112 => 59,  88 => 25,  77 => 29,  74 => 28,  69 => 303,  67 => 28,  63 => 26,  60 => 25,  49 => 17,  37 => 8,  31 => 4,  28 => 3,);
     }
 }

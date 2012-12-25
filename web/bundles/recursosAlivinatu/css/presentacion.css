@@ -1,0 +1,191 @@
+/* Estilo del anuncio de la img de portada */
+#anuncio{
+    position: absolute;
+    width: 948px;
+    margin-top: 100px;
+    display: block
+}
+
+#date{
+    font: normal 12px "verdana", arial;
+    color: #fff;
+    text-shadow: 0px 0px 4px #000;
+    padding-bottom: 5px;
+    
+}
+
+#anuncio a{
+    text-decoration: none;
+}
+
+#textoAnuncio{
+    font: normal 22px "verdana", arial;
+    color: #fff;
+    background-color: #008fc5;
+    padding: 2px 7px 10px 0px;
+    opacity: .8;
+    top: 50px;
+    -webkit-transition: all 250ms ease-out;
+    -moz-transition: all 250ms ease-out;
+    -o-transition: all 250ms ease-out;
+    transition: all 250ms ease-out;
+}
+
+#textoAnuncio:hover{
+    -webkit-transition: all 250ms ease-out;
+    -moz-transition: all 250ms ease-out;
+    -o-transition: all 250ms ease-out;
+    transition: all 250ms ease-out;
+    text-shadow: 0px 0px 1px #000;
+    opacity: .9;
+    
+}
+
+#botonAnuncio{
+    font: normal 13px "verdana", arial;
+    background-color: #dadadb;
+    box-shadow: 0px 0px 8px  #dadadb;
+    color: #222;
+    padding: 6px 14px 6px 14px; 
+}
+
+#botonAnuncio:hover{
+    background-color: #94c459;
+    color: #fff;
+}
+
+/* fin de estilo de anuncio de portada */
+/**************************************************************************/
+#contenido{
+    margin: 0 auto 0 auto;
+    width: 948px;
+}
+
+hr{
+    height: 1px;
+    border: 0;
+    background-color: #dadada;
+    opacity: .7;
+}
+
+#tituloOferta{
+    font-family: 'Agency Fb', verdana;
+    font-size: 38px;
+    color: #0a9ad1;
+    text-align: center;
+}
+
+#contenido div[id^="columna"]{
+    width: 315px;
+    height: 110px;
+    float: left;
+    position: relative;
+    margin: 10px 0px 10px 0px;
+}
+
+#imgOferta{
+    opacity: .8;
+    float: left;
+}
+
+#tituloItemOferta{
+    color: #12232d;
+    font: 14px normal verdana, arial;
+    text-shadow: 0px 0px 0px #12232d;
+    height: 15px;
+}
+
+#contenidoItemOfert{  
+    color: #213440;
+    font: 12px normal verdana, arial;
+    position: absolute;
+    text-align: justify;
+}
+
+#contenido span[id^="contenidoItemOferta"]{  
+    color: #213440;
+    font: 12px normal verdana, arial;
+    width: 898px;
+    display: inline-block;
+    padding: 25px;
+    background-color: #eff1f2;
+    border: 1px solid #d9d9d9;
+}
+
+
+
+#panelOferta{
+    position: absolute;
+    float: left;
+    right: 20px;
+    width: 225px;
+}
+
+#imgToggle{
+    float: left;
+    box-shadow: 0px 0px 10px 1px #dadada;
+    padding: 10px;
+}
+
+#contenidoToggle{
+    position: relative;
+    float: left;
+    left: 28px;
+    width: 600px;
+}
+
+#tituloToggle{
+    box-shadow: 0px 0px 5px 1px #fff;
+    font: 15px normal  verdana, arial;
+    background-color: #008fc5;
+    padding: 5px 4px 5px 8px;
+    opacity: .8;
+    color: #fff;
+}
+
+#subtituloToggle{
+    font: 13px normal  verdana, arial;
+    font-weight: bold;
+}
+
+#textoToggle{
+    font: 13px normal  verdana, arial;
+    text-align: justify;
+}
+
+#beneficiosToggle li{
+    font: 13px normal  verdana, arial;
+}
+
+#botonToggle{
+    font: normal 13px "verdana", arial;
+    background-color: #94c459;
+    box-shadow: 0px 0px 8px  #fff;
+    color: #fff;
+    padding: 6px 14px 6px 14px; 
+    float: right;
+}
+
+#botonToggle:hover{
+    background-color: #696c6d;
+    text-shadow: 0px 0px 1px #666;
+}
+
+span [id^="botonOferta"]{
+    font: normal 13px "verdana", arial;
+    background-color: #ededed;
+    box-shadow: 0px 0px 8px  #fff;
+    border-radius: 2px;
+    color: #666;
+    margin-top: 10px;
+    padding: 3px 14px 4px 14px; 
+    float: right;
+    cursor: pointer;
+}
+
+
+span [id^="botonOferta"]:hover{
+    background-color: #696c6d;
+    color: #fff;
+    text-shadow: 0px 0px 1px #666;
+}
