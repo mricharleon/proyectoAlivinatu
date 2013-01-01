@@ -2,4 +2,31 @@ alivinatu_homepage:
     pattern:  /
     defaults: { _controller: AlivinatuBundle:Controlador:index }
 
+articulo_listar:
+    pattern: /articulos/listar
+    defaults: { _controller: AlivinatuBundle:Articulos:listar }
+    
+comentarioListar:
+    pattern: /comentarios/listar
+    defaults: { _controller: AlivinatuBundle:Comentarios:listarComentarios }
+    
+articulo_crear:
+    pattern: /articulos/crear/{n}
+    defaults: { _controller: AlivinatuBundle:Articulos:crear }
+    
+articulo_editar:
+    pattern: /articulos/editar/{id}
+    defaults: { _controller: AlivinatuBundle:Articulos:editar }
+    
+articulo_visualizar:
+    pattern: /articulos/visualizar/{id}
+    defaults: { _controller: AlivinatuBundle:Articulos:visualizar }
+    
+articulo_borrar:
+    pattern: /articulos/borrar/{id}
+    defaults: { _controller: AlivinatuBundle:Articulos:borrar }
+    
 
+comentario_crear:
+    pattern: /comentarios/crear
+    defaults: { _controller: AlivinatuBundle:Comentarios:crear }

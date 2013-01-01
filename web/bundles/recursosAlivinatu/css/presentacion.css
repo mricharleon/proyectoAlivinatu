@@ -66,6 +66,8 @@ hr{
     border: 0;
     background-color: #dadada;
     opacity: .7;
+    margin-bottom: 20px;
+    margin-top: 22px;
 }
 
 #tituloOferta{
@@ -77,22 +79,28 @@ hr{
 
 #contenido div[id^="columna"]{
     width: 315px;
-    height: 110px;
+    height: 150px;
     float: left;
     position: relative;
-    margin: 10px 0px 10px 0px;
+    margin: 20px 0px 10px 0px;
+    
+    
 }
 
 #imgOferta{
-    opacity: .8;
+    opacity: .7;
     float: left;
 }
 
 #tituloItemOferta{
-    color: #12232d;
+    color: #0b1f26;
     font: 14px normal verdana, arial;
-    text-shadow: 0px 0px 0px #12232d;
+    text-shadow: 0px 0px 0px #f0a9ad1;
     height: 15px;
+    
+    
+    
+    border-radius: 7px 7px 7px 0px;
 }
 
 #contenidoItemOfert{  
@@ -108,6 +116,7 @@ hr{
     width: 898px;
     display: inline-block;
     padding: 25px;
+    margin-top: -40px;
     background-color: #eff1f2;
     border: 1px solid #d9d9d9;
 }
@@ -123,7 +132,7 @@ hr{
 
 #imgToggle{
     float: left;
-    box-shadow: 0px 0px 10px 1px #dadada;
+    box-shadow: 0px 0px 10px 3px #dadada;
     padding: 10px;
 }
 
@@ -173,14 +182,15 @@ hr{
 
 span [id^="botonOferta"]{
     font: normal 13px "verdana", arial;
-    background-color: #ededed;
+    background-color: #f3f3f3;
     box-shadow: 0px 0px 8px  #fff;
-    border-radius: 2px;
+    border-radius: 1px;
     color: #666;
-    margin-top: 10px;
+    margin-top: 12px;
     padding: 3px 14px 4px 14px; 
     float: right;
     cursor: pointer;
+    border: 1px solid #ebebeb;
 }
 
 

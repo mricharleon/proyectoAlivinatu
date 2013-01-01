@@ -194,6 +194,16 @@ nav ul li:hover ul.children{
     position: absolute;
 }
 
+/* estilo del mensaje de login */
+#headerLogin{
+    
+    color: #fff;
+    font: 12px normal verdana, arial;
+    margin-top: 6px;
+    float: right;
+    
+}
+
 
 
 /* Estilo del footer */

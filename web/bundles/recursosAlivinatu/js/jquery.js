@@ -22,7 +22,7 @@ function updateBackground() {
         
 function toggle(n){
     $('#botonOferta'+n).on('click',function(){
-        for(var i=0; i<6; i++){
+        for(var i=0; i<11; i++){
             if (i!=n){
                 $('#contenidoItemOferta' + i).hide(400);
             }else{
@@ -37,16 +37,13 @@ function toggle(n){
 $(document).ready(function() {
     var n, columna;
 
-    for(var i=0; i<6; i++){
+    for(var i=0; i<11; i++){
         $('#contenidoItemOferta' + i).hide();
     }
 
-    $('#botonOferta').on('click',toggle(0));
-    $('#botonOferta').on('click',toggle(1));
-    $('#botonOferta').on('click',toggle(2));
-    $('#botonOferta').on('click',toggle(3));
-    $('#botonOferta').on('click',toggle(4));
-    $('#botonOferta').on('click',toggle(5));
+    for (var i=0; i<11; i++){
+        $('#botonOferta').on('click',toggle(i));
+    }
 
     /* funcion para controlar el tamaño de la img de bienvenida */     
     updateBackground();

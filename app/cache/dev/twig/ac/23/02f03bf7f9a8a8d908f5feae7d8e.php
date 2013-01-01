@@ -53,7 +53,7 @@ class __TwigTemplate_ac2302f03bf7f9a8a8d908f5feae7d8e extends Twig_Template
         ";
         // line 11
         $this->displayBlock('body', $context, $blocks);
-        // line 34
+        // line 35
         echo "    </body>
 </html>
 ";
@@ -93,22 +93,19 @@ class __TwigTemplate_ac2302f03bf7f9a8a8d908f5feae7d8e extends Twig_Template
                 ";
         // line 19
         $this->displayBlock('headerBusqueda', $context, $blocks);
-        // line 20
-        echo "                ";
-        $this->displayBlock('headerLogin', $context, $blocks);
-        // line 21
+        // line 22
         echo "            </header>
             
             ";
-        // line 23
+        // line 24
         $this->displayBlock('contPrincipal', $context, $blocks);
-        // line 29
+        // line 30
         echo "            
             <footer>
                 ";
-        // line 31
-        $this->displayBlock('footer', $context, $blocks);
         // line 32
+        $this->displayBlock('footer', $context, $blocks);
+        // line 33
         echo "            </footer>
         ";
     }
@@ -139,7 +136,12 @@ class __TwigTemplate_ac2302f03bf7f9a8a8d908f5feae7d8e extends Twig_Template
     // line 19
     public function block_headerBusqueda($context, array $blocks = array())
     {
-        echo " ";
+        echo " 
+                    ";
+        // line 20
+        $this->displayBlock('headerLogin', $context, $blocks);
+        // line 21
+        echo "                ";
     }
 
     // line 20
@@ -148,42 +150,42 @@ class __TwigTemplate_ac2302f03bf7f9a8a8d908f5feae7d8e extends Twig_Template
         echo " ";
     }
 
-    // line 23
+    // line 24
     public function block_contPrincipal($context, array $blocks = array())
     {
-        // line 24
-        echo "                ";
-        $this->displayBlock('imagenPrincipal', $context, $blocks);
         // line 25
         echo "                ";
+        $this->displayBlock('imagenPrincipal', $context, $blocks);
+        // line 26
+        echo "                ";
         $this->displayBlock('contenido', $context, $blocks);
-        // line 28
+        // line 29
         echo "            ";
     }
 
-    // line 24
+    // line 25
     public function block_imagenPrincipal($context, array $blocks = array())
     {
         echo " ";
     }
 
-    // line 25
+    // line 26
     public function block_contenido($context, array $blocks = array())
     {
-        // line 26
+        // line 27
         echo "                    ";
         $this->displayBlock('ofertaTexto', $context, $blocks);
-        // line 27
+        // line 28
         echo "                ";
     }
 
-    // line 26
+    // line 27
     public function block_ofertaTexto($context, array $blocks = array())
     {
         echo " ";
     }
 
-    // line 31
+    // line 32
     public function block_footer($context, array $blocks = array())
     {
         echo " ";
@@ -201,6 +203,6 @@ class __TwigTemplate_ac2302f03bf7f9a8a8d908f5feae7d8e extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  185 => 31,  179 => 26,  175 => 27,  172 => 26,  169 => 25,  163 => 24,  159 => 28,  156 => 25,  153 => 24,  150 => 23,  144 => 20,  138 => 19,  132 => 16,  128 => 17,  126 => 16,  121 => 15,  115 => 13,  110 => 32,  104 => 29,  102 => 23,  93 => 19,  90 => 18,  88 => 15,  85 => 14,  83 => 13,  80 => 12,  77 => 11,  72 => 7,  67 => 6,  61 => 5,  55 => 34,  53 => 11,  46 => 8,  43 => 7,  41 => 6,  108 => 31,  105 => 59,  100 => 74,  98 => 21,  95 => 20,  92 => 57,  49 => 17,  37 => 5,  31 => 1,  28 => 3,);
+        return array (  187 => 32,  181 => 27,  177 => 28,  174 => 27,  171 => 26,  161 => 29,  158 => 26,  146 => 20,  142 => 21,  140 => 20,  125 => 17,  123 => 16,  118 => 15,  107 => 33,  105 => 32,  101 => 30,  99 => 24,  95 => 22,  93 => 19,  90 => 18,  85 => 14,  83 => 13,  80 => 12,  72 => 7,  61 => 5,  55 => 35,  53 => 11,  46 => 8,  43 => 7,  41 => 6,  333 => 125,  330 => 124,  322 => 98,  317 => 74,  314 => 73,  297 => 152,  293 => 151,  288 => 149,  284 => 148,  279 => 146,  275 => 145,  270 => 143,  266 => 142,  261 => 140,  257 => 139,  252 => 137,  248 => 136,  243 => 134,  233 => 130,  229 => 129,  225 => 127,  223 => 124,  198 => 101,  196 => 98,  172 => 76,  170 => 73,  165 => 25,  162 => 69,  155 => 25,  152 => 24,  143 => 62,  141 => 57,  135 => 19,  130 => 51,  127 => 50,  122 => 45,  119 => 44,  114 => 47,  112 => 13,  92 => 26,  89 => 25,  81 => 20,  76 => 17,  73 => 16,  66 => 12,  62 => 11,  57 => 10,  54 => 9,  48 => 6,  44 => 5,  39 => 4,  36 => 3,  597 => 484,  569 => 459,  549 => 442,  529 => 425,  498 => 397,  470 => 372,  441 => 346,  422 => 330,  403 => 314,  384 => 298,  352 => 269,  325 => 99,  296 => 219,  277 => 203,  258 => 187,  239 => 133,  207 => 142,  178 => 116,  149 => 90,  129 => 16,  110 => 57,  88 => 15,  77 => 11,  74 => 28,  69 => 510,  67 => 6,  63 => 26,  60 => 25,  49 => 17,  37 => 5,  31 => 1,  28 => 3,);
     }
 }

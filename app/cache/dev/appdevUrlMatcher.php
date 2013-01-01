@@ -113,6 +113,41 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\ControladorController::indexAction',  '_route' => 'alivinatu_homepage',);
         }
 
+        // articulo_listar
+        if ($pathinfo === '/articulos/listar') {
+            return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\ArticulosController::listarAction',  '_route' => 'articulo_listar',);
+        }
+
+        // comentarioListar
+        if ($pathinfo === '/comentarios/listar') {
+            return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\ComentariosController::listarComentariosAction',  '_route' => 'comentarioListar',);
+        }
+
+        // articulo_crear
+        if (0 === strpos($pathinfo, '/articulos/crear') && preg_match('#^/articulos/crear/(?<n>[^/]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\ArticulosController::crearAction',)), array('_route' => 'articulo_crear'));
+        }
+
+        // articulo_editar
+        if (0 === strpos($pathinfo, '/articulos/editar') && preg_match('#^/articulos/editar/(?<id>[^/]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\ArticulosController::editarAction',)), array('_route' => 'articulo_editar'));
+        }
+
+        // articulo_visualizar
+        if (0 === strpos($pathinfo, '/articulos/visualizar') && preg_match('#^/articulos/visualizar/(?<id>[^/]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\ArticulosController::visualizarAction',)), array('_route' => 'articulo_visualizar'));
+        }
+
+        // articulo_borrar
+        if (0 === strpos($pathinfo, '/articulos/borrar') && preg_match('#^/articulos/borrar/(?<id>[^/]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\ArticulosController::borrarAction',)), array('_route' => 'articulo_borrar'));
+        }
+
+        // comentario_crear
+        if ($pathinfo === '/comentarios/crear') {
+            return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\ComentariosController::crearAction',  '_route' => 'comentario_crear',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

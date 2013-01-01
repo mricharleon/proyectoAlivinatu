@@ -67,7 +67,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
     ";
         // line 28
         $this->displayBlock('ofertaTexto', $context, $blocks);
-        // line 303
+        // line 510
         echo "</div>
 ";
     }
@@ -81,7 +81,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         <div id=\"tituloOferta\"> Conoce Nuestros Servicios </div>
         <hr>  
        
-  
+        <!-- fila 1 de las ofertas -->
         
         <div id=\"columna0\">
             <span id=\"imgOferta\">
@@ -92,37 +92,34 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
             </span>
         
             <span id=\"panelOferta\">
-                <span id=\"tituloItemOferta\">
+                <div id=\"tituloItemOferta\">
                     AQUA DETOX
-                </span>  
-                    <br>
+                </div>  
                 <span id=\"contenidoItemOfert\">
-                    La limpieza iónica es muy importante para la correcta 
+                    Limpieza iónica es muy importante para la correcta 
                     eliminación de las toxinas del cuerpo, através del campo
-                    electromagnético.
-                    <spam id=\"botonOferta0\">Leer más..!</spam>
+                    electro magnético
+                    <spam id=\"botonOferta0\">Continuar leyendo..!</spam>
                     
                 </span>
             </span>
         </div>
             
-            
         <div id=\"columna1\">
            <span id=\"imgOferta\">
                 <img src=\"";
-        // line 59
+        // line 57
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/masajes.png"), "html", null, true);
         echo "\">
             </span>
             <span id=\"panelOferta\">
-                <span id=\"tituloItemOferta\">
+                <div id=\"tituloItemOferta\">
                     MASAJES RELAJANTES
-                </span>  
-                    <br>
+                </div>  
                 <span id=\"contenidoItemOfert\">
                     Servicio de masajes relajantes que elimina tensión acumulada,
-                    se aplica de forma lenta y con una presión firme y progresiva.
-                    <spam id=\"botonOferta1\">Leer más..!</spam>
+                    se aplica de forma lenta y con una presión firme y progresiva
+                    <spam id=\"botonOferta1\">Continuar leyendo..!</spam>
                 </span>
             </span>
         </div>
@@ -130,19 +127,18 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         <div id=\"columna2\">
            <span id=\"imgOferta\">
                 <img src=\"";
-        // line 76
+        // line 73
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/hidroterapiaColonica.png"), "html", null, true);
         echo "\">
             </span>
             <span id=\"panelOferta\">
-                <span id=\"tituloItemOferta\">
+                <div id=\"tituloItemOferta\">
                     HIDROTERAPIA COLÓNICA
-                </span>  
-                    <br>
+                </div>  
                 <span id=\"contenidoItemOfert\">
-                    Actúa como una ducha con presión que durante 45 minutos asegura la distribución
-                    del agua con ozono en el colon.
-                    <spam id=\"botonOferta2\">Leer más..!</spam>
+                    Actúa como una ducha con una presión que durante 45 minutos asegura la distribución
+                    del agua con ozono en el colon
+                    <spam id=\"botonOferta2\">Continuar leyendo..!</spam>
                 </span>
             </span>
         </div>
@@ -151,7 +147,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         
         <span id=\"contenidoItemOferta0\">
             <img id=\"imgToggle\" src=\"";
-        // line 94
+        // line 90
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/aquaDetox.jpg"), "html", null, true);
         echo "\">
             <span id=\"contenidoToggle\">
@@ -180,7 +176,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         
         <span id=\"contenidoItemOferta1\">
             <img id=\"imgToggle\" src=\"";
-        // line 120
+        // line 116
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/masajes.jpg"), "html", null, true);
         echo "\">
             <span id=\"contenidoToggle\">
@@ -209,7 +205,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         
         <span id=\"contenidoItemOferta2\">
             <img id=\"imgToggle\" src=\"";
-        // line 146
+        // line 142
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/hidroterapiaColonica.jpg"), "html", null, true);
         echo "\">
             <span id=\"contenidoToggle\">
@@ -237,22 +233,22 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         </span>
         
         <!-- fila 2 de las ofertas -->
+        
         <div id=\"columna3\">
             <span id=\"imgOferta\">
                 <img src=\"";
-        // line 174
+        // line 171
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/bañosCajon.png"), "html", null, true);
         echo "\">
             </span>
             <span id=\"panelOferta\">
-                <span id=\"tituloItemOferta\">
+                <div id=\"tituloItemOferta\">
                     BAÑOS DE CAJÓN
-                </span>  
-                    <br>
+                </div>  
                 <span id=\"contenidoItemOfert\">
                     Variación del baño de vapor, ambiente más cerrado,
-                    en una cabina de madera, da mayor calidez y controla mejor la baja de presión.
-                    <spam id=\"botonOferta3\">Leer más..!</spam>
+                    en cabina de madera, da mayor calidez y controla mejor la baja de presión
+                    <spam id=\"botonOferta3\">Continuar leyendo..!</spam>
                 </span>
             </span>
         </div>
@@ -260,19 +256,18 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         <div id=\"columna4\">
             <span id=\"imgOferta\">
                 <img src=\"";
-        // line 191
+        // line 187
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/bañosAsiento.png"), "html", null, true);
         echo "\">
             </span>
             <span id=\"panelOferta\">
-                <span id=\"tituloItemOferta\">
+                <div id=\"tituloItemOferta\">
                     BAÑOS DE ASIENTO
-                </span>  
-                    <br>
+                </div>  
                 <span id=\"contenidoItemOfert\">
                     Extrae el calor de la parte baja del vientre para obtener energía.
-                    El calor excesivo en nuestro cuerpo es una pérdida de energía.
-                    <spam id=\"botonOferta4\">Leer más..!</spam>
+                    El calor excesivo en nuestro cuerpo es una pérdida de energía
+                    <spam id=\"botonOferta4\">Continuar leyendo..!</spam>
                 </span>
             </span>
         </div>
@@ -280,19 +275,18 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         <div id=\"columna5\">
             <span id=\"imgOferta\">
                 <img src=\"";
-        // line 208
+        // line 203
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/hidromasaje.png"), "html", null, true);
         echo "\">
             </span>
             <span id=\"panelOferta\">
-                <span id=\"tituloItemOferta\">
+                <div id=\"tituloItemOferta\">
                     HIDROMASAJE
-                </span>  
-                    <br>
+                </div>  
                 <span id=\"contenidoItemOfert\">
-                    Recomendado por muchos especialistas de manera terapéutica para combatir la enfermedad
-                    de nuestra sociedad el stress.
-                    <spam id=\"botonOferta5\">Leer más..!</spam>
+                    Recomendado por especialistas de manera terapéutica para combatir la enfermedad
+                    de nuestra sociedad el stress
+                    <spam id=\"botonOferta5\">Continuar leyendo..!</spam>
                 </span>
             </span>
         </div>
@@ -300,7 +294,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         <!-- contenido del Toggle -->
         <span id=\"contenidoItemOferta3\">
             <img id=\"imgToggle\" src=\"";
-        // line 225
+        // line 219
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/bañosCajon.jpg"), "html", null, true);
         echo "\">
             <span id=\"contenidoToggle\">
@@ -329,7 +323,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         
         <span id=\"contenidoItemOferta4\">
             <img id=\"imgToggle\" src=\"";
-        // line 251
+        // line 245
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/bañosAsiento.jpg"), "html", null, true);
         echo "\">
             <span id=\"contenidoToggle\">
@@ -356,7 +350,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         
         <span id=\"contenidoItemOferta5\">
             <img id=\"imgToggle\" src=\"";
-        // line 275
+        // line 269
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/hidromasaje.jpg"), "html", null, true);
         echo "\">
             <span id=\"contenidoToggle\">
@@ -383,6 +377,249 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         </span>
         
         
+        <!-- fila 3 de las ofertas -->
+        
+        <div id=\"columna6\">
+            <span id=\"imgOferta\">
+                <img src=\"";
+        // line 298
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/camaJade.png"), "html", null, true);
+        echo "\">
+            </span>
+            <span id=\"panelOferta\">
+                <div id=\"tituloItemOferta\">
+                    CAMA DE JADE
+                </div>  
+                <span id=\"contenidoItemOfert\">
+                    Son camillas con un rodillo interno de piedra de jade que
+                    emite helio y tres placas carbónicas que aportan rayos infrarrojos
+                    <spam id=\"botonOferta6\">Continuar leyendo..!</spam>
+                </span>
+            </span>
+        </div>
+        
+        <div id=\"columna7\">
+            <span id=\"imgOferta\">
+                <img src=\"";
+        // line 314
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/biomagnetismo.png"), "html", null, true);
+        echo "\">
+            </span>
+            <span id=\"panelOferta\">
+                <div id=\"tituloItemOferta\">
+                    BIOMAGNETISMO
+                </div>  
+                <span id=\"contenidoItemOfert\">
+                    Aplicando imanes con una determinada fuerza y polaridad en puntos 
+                    específicos del cuerpo se puede exterminar virus
+                    <spam id=\"botonOferta7\">Continuar leyendo..!</spam>
+                </span>
+            </span>
+        </div>
+        
+        <div id=\"columna8\">
+            <span id=\"imgOferta\">
+                <img src=\"";
+        // line 330
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/microdermoabrasion.png"), "html", null, true);
+        echo "\">
+            </span>
+            <span id=\"panelOferta\">
+                <div id=\"tituloItemOferta\">
+                    MICRODERMOABRASIÓN
+                </div>  
+                    <span id=\"contenidoItemOfert\">
+                    Elimina las capas superficiales de piel 
+                    muerta y opaca, estimulando la renovación y la producción de colágeno
+                    <spam id=\"botonOferta8\">Continuar leyendo..!</spam>
+                </span>
+            </span>
+        </div>
+        
+        <!-- contenido del Toggle -->
+        <span id=\"contenidoItemOferta6\">
+            <img id=\"imgToggle\" src=\"";
+        // line 346
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/camaJade.jpg"), "html", null, true);
+        echo "\">
+            <span id=\"contenidoToggle\">
+                <div id=\"tituloToggle\">
+                    <b>Cama de Jade</b> | Conoce un poco más de este servicio
+                </div>
+                    <br>
+                    <div id=\"textoToggle\">
+                    Las camas de piedras Jade actúan a través del movimiento de sus
+                    rodillos y del calor que transmiten. Sirven para reducir los 
+                    dolores musculares provocados por el estrés y contrarrestar la tensión muscular.
+                    
+                    
+                    <ul id=\"beneficiosToggle\">
+                    <li>Estrés: (ideal para después de varias horas de trabajo frente al computador) elimina la tensión.</li>
+                    <li>Mejoramiento de la postura, rectificación de vértebras, equilibra el sistema nervioso.</li>
+                    <li>Mejora la celulitis, las várices y las piernas hinchadas.</li>
+                    <li>Mejora las funciones inmunológicas.</li>
+                    </ul>
+                    </div>
+                    
+                    <a href=\"\"><spam id=\"botonToggle\">Solicitar Cita Ahora..!</spam></a>
+                    
+            </span>
+        </span>
+        
+        <span id=\"contenidoItemOferta7\">
+            <img id=\"imgToggle\" src=\"";
+        // line 372
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/biomagnetismo.jpg"), "html", null, true);
+        echo "\">
+            <span id=\"contenidoToggle\">
+                <div id=\"tituloToggle\">
+                    <b>Biomagnetismo</b> | Conoce un poco más de este servicio
+                </div>
+                    <br>
+                    <div id=\"textoToggle\">
+                    Extermina en tiempo breve, virus, bacterias, hongos o parásitos,
+                    que son causa de la mayoría de las enfermedades graves del hombre,
+                    incluso algunas en las que la medicina oficial no siempre reconoce.
+                    
+                    <ul id=\"beneficiosToggle\">
+                    <li>Regulariza la circulación sanguinea, normaliza la presión alta o baja.</li>
+                    <li>Corrige alteraciones por mal funcionamiento de los organos sexuales.</li>
+                    <li>Corrige problemas de las vías urinarias.</li>
+                    <li>Alivia las hemorroides.</li>
+                    </ul>
+                    </div>
+                    
+                    <a href=\"\"><spam id=\"botonToggle\">Solicitar Cita Ahora..!</spam></a>
+                    
+            </span>
+        </span>
+        
+        <span id=\"contenidoItemOferta8\">
+            <img id=\"imgToggle\" src=\"";
+        // line 397
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/microdermoabrasion.jpg"), "html", null, true);
+        echo "\">
+            <span id=\"contenidoToggle\">
+                <div id=\"tituloToggle\">
+                    <b>Microdermoabrasión</b> | Conoce un poco más de este servicio
+                </div>
+                    <br>
+                    <div id=\"textoToggle\">
+                    Muchos pacientes observan cambios radicales en el tono, la textura
+                    y el color de las zonas tratadas desde el primer tratamiento.
+                    
+                    
+                    <ul id=\"beneficiosToggle\">
+                    <li>Problemas leves de la piel (como la pigmentación despareja o una mala textura).</li>
+                    <li>Cicatrices leves causadas por el acné.</li>
+                    <li>Poros dilatados y líneas finas.</li>
+                    <li>Piel grasosa o sin brillo.</li>
+                    </ul>
+                    </div>
+                    
+                    <a href=\"\"><spam id=\"botonToggle\">Solicitar Cita Ahora..!</spam></a>
+                    
+            </span>
+        </span>
+        
+        <!-- fila 4 de las ofertas -->
+        
+        <div id=\"columna9\">
+            <span id=\"imgOferta\">
+                <img src=\"";
+        // line 425
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/bañosBarro.png"), "html", null, true);
+        echo "\">
+            </span>
+            <span id=\"panelOferta\">
+                <div id=\"tituloItemOferta\">
+                    BAÑOS DE BARRO
+                </div>  
+                    
+                <span id=\"contenidoItemOfert\">
+                    Exofoliante natural, saca las impurezas de la piel, retira 
+                    las celulas viejas, quita manchas y mejora la circulación.
+                    <spam id=\"botonOferta9\">Continuar leyendo..!</spam>
+                </span>
+            </span>
+        </div>
+        
+        <div id=\"columna10\">
+            <span id=\"imgOferta\">
+                <img src=\"";
+        // line 442
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/quiropraxia.png"), "html", null, true);
+        echo "\">
+            </span>
+            <span id=\"panelOferta\">
+                <div id=\"tituloItemOferta\">
+                    QUIROPRAXIA
+                </div>  
+                <span id=\"contenidoItemOfert\">
+                    Busca el restablecimiento de la salud mediante la manipulación de
+                    ciertos órganos, especialmente de la columna vertebral.
+                    <spam id=\"botonOferta10\">Continuar leyendo..!</spam>
+                </span>
+            </span>
+        </div>
+        
+        
+        <!-- contenido del Toggle -->
+        <span id=\"contenidoItemOferta9\">
+            <img id=\"imgToggle\" src=\"";
+        // line 459
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/bañosBarro.jpg"), "html", null, true);
+        echo "\">
+            <span id=\"contenidoToggle\">
+                <div id=\"tituloToggle\">
+                    <b>Baños de Barro</b> | Conoce un poco más de este servicio
+                </div>
+                    <br>
+                    <div id=\"textoToggle\">
+                    Los baños de barro  se remontan a los albores del tiempo,
+                    y se asocian a la relajación y muchos otros beneficios:
+                    
+                    
+                    <ul id=\"beneficiosToggle\">
+                    <li>Calman la artritis y los dolores en las articulaciones.</li>
+                    <li>Mejoran la piel, dejándola más joven y tersa.</li>
+                    <li>Alivian la tensión muscular e inflamación.</li>
+                    <li>Desintoxican la piel.</li>
+                    </ul>
+                    </div>
+                    
+                    <a href=\"\"><spam id=\"botonToggle\">Solicitar Cita Ahora..!</spam></a>
+                    
+            </span>
+        </span>
+        
+        <span id=\"contenidoItemOferta10\">
+            <img id=\"imgToggle\" src=\"";
+        // line 484
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/quiropraxia.jpg"), "html", null, true);
+        echo "\">
+            <span id=\"contenidoToggle\">
+                <div id=\"tituloToggle\">
+                    <b>Quiropraxia</b> | Conoce un poco más de este servicio
+                </div>
+                    <br>
+                    <div id=\"textoToggle\">
+                    Esta práctica es definida como la \"profesión sanitaria que se ocupa del diagnóstico,
+                    el tratamiento y la prevención de trastornos mecánicos del sistema neuro-musculoesqueléticos.
+                    
+                    <ul id=\"beneficiosToggle\">
+                    <li>Mejora la elasticidad de la piel, así como la velocidad de cicatrización.</li>
+                    <li>Mejora la inmunidad (mayor resistencia a catarros y todo tipo de infecciones).</li>
+                    <li>Sensación de bienestary mejora del estado de ánimo.</li>
+                    <li>Mejora la actividad sexual en ambos sexos.</li>
+                    </ul>
+                    </div>
+                    
+                    <a href=\"\"><spam id=\"botonToggle\">Solicitar Cita Ahora..!</spam></a>
+                    
+            </span>
+        </span>
+        
         
 
     ";
@@ -400,6 +637,6 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  358 => 275,  331 => 251,  302 => 225,  282 => 208,  262 => 191,  242 => 174,  211 => 146,  182 => 120,  153 => 94,  132 => 76,  112 => 59,  88 => 38,  77 => 29,  74 => 28,  69 => 303,  67 => 28,  63 => 26,  60 => 25,  49 => 17,  37 => 8,  31 => 4,  28 => 3,);
+        return array (  597 => 484,  569 => 459,  549 => 442,  529 => 425,  498 => 397,  470 => 372,  441 => 346,  422 => 330,  403 => 314,  384 => 298,  352 => 269,  325 => 245,  296 => 219,  277 => 203,  258 => 187,  239 => 171,  207 => 142,  178 => 116,  149 => 90,  129 => 73,  110 => 57,  88 => 38,  77 => 29,  74 => 28,  69 => 510,  67 => 28,  63 => 26,  60 => 25,  49 => 17,  37 => 8,  31 => 4,  28 => 3,);
     }
 }

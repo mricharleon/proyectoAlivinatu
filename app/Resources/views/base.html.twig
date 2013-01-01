@@ -16,8 +16,9 @@
                             {% block login %} {% endblock %}
                         {% endblock %}
                     </nav>    
-                {% block headerBusqueda %} {% endblock %}
-                {% block headerLogin %} {% endblock %}
+                {% block headerBusqueda %} 
+                    {% block headerLogin %} {% endblock %}
+                {% endblock %}
             </header>
             
             {% block contPrincipal %}

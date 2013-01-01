@@ -53,9 +53,17 @@
         <input type="text" class="cajaBusqueda" name="" placeholder="Ingresa tu Búsqueda"/>
         <input type="image" src="{{ asset('bundles/recursosAlivinatu/images/buscar.png') }}" class="cajaBusqueda_submit" title="Buscar"/>
     </form>
+        
+        {% block headerLogin %}
+        <div id="headerLogin">
+            Hola, Desconocido(a) (Salir)
+        </div>
+    {% endblock %}
+        
 </div>
 
 </div>
+    
 {% endblock %}
     
 {% block footer %}
