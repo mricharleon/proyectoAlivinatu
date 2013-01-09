@@ -11,8 +11,8 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
 
         $this->blocks = array(
             'imagenPrincipal' => array($this, 'block_imagenPrincipal'),
-            'contenido' => array($this, 'block_contenido'),
             'ofertaTexto' => array($this, 'block_ofertaTexto'),
+            'tituloContenido' => array($this, 'block_tituloContenido'),
         );
     }
 
@@ -59,34 +59,20 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
     }
 
     // line 25
-    public function block_contenido($context, array $blocks = array())
-    {
-        // line 26
-        echo "<div id=\"contenido\">
-    
-    ";
-        // line 28
-        $this->displayBlock('ofertaTexto', $context, $blocks);
-        // line 510
-        echo "</div>
-";
-    }
-
-    // line 28
     public function block_ofertaTexto($context, array $blocks = array())
     {
-        // line 29
-        echo "        <br>
-        <hr>
-        <div id=\"tituloOferta\"> Conoce Nuestros Servicios </div>
-        <hr>  
-       
-        <!-- fila 1 de las ofertas -->
+        echo "     
+    <div id=\"contenido\">
+        ";
+        // line 27
+        $this->displayBlock('tituloContenido', $context, $blocks);
+        // line 33
+        echo "        <!-- fila 1 de las ofertas -->
         
         <div id=\"columna0\">
             <span id=\"imgOferta\">
                 <img src=\"";
-        // line 38
+        // line 37
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/aquaDetox.png"), "html", null, true);
         echo "\">
             </span>
@@ -108,7 +94,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         <div id=\"columna1\">
            <span id=\"imgOferta\">
                 <img src=\"";
-        // line 57
+        // line 56
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/masajes.png"), "html", null, true);
         echo "\">
             </span>
@@ -127,7 +113,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         <div id=\"columna2\">
            <span id=\"imgOferta\">
                 <img src=\"";
-        // line 73
+        // line 72
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/hidroterapiaColonica.png"), "html", null, true);
         echo "\">
             </span>
@@ -147,7 +133,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         
         <span id=\"contenidoItemOferta0\">
             <img id=\"imgToggle\" src=\"";
-        // line 90
+        // line 89
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/aquaDetox.jpg"), "html", null, true);
         echo "\">
             <span id=\"contenidoToggle\">
@@ -176,7 +162,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         
         <span id=\"contenidoItemOferta1\">
             <img id=\"imgToggle\" src=\"";
-        // line 116
+        // line 115
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/masajes.jpg"), "html", null, true);
         echo "\">
             <span id=\"contenidoToggle\">
@@ -205,7 +191,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         
         <span id=\"contenidoItemOferta2\">
             <img id=\"imgToggle\" src=\"";
-        // line 142
+        // line 141
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/hidroterapiaColonica.jpg"), "html", null, true);
         echo "\">
             <span id=\"contenidoToggle\">
@@ -237,7 +223,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         <div id=\"columna3\">
             <span id=\"imgOferta\">
                 <img src=\"";
-        // line 171
+        // line 170
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/bañosCajon.png"), "html", null, true);
         echo "\">
             </span>
@@ -256,7 +242,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         <div id=\"columna4\">
             <span id=\"imgOferta\">
                 <img src=\"";
-        // line 187
+        // line 186
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/bañosAsiento.png"), "html", null, true);
         echo "\">
             </span>
@@ -275,7 +261,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         <div id=\"columna5\">
             <span id=\"imgOferta\">
                 <img src=\"";
-        // line 203
+        // line 202
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/hidromasaje.png"), "html", null, true);
         echo "\">
             </span>
@@ -294,7 +280,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         <!-- contenido del Toggle -->
         <span id=\"contenidoItemOferta3\">
             <img id=\"imgToggle\" src=\"";
-        // line 219
+        // line 218
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/bañosCajon.jpg"), "html", null, true);
         echo "\">
             <span id=\"contenidoToggle\">
@@ -323,7 +309,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         
         <span id=\"contenidoItemOferta4\">
             <img id=\"imgToggle\" src=\"";
-        // line 245
+        // line 244
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/bañosAsiento.jpg"), "html", null, true);
         echo "\">
             <span id=\"contenidoToggle\">
@@ -350,7 +336,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         
         <span id=\"contenidoItemOferta5\">
             <img id=\"imgToggle\" src=\"";
-        // line 269
+        // line 268
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/hidromasaje.jpg"), "html", null, true);
         echo "\">
             <span id=\"contenidoToggle\">
@@ -382,7 +368,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         <div id=\"columna6\">
             <span id=\"imgOferta\">
                 <img src=\"";
-        // line 298
+        // line 297
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/camaJade.png"), "html", null, true);
         echo "\">
             </span>
@@ -401,7 +387,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         <div id=\"columna7\">
             <span id=\"imgOferta\">
                 <img src=\"";
-        // line 314
+        // line 313
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/biomagnetismo.png"), "html", null, true);
         echo "\">
             </span>
@@ -420,7 +406,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         <div id=\"columna8\">
             <span id=\"imgOferta\">
                 <img src=\"";
-        // line 330
+        // line 329
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/microdermoabrasion.png"), "html", null, true);
         echo "\">
             </span>
@@ -439,7 +425,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         <!-- contenido del Toggle -->
         <span id=\"contenidoItemOferta6\">
             <img id=\"imgToggle\" src=\"";
-        // line 346
+        // line 345
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/camaJade.jpg"), "html", null, true);
         echo "\">
             <span id=\"contenidoToggle\">
@@ -468,7 +454,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         
         <span id=\"contenidoItemOferta7\">
             <img id=\"imgToggle\" src=\"";
-        // line 372
+        // line 371
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/biomagnetismo.jpg"), "html", null, true);
         echo "\">
             <span id=\"contenidoToggle\">
@@ -496,7 +482,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         
         <span id=\"contenidoItemOferta8\">
             <img id=\"imgToggle\" src=\"";
-        // line 397
+        // line 396
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/microdermoabrasion.jpg"), "html", null, true);
         echo "\">
             <span id=\"contenidoToggle\">
@@ -527,7 +513,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         <div id=\"columna9\">
             <span id=\"imgOferta\">
                 <img src=\"";
-        // line 425
+        // line 424
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/bañosBarro.png"), "html", null, true);
         echo "\">
             </span>
@@ -547,7 +533,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         <div id=\"columna10\">
             <span id=\"imgOferta\">
                 <img src=\"";
-        // line 442
+        // line 441
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/ofertas/quiropraxia.png"), "html", null, true);
         echo "\">
             </span>
@@ -567,7 +553,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         <!-- contenido del Toggle -->
         <span id=\"contenidoItemOferta9\">
             <img id=\"imgToggle\" src=\"";
-        // line 459
+        // line 458
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/bañosBarro.jpg"), "html", null, true);
         echo "\">
             <span id=\"contenidoToggle\">
@@ -595,7 +581,7 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         
         <span id=\"contenidoItemOferta10\">
             <img id=\"imgToggle\" src=\"";
-        // line 484
+        // line 483
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/servicios/quiropraxia.jpg"), "html", null, true);
         echo "\">
             <span id=\"contenidoToggle\">
@@ -621,8 +607,19 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         </span>
         
         
+    </div>
+";
+    }
 
-    ";
+    // line 27
+    public function block_tituloContenido($context, array $blocks = array())
+    {
+        // line 28
+        echo "            <br>
+            <hr>
+            <div id=\"tituloOferta\"> Conoce Nuestros Servicios </div>
+            <hr>
+        ";
     }
 
     public function getTemplateName()
@@ -637,6 +634,6 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  597 => 484,  569 => 459,  549 => 442,  529 => 425,  498 => 397,  470 => 372,  441 => 346,  422 => 330,  403 => 314,  384 => 298,  352 => 269,  325 => 245,  296 => 219,  277 => 203,  258 => 187,  239 => 171,  207 => 142,  178 => 116,  149 => 90,  129 => 73,  110 => 57,  88 => 38,  77 => 29,  74 => 28,  69 => 510,  67 => 28,  63 => 26,  60 => 25,  49 => 17,  37 => 8,  31 => 4,  28 => 3,);
+        return array (  616 => 28,  613 => 27,  583 => 483,  555 => 458,  535 => 441,  515 => 424,  484 => 396,  456 => 371,  427 => 345,  408 => 329,  389 => 313,  370 => 297,  338 => 268,  311 => 244,  282 => 218,  263 => 202,  244 => 186,  225 => 170,  193 => 141,  164 => 115,  135 => 89,  115 => 72,  96 => 56,  74 => 37,  68 => 33,  66 => 27,  60 => 25,  49 => 17,  37 => 8,  31 => 4,  28 => 3,);
     }
 }

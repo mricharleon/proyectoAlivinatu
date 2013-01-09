@@ -26,7 +26,6 @@ articulo_borrar:
     pattern: /articulos/borrar/{id}
     defaults: { _controller: AlivinatuBundle:Articulos:borrar }
     
-
 comentario_crear:
     pattern: /comentarios/crear
     defaults: { _controller: AlivinatuBundle:Comentarios:crear }

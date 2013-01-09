@@ -1,0 +1,48 @@
+{% extends 'AlivinatuBundle::layout.html.twig' %}
+    
+{% block title %}
+    Administración
+{% endblock %}
+
+{% block contenido %}     
+    <div id="contenido">
+        
+        
+        <div id="cajaContenido">
+            <div id="tituloForm"><b>Selecciona</b> | El Caso de Uso para su Administración</div>
+            
+            <div id="columnaCU1">
+                <img src="{{ asset('bundles/recursosAlivinatu/images/administrador/menu/adminCliente.jpg')}}">
+                <a href="{{ path('adminCliente') }}"><span id="tituloCU">Administrar Cliente</span></a>
+            </div>
+            
+            <div id="columnaCU1">
+                <img src="{{ asset('bundles/recursosAlivinatu/images/administrador/menu/adminServicio.jpg')}}">
+                <a href=""><span id="tituloCU">Administrar Servicio</span></a>
+            </div>
+            
+            <div id="columnaCU1">
+                <img src="{{ asset('bundles/recursosAlivinatu/images/administrador/menu/adminSala.jpg')}}">
+                <span id="tituloCU">Administrar Sala</span>
+            </div>
+            
+            <div id="columnaCU1">
+                <img src="{{ asset('bundles/recursosAlivinatu/images/administrador/menu/adminPromocion.jpg')}}">
+                <span id="tituloCU">Administrar Promoción</span>
+            </div>
+            
+            <div id="columnaCU1">
+                <img src="{{ asset('bundles/recursosAlivinatu/images/administrador/menu/adminReserva.jpg')}}">
+                <span id="tituloCU">Administrar Reserva</span>
+            </div>
+            <div class="clear"></div>
+            
+           {# <a href=""><span id="botonCU">Cancelar</span></a>#}
+        </div>
+    
+        
+    </div>
+{% endblock %}
+
+
+

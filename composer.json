@@ -39,3 +39,9 @@
         "symfony-web-dir": "web"
     }
 }
+
+{
+    "require": {
+        "doctrine/doctrine-fixtures-bundle": "dev-master"
+    }
+}

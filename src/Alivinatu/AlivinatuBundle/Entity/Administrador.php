@@ -5,37 +5,20 @@ namespace Alivinatu\AlivinatuBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * Alivinatu\AlivinatuBundle\Entity\Administrador
+ *
  * @ORM\Table(name="administrador")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Alivinatu\AlivinatuBundle\Entity\AdministradorRepository")
  */
-class Administrador
+class Administrador extends Usuario
 {
     /**
-     * @ORM\id
-     * @ORM\Column(Type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * Get id
+     *
+     * @return integer 
      */
-    private $id;
-    
-    /**
-     * @ORM\Column(Type="string")
-     */
-    private $usuario;
-    
-    /**
-     * @ORM\Column(Type="string")
-     */
-    private $password;
-    
-    /**
-     * @ORM\Column(Type="string")
-     */
-    private $nombre;
-    
-    /**
-     * @ORM\Column(Type="string")
-     */
-    private $apellido;
+    public function getId()
+    {
+        return $this->id;
+    }
 }
-
-?>

@@ -2,10 +2,32 @@ alivinatu:
     resource: "@AlivinatuBundle/Resources/config/routing.yml"
     prefix:   /
 
-# Agregando para la ruta del login
+registroAdmin:
+  pattern: /admin/registro
+  defaults: { _controller: 'AlivinatuBundle:Usuario:registroAdmin' }
+  
+registroCliente:
+  pattern: /user/registro
+  defaults: { _controller: 'AlivinatuBundle:Usuario:registroCliente' }
+  
+menuAdmin:
+  pattern:  /admin
+  defaults: { _controller: 'AlivinatuBundle:Admin:menuAdmin' }
 
-  
-  
+login:
+    pattern:  /login
+    defaults: { _controller: 'AlivinatuBundle:Usuario:login' }
+
+check_path:
+    pattern: /check
+
+logout:
+    pattern:  /logout
+    
+adminCliente:
+  pattern:  /admin/cliente
+  defaults: { _controller: 'AlivinatuBundle:Admin:adminCliente' }
+      
 # Internal routing configuration to handle ESI
 #_internal:
 #    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"

@@ -12,7 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Comments
 {
-    
     /**
     * @ORM\ManyToOne(targetEntity="Articles", inversedBy="comments")
     * @ORM\JoinColumn(name="article_id", referencedColumnName="id")
@@ -29,6 +28,10 @@ class Comments
     {
         return $this->article;
     }
+    
+    
+    
+    
     
     
     /**

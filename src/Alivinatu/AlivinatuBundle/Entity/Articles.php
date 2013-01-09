@@ -10,12 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Alivinatu\AlivinatuBundle\Entity\ArticlesRepository")
  */
-
 class Articles
 {
-
-    
-    
     /**
     * @ORM\OneToMany(targetEntity="Comments", mappedBy="article")
     */
@@ -38,8 +34,6 @@ class Articles
     }
     
     
-
-
     
     
     /**
@@ -300,5 +294,28 @@ class Articles
     public function getCategory()
     {
         return $this->category;
+    }
+
+    /**
+     * Add comments
+     *
+     * @param Alivinatu\AlivinatuBundle\Entity\Comments $comments
+     * @return Articles
+     */
+    public function addComment(\Alivinatu\AlivinatuBundle\Entity\Comments $comments)
+    {
+        $this->comments[] = $comments;
+    
+        return $this;
+    }
+
+    /**
+     * Remove comments
+     *
+     * @param Alivinatu\AlivinatuBundle\Entity\Comments $comments
+     */
+    public function removeComment(\Alivinatu\AlivinatuBundle\Entity\Comments $comments)
+    {
+        $this->comments->removeElement($comments);
     }
 }

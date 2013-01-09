@@ -266,7 +266,7 @@ class appDevDebugProjectContainer extends Container
      * This service is shared.
      * This method always returns the same instance of the service.
      *
-     * @return EM50de2447f21f9_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager A EM50de2447f21f9_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager instance.
+     * @return EM50ecee7cb92e1_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager A EM50ecee7cb92e1_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager instance.
      */
     protected function getDoctrine_Orm_DefaultEntityManagerService()
     {
@@ -300,7 +300,7 @@ class appDevDebugProjectContainer extends Container
         $f = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $e);
         $this->get('doctrine.orm.default_manager_configurator')->configure($f);
 
-        return $this->services['doctrine.orm.default_entity_manager'] = new \EM50de2447f21f9_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager($f, $this);
+        return $this->services['doctrine.orm.default_entity_manager'] = new \EM50ecee7cb92e1_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager($f, $this);
     }
 
     /**
@@ -1004,7 +1004,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getLocaleListenerService()
     {
-        return $this->services['locale_listener'] = new \Symfony\Component\HttpKernel\EventListener\LocaleListener('en', $this->get('router'));
+        return $this->services['locale_listener'] = new \Symfony\Component\HttpKernel\EventListener\LocaleListener('es', $this->get('router'));
     }
 
     /**
@@ -1377,19 +1377,6 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
-     * Gets the 'security.authentication.trust_resolver' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolver A Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolver instance.
-     */
-    protected function getSecurity_Authentication_TrustResolverService()
-    {
-        return $this->services['security.authentication.trust_resolver'] = new \Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolver('Symfony\\Component\\Security\\Core\\Authentication\\Token\\AnonymousToken', 'Symfony\\Component\\Security\\Core\\Authentication\\Token\\RememberMeToken');
-    }
-
-    /**
      * Gets the 'security.context' service.
      *
      * This service is shared.
@@ -1412,29 +1399,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_EncoderFactoryService()
     {
-        return $this->services['security.encoder_factory'] = new \Symfony\Component\Security\Core\Encoder\EncoderFactory(array('Symfony\\Component\\Security\\Core\\User\\User' => array('class' => 'Symfony\\Component\\Security\\Core\\Encoder\\PlaintextPasswordEncoder', 'arguments' => array(0 => false))));
-    }
-
-    /**
-     * Gets the 'security.expressions.compiler' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return JMS\SecurityExtraBundle\Security\Authorization\Expression\ExpressionCompiler A JMS\SecurityExtraBundle\Security\Authorization\Expression\ExpressionCompiler instance.
-     */
-    protected function getSecurity_Expressions_CompilerService()
-    {
-        $a = new \JMS\SecurityExtraBundle\Security\Authorization\Expression\Compiler\ContainerAwareVariableCompiler();
-        $a->setMaps(array('trust_resolver' => 'security.authentication.trust_resolver', 'role_hierarchy' => 'security.role_hierarchy', 'permission_evaluator' => 'security.acl.permission_evaluator'), array());
-
-        $this->services['security.expressions.compiler'] = $instance = new \JMS\SecurityExtraBundle\Security\Authorization\Expression\ExpressionCompiler();
-
-        $instance->addFunctionCompiler(new \JMS\SecurityExtraBundle\Security\Acl\Expression\HasPermissionFunctionCompiler());
-        $instance->addTypeCompiler(new \JMS\SecurityExtraBundle\Security\Authorization\Expression\Compiler\ParameterExpressionCompiler());
-        $instance->addTypeCompiler($a);
-
-        return $instance;
+        return $this->services['security.encoder_factory'] = new \Symfony\Component\Security\Core\Encoder\EncoderFactory(array('Symfony\\Component\\Security\\Core\\User\\User' => array('class' => 'Symfony\\Component\\Security\\Core\\Encoder\\MessageDigestPasswordEncoder', 'arguments' => array(0 => 'sha1', 1 => false, 2 => 1)), 'Alivinatu\\AlivinatuBundle\\Entity\\Usuario' => array('class' => 'Symfony\\Component\\Security\\Core\\Encoder\\MessageDigestPasswordEncoder', 'arguments' => array(0 => 'sha512', 1 => true, 2 => 5000))));
     }
 
     /**
@@ -1460,33 +1425,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_FirewallService()
     {
-        return $this->services['security.firewall'] = new \Symfony\Component\Security\Http\Firewall(new \Symfony\Bundle\SecurityBundle\Security\FirewallMap($this, array('security.firewall.map.context.dev' => new \Symfony\Component\HttpFoundation\RequestMatcher('^/(_(profiler|wdt)|css|images|js)/'), 'security.firewall.map.context.login' => new \Symfony\Component\HttpFoundation\RequestMatcher('^/demo/secured/login$'), 'security.firewall.map.context.secured_area' => new \Symfony\Component\HttpFoundation\RequestMatcher('^/demo/secured/'))), $this->get('event_dispatcher'));
-    }
-
-    /**
-     * Gets the 'security.firewall.map.context.dev' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return Symfony\Bundle\SecurityBundle\Security\FirewallContext A Symfony\Bundle\SecurityBundle\Security\FirewallContext instance.
-     */
-    protected function getSecurity_Firewall_Map_Context_DevService()
-    {
-        return $this->services['security.firewall.map.context.dev'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(), NULL);
-    }
-
-    /**
-     * Gets the 'security.firewall.map.context.login' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return Symfony\Bundle\SecurityBundle\Security\FirewallContext A Symfony\Bundle\SecurityBundle\Security\FirewallContext instance.
-     */
-    protected function getSecurity_Firewall_Map_Context_LoginService()
-    {
-        return $this->services['security.firewall.map.context.login'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(), NULL);
+        return $this->services['security.firewall'] = new \Symfony\Component\Security\Http\Firewall(new \Symfony\Bundle\SecurityBundle\Security\FirewallMap($this, array('security.firewall.map.context.secured_area' => new \Symfony\Component\HttpFoundation\RequestMatcher('^/'))), $this->get('event_dispatcher'));
     }
 
     /**
@@ -1506,17 +1445,20 @@ class appDevDebugProjectContainer extends Container
         $e = $this->get('http_kernel');
         $f = $this->get('security.authentication.manager');
 
-        $g = new \Symfony\Component\Security\Http\AccessMap();
+        $g = new \Symfony\Component\HttpFoundation\RequestMatcher('^/perfil');
 
-        $h = new \Symfony\Component\Security\Http\HttpUtils($d, $d);
+        $h = new \Symfony\Component\Security\Http\AccessMap();
+        $h->add($g, array(0 => 'ROLE_USER'), NULL);
 
-        $i = new \Symfony\Component\Security\Http\Firewall\LogoutListener($b, $h, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($h, '/demo/'), array('csrf_parameter' => '_csrf_token', 'intention' => 'logout', 'logout_path' => '/demo/secured/logout'));
-        $i->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
+        $i = new \Symfony\Component\Security\Http\HttpUtils($d, $d);
 
-        $j = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler($h, array('login_path' => '/demo/secured/login', 'always_use_default_target_path' => false, 'default_target_path' => '/', 'target_path_parameter' => '_target_path', 'use_referer' => false));
-        $j->setProviderKey('secured_area');
+        $j = new \Symfony\Component\Security\Http\Firewall\LogoutListener($b, $i, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($i, '/'), array('csrf_parameter' => '_csrf_token', 'intention' => 'logout', 'logout_path' => '/logout'));
+        $j->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
 
-        return $this->services['security.firewall.map.context.secured_area'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($g, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('security.user.provider.concrete.in_memory')), 'secured_area', $a, $c), 2 => $i, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $f, new \Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy('migrate'), $h, 'secured_area', $j, new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($e, $h, array('login_path' => '/demo/secured/login', 'failure_path' => NULL, 'failure_forward' => false), $a), array('check_path' => '/demo/secured/login_check', 'use_forward' => false, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $c), 4 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $g, $f, $a)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $h, 'secured_area', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $h, '/demo/secured/login', false), NULL, NULL, $a));
+        $k = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler($i, array('login_path' => '/login', 'always_use_default_target_path' => false, 'default_target_path' => '/', 'target_path_parameter' => '_target_path', 'use_referer' => false));
+        $k->setProviderKey('secured_area');
+
+        return $this->services['security.firewall.map.context.secured_area'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($h, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('security.user.provider.concrete.main')), 'secured_area', $a, $c), 2 => $j, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $f, new \Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy('migrate'), $i, 'secured_area', $k, new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($e, $i, array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false), $a), array('check_path' => '/check', 'use_forward' => false, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $c), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '50ecee7c0b6ec', $a), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $h, $f, $a)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $i, 'secured_area', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $i, '/login', false), NULL, NULL, $a));
     }
 
     /**
@@ -1542,7 +1484,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_RoleHierarchyService()
     {
-        return $this->services['security.role_hierarchy'] = new \Symfony\Component\Security\Core\Role\RoleHierarchy(array('ROLE_ADMIN' => array(0 => 'ROLE_USER'), 'ROLE_SUPER_ADMIN' => array(0 => 'ROLE_USER', 1 => 'ROLE_ADMIN', 2 => 'ROLE_ALLOWED_TO_SWITCH')));
+        return $this->services['security.role_hierarchy'] = new \Symfony\Component\Security\Core\Role\RoleHierarchy(array());
     }
 
     /**
@@ -1979,7 +1921,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['templating.helper.logout_url'] = $instance = new \Symfony\Bundle\SecurityBundle\Templating\Helper\LogoutUrlHelper($this, $this->get('router'));
 
-        $instance->registerListener('secured_area', '/demo/secured/logout', 'logout', '_csrf_token', NULL);
+        $instance->registerListener('secured_area', '/logout', 'logout', '_csrf_token', NULL);
 
         return $instance;
     }
@@ -2059,7 +2001,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getTemplating_Helper_TranslatorService()
     {
-        return $this->services['templating.helper.translator'] = new \Symfony\Bundle\FrameworkBundle\Templating\Helper\TranslatorHelper($this->get('translator'));
+        return $this->services['templating.helper.translator'] = new \Symfony\Bundle\FrameworkBundle\Templating\Helper\TranslatorHelper($this->get('translator.default'));
     }
 
     /**
@@ -2421,19 +2363,6 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
-     * Gets the 'translator' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return Symfony\Component\Translation\IdentityTranslator A Symfony\Component\Translation\IdentityTranslator instance.
-     */
-    protected function getTranslatorService()
-    {
-        return $this->services['translator'] = new \Symfony\Component\Translation\IdentityTranslator($this->get('translator.selector'));
-    }
-
-    /**
      * Gets the 'translator.default' service.
      *
      * This service is shared.
@@ -2443,7 +2372,82 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getTranslator_DefaultService()
     {
-        return $this->services['translator.default'] = new \Symfony\Bundle\FrameworkBundle\Translation\Translator($this, $this->get('translator.selector'), array('translation.loader.php' => array(0 => 'php'), 'translation.loader.yml' => array(0 => 'yml'), 'translation.loader.xliff' => array(0 => 'xlf', 1 => 'xliff'), 'translation.loader.po' => array(0 => 'po'), 'translation.loader.mo' => array(0 => 'mo'), 'translation.loader.qt' => array(0 => 'ts'), 'translation.loader.csv' => array(0 => 'csv'), 'translation.loader.res' => array(0 => 'res'), 'translation.loader.dat' => array(0 => 'dat'), 'translation.loader.ini' => array(0 => 'ini')), array('cache_dir' => 'C:/wamp/www/proyectoAlivinatu/app/cache/dev/translations', 'debug' => true));
+        $this->services['translator.default'] = $instance = new \Symfony\Bundle\FrameworkBundle\Translation\Translator($this, new \Symfony\Component\Translation\MessageSelector(), array('translation.loader.php' => array(0 => 'php'), 'translation.loader.yml' => array(0 => 'yml'), 'translation.loader.xliff' => array(0 => 'xlf', 1 => 'xliff'), 'translation.loader.po' => array(0 => 'po'), 'translation.loader.mo' => array(0 => 'mo'), 'translation.loader.qt' => array(0 => 'ts'), 'translation.loader.csv' => array(0 => 'csv'), 'translation.loader.res' => array(0 => 'res'), 'translation.loader.dat' => array(0 => 'dat'), 'translation.loader.ini' => array(0 => 'ini')), array('cache_dir' => 'C:/wamp/www/proyectoAlivinatu/app/cache/dev/translations', 'debug' => true));
+
+        $instance->setFallbackLocale('es');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.bg.xlf', 'bg', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.ca.xlf', 'ca', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.cs.xlf', 'cs', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.da.xlf', 'da', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.de.xlf', 'de', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.en.xlf', 'en', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.es.xlf', 'es', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.et.xlf', 'et', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.eu.xlf', 'eu', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.fa.xlf', 'fa', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.fi.xlf', 'fi', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.fr.xlf', 'fr', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.he.xlf', 'he', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.hr.xlf', 'hr', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.hu.xlf', 'hu', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.hy.xlf', 'hy', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.id.xlf', 'id', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.it.xlf', 'it', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.ja.xlf', 'ja', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.lb.xlf', 'lb', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.lt.xlf', 'lt', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.mn.xlf', 'mn', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.nb.xlf', 'nb', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.nl.xlf', 'nl', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.pl.xlf', 'pl', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.pt.xlf', 'pt', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.pt_BR.xlf', 'pt_BR', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.ro.xlf', 'ro', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.ru.xlf', 'ru', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.sk.xlf', 'sk', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.sl.xlf', 'sl', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.sr_Cyrl.xlf', 'sr_Cyrl', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.sr_Latn.xlf', 'sr_Latn', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.sv.xlf', 'sv', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.ua.xlf', 'ua', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.zh_CN.xlf', 'zh_CN', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.ca.xlf', 'ca', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.cs.xlf', 'cs', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.da.xlf', 'da', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.de.xlf', 'de', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.en.xlf', 'en', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.es.xlf', 'es', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.et.xlf', 'et', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.eu.xlf', 'eu', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.fa.xlf', 'fa', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.fi.xlf', 'fi', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.fr.xlf', 'fr', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.he.xlf', 'he', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.hr.xlf', 'hr', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.hu.xlf', 'hu', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.hy.xlf', 'hy', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.id.xlf', 'id', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.it.xlf', 'it', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.ja.xlf', 'ja', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.lb.xlf', 'lb', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.lt.xlf', 'lt', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.mn.xlf', 'mn', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.nb.xlf', 'nb', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.nl.xlf', 'nl', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.pl.xlf', 'pl', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.pt.xlf', 'pt', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.pt_BR.xlf', 'pt_BR', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.ro.xlf', 'ro', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.ru.xlf', 'ru', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.sk.xlf', 'sk', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.sl.xlf', 'sl', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.sr_Cyrl.xlf', 'sr_Cyrl', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.sr_Latn.xlf', 'sr_Latn', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.sv.xlf', 'sv', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.ua.xlf', 'ua', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\proyectoAlivinatu\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.zh_CN.xlf', 'zh_CN', 'validators');
+
+        return $instance;
     }
 
     /**
@@ -2456,13 +2460,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getTwigService()
     {
-        $a = $this->get('security.context');
-
         $this->services['twig'] = $instance = new \Twig_Environment($this->get('twig.loader'), array('debug' => true, 'strict_variables' => true, 'exception_controller' => 'Symfony\\Bundle\\TwigBundle\\Controller\\ExceptionController::showAction', 'cache' => 'C:/wamp/www/proyectoAlivinatu/app/cache/dev/twig', 'charset' => 'UTF-8', 'paths' => array()));
 
         $instance->addExtension(new \Symfony\Bundle\SecurityBundle\Twig\Extension\LogoutUrlExtension($this->get('templating.helper.logout_url')));
-        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\SecurityExtension($a));
-        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\TranslationExtension($this->get('translator')));
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\SecurityExtension($this->get('security.context')));
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\TranslationExtension($this->get('translator.default')));
         $instance->addExtension(new \Symfony\Bundle\TwigBundle\Extension\AssetsExtension($this));
         $instance->addExtension(new \Symfony\Bundle\TwigBundle\Extension\ActionsExtension($this));
         $instance->addExtension(new \Symfony\Bundle\TwigBundle\Extension\CodeExtension($this));
@@ -2471,7 +2473,6 @@ class appDevDebugProjectContainer extends Container
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\FormExtension(new \Symfony\Bridge\Twig\Form\TwigRenderer(new \Symfony\Bridge\Twig\Form\TwigRendererEngine(array(0 => 'form_div_layout.html.twig')), $this->get('form.csrf_provider'))));
         $instance->addExtension(new \Twig_Extension_Debug());
         $instance->addExtension(new \Symfony\Bundle\AsseticBundle\Twig\AsseticExtension($this->get('assetic.asset_factory'), $this->get('templating.name_parser'), true, array(), array(), $this->get('assetic.value_supplier.default')));
-        $instance->addExtension(new \JMS\SecurityExtraBundle\Twig\SecurityExtension($a));
         $instance->addExtension($this->get('twig.extension.acme.demo'));
 
         return $instance;
@@ -2579,7 +2580,7 @@ class appDevDebugProjectContainer extends Container
     /**
      * Gets the doctrine.orm.entity_manager service alias.
      *
-     * @return EM50de2447f21f9_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager An instance of the doctrine.orm.default_entity_manager service
+     * @return EM50ecee7cb92e1_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager An instance of the doctrine.orm.default_entity_manager service
      */
     protected function getDoctrine_Orm_EntityManagerService()
     {
@@ -2594,6 +2595,16 @@ class appDevDebugProjectContainer extends Container
     protected function getSession_StorageService()
     {
         return $this->get('session.storage.native');
+    }
+
+    /**
+     * Gets the translator service alias.
+     *
+     * @return Symfony\Bundle\FrameworkBundle\Translation\Translator An instance of the translator.default service
+     */
+    protected function getTranslatorService()
+    {
+        return $this->get('translator.default');
     }
 
     /**
@@ -2716,11 +2727,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Access_DecisionManagerService()
     {
-        $a = new \JMS\SecurityExtraBundle\Security\Authorization\Expression\LazyLoadingExpressionVoter(new \JMS\SecurityExtraBundle\Security\Authorization\Expression\ContainerAwareExpressionHandler($this));
-        $a->setLazyCompiler($this, 'security.expressions.compiler');
-        $a->setCacheDir('C:/wamp/www/proyectoAlivinatu/app/cache/dev/jms_security/expressions');
-
-        return $this->services['security.access.decision_manager'] = new \Symfony\Component\Security\Core\Authorization\AccessDecisionManager(array(0 => $a, 1 => new \Symfony\Component\Security\Core\Authorization\Voter\RoleHierarchyVoter($this->get('security.role_hierarchy')), 2 => new \Symfony\Component\Security\Core\Authorization\Voter\AuthenticatedVoter($this->get('security.authentication.trust_resolver'))), 'affirmative', false, true);
+        return $this->services['security.access.decision_manager'] = new \Symfony\Component\Security\Core\Authorization\AccessDecisionManager(array(0 => new \Symfony\Component\Security\Core\Authorization\Voter\RoleHierarchyVoter($this->get('security.role_hierarchy')), 1 => new \Symfony\Component\Security\Core\Authorization\Voter\AuthenticatedVoter($this->get('security.authentication.trust_resolver'))), 'affirmative', false, true);
     }
 
     /**
@@ -2737,11 +2744,28 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('security.user.provider.concrete.in_memory'), new \Symfony\Component\Security\Core\User\UserChecker(), 'secured_area', $this->get('security.encoder_factory'), true)), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('security.user.provider.concrete.main'), new \Symfony\Component\Security\Core\User\UserChecker(), 'secured_area', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('50ecee7c0b6ec')), true);
 
         $instance->setEventDispatcher($this->get('event_dispatcher'));
 
         return $instance;
+    }
+
+    /**
+     * Gets the 'security.authentication.trust_resolver' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * This service is private.
+     * If you want to be able to request this service from the container directly,
+     * make it public, otherwise you might end up with broken code.
+     *
+     * @return Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolver A Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolver instance.
+     */
+    protected function getSecurity_Authentication_TrustResolverService()
+    {
+        return $this->services['security.authentication.trust_resolver'] = new \Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolver('Symfony\\Component\\Security\\Core\\Authentication\\Token\\AnonymousToken', 'Symfony\\Component\\Security\\Core\\Authentication\\Token\\RememberMeToken');
     }
 
     /**
@@ -2766,7 +2790,7 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
-     * Gets the 'security.user.provider.concrete.in_memory' service.
+     * Gets the 'security.user.provider.concrete.main' service.
      *
      * This service is shared.
      * This method always returns the same instance of the service.
@@ -2775,16 +2799,11 @@ class appDevDebugProjectContainer extends Container
      * If you want to be able to request this service from the container directly,
      * make it public, otherwise you might end up with broken code.
      *
-     * @return Symfony\Component\Security\Core\User\InMemoryUserProvider A Symfony\Component\Security\Core\User\InMemoryUserProvider instance.
+     * @return Symfony\Bridge\Doctrine\Security\User\EntityUserProvider A Symfony\Bridge\Doctrine\Security\User\EntityUserProvider instance.
      */
-    protected function getSecurity_User_Provider_Concrete_InMemoryService()
+    protected function getSecurity_User_Provider_Concrete_MainService()
     {
-        $this->services['security.user.provider.concrete.in_memory'] = $instance = new \Symfony\Component\Security\Core\User\InMemoryUserProvider();
-
-        $instance->createUser(new \Symfony\Component\Security\Core\User\User('user', 'userpass', array(0 => 'ROLE_USER')));
-        $instance->createUser(new \Symfony\Component\Security\Core\User\User('admin', 'adminpass', array(0 => 'ROLE_ADMIN')));
-
-        return $instance;
+        return $this->services['security.user.provider.concrete.main'] = new \Symfony\Bridge\Doctrine\Security\User\EntityUserProvider($this->get('doctrine'), 'Alivinatu\\AlivinatuBundle\\Entity\\Usuario', 'email', NULL);
     }
 
     /**
@@ -2819,23 +2838,6 @@ class appDevDebugProjectContainer extends Container
     protected function getTemplating_LocatorService()
     {
         return $this->services['templating.locator'] = new \Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator($this->get('file_locator'), 'C:/wamp/www/proyectoAlivinatu/app/cache/dev');
-    }
-
-    /**
-     * Gets the 'translator.selector' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * This service is private.
-     * If you want to be able to request this service from the container directly,
-     * make it public, otherwise you might end up with broken code.
-     *
-     * @return Symfony\Component\Translation\MessageSelector A Symfony\Component\Translation\MessageSelector instance.
-     */
-    protected function getTranslator_SelectorService()
-    {
-        return $this->services['translator.selector'] = new \Symfony\Component\Translation\MessageSelector();
     }
 
     /**
@@ -2957,7 +2959,7 @@ class appDevDebugProjectContainer extends Container
             'mailer_host' => 'localhost',
             'mailer_user' => NULL,
             'mailer_password' => NULL,
-            'locale' => 'en',
+            'locale' => 'es',
             'secret' => 'ThisTokenIsNotSoSecretChangeIt',
             'controller_resolver.class' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\ControllerResolver',
             'controller_name_converter.class' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\ControllerNameParser',
@@ -3002,7 +3004,7 @@ class appDevDebugProjectContainer extends Container
             'debug.controller_resolver.class' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\TraceableControllerResolver',
             'kernel.secret' => 'ThisTokenIsNotSoSecretChangeIt',
             'kernel.trust_proxy_headers' => false,
-            'kernel.default_locale' => 'en',
+            'kernel.default_locale' => 'es',
             'session.class' => 'Symfony\\Component\\HttpFoundation\\Session\\Session',
             'session.flashbag.class' => 'Symfony\\Component\\HttpFoundation\\Session\\Flash\\FlashBag',
             'session.attribute_bag.class' => 'Symfony\\Component\\HttpFoundation\\Session\\Attribute\\AttributeBag',
@@ -3179,14 +3181,7 @@ class appDevDebugProjectContainer extends Container
             'security.access.always_authenticate_before_granting' => false,
             'security.authentication.hide_user_not_found' => true,
             'security.role_hierarchy.roles' => array(
-                'ROLE_ADMIN' => array(
-                    0 => 'ROLE_USER',
-                ),
-                'ROLE_SUPER_ADMIN' => array(
-                    0 => 'ROLE_USER',
-                    1 => 'ROLE_ADMIN',
-                    2 => 'ROLE_ALLOWED_TO_SWITCH',
-                ),
+
             ),
             'twig.class' => 'Twig_Environment',
             'twig.loader.class' => 'Symfony\\Bundle\\TwigBundle\\Loader\\FilesystemLoader',
@@ -3399,7 +3394,7 @@ class appDevDebugProjectContainer extends Container
             'jms_di_extra.cache_dir' => 'C:/wamp/www/proyectoAlivinatu/app/cache/dev/jms_diextra',
             'jms_di_extra.doctrine_integration' => true,
             'jms_di_extra.doctrine_integration.entity_manager.file' => 'C:/wamp/www/proyectoAlivinatu/app/cache/dev/jms_diextra/doctrine/EntityManager.php',
-            'jms_di_extra.doctrine_integration.entity_manager.class' => 'EM50de2447f21f9_546a8d27f194334ee012bfe64f629947b07e4919\\__CG__\\Doctrine\\ORM\\EntityManager',
+            'jms_di_extra.doctrine_integration.entity_manager.class' => 'EM50ecee7cb92e1_546a8d27f194334ee012bfe64f629947b07e4919\\__CG__\\Doctrine\\ORM\\EntityManager',
             'security.secured_services' => array(
 
             ),
@@ -3421,16 +3416,6 @@ class appDevDebugProjectContainer extends Container
             'security.extra.file_cache.class' => 'Metadata\\Cache\\FileCache',
             'security.access.secure_all_services' => false,
             'security.extra.cache_dir' => 'C:/wamp/www/proyectoAlivinatu/app/cache/dev/jms_security',
-            'security.acl.permission_evaluator.class' => 'JMS\\SecurityExtraBundle\\Security\\Acl\\Expression\\PermissionEvaluator',
-            'security.acl.has_permission_compiler.class' => 'JMS\\SecurityExtraBundle\\Security\\Acl\\Expression\\HasPermissionFunctionCompiler',
-            'security.expressions.voter.class' => 'JMS\\SecurityExtraBundle\\Security\\Authorization\\Expression\\LazyLoadingExpressionVoter',
-            'security.expressions.handler.class' => 'JMS\\SecurityExtraBundle\\Security\\Authorization\\Expression\\ContainerAwareExpressionHandler',
-            'security.expressions.compiler.class' => 'JMS\\SecurityExtraBundle\\Security\\Authorization\\Expression\\ExpressionCompiler',
-            'security.expressions.expression.class' => 'JMS\\SecurityExtraBundle\\Security\\Authorization\\Expression\\Expression',
-            'security.expressions.variable_compiler.class' => 'JMS\\SecurityExtraBundle\\Security\\Authorization\\Expression\\Compiler\\ContainerAwareVariableCompiler',
-            'security.expressions.parameter_compiler.class' => 'JMS\\SecurityExtraBundle\\Security\\Authorization\\Expression\\Compiler\\ParameterExpressionCompiler',
-            'security.extra.config_driver.class' => 'JMS\\SecurityExtraBundle\\Metadata\\Driver\\ConfigDriver',
-            'security.extra.twig_extension.class' => 'JMS\\SecurityExtraBundle\\Twig\\SecurityExtension',
             'security.authenticated_voter.disabled' => false,
             'security.role_voter.disabled' => false,
             'security.acl_voter.disabled' => false,

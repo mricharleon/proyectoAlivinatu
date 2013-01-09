@@ -27,7 +27,7 @@ class ComentariosController extends Controller
     public function listarComentariosAction()
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $comentario = $em->getRepository('AlivinatuBundle:Comments')->find(11);
+        $comentario = $em->getRepository('AlivinatuBundle:Comments')->find(1);
         
         $articulo = $comentario->getArticle();
         
@@ -35,4 +35,3 @@ class ComentariosController extends Controller
         array('comentarios' => $comentario, 'articulos'=>$articulo));   
     }
 }
-?>

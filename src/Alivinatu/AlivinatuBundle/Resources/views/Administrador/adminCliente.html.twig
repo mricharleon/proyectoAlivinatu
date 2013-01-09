@@ -1,0 +1,26 @@
+{% extends 'AlivinatuBundle::layout.html.twig' %}
+    
+{% block title %}
+    Admin. Cliente
+{% endblock %}
+
+{% block contenido %}     
+    <div id="contenido">
+        
+        <div id="cajaContenido">
+            <div id="tituloForm"><b>Administración de Cliente</b> | Administra todas las cuentas de usuario</div>
+            <form id="formAdminClienteBuscar">
+                <spam id="tituloAdminCU">Ingresa Criterio de Búsqueda</spam>
+                <input type="text" id="inputCUBuscar" placeholder="Ingresa tu búsqueda" />
+                
+                <input id="botonCUBuscar" type="submit" value="Buscar">
+                <a href=""><span id="botonCU">Limpiar</span></a>
+            </form>
+            
+        </div>
+        
+    </div>
+{% endblock %}
+
+
+

@@ -1,0 +1,262 @@
+#contenidoRegistro{
+    
+}
+
+label {
+    font: 12px normal verdana, arial;
+    font-weight: bold;
+    display: inline-block;
+    font-weight: bold;
+    margin: 12px 0px 18px 0px;
+    width: 100px;
+    text-align: right;
+    padding: 0px 10px 0px 0px;
+    vertical-align: middle;
+}
+
+#formRegistro input[type="text"],
+              input[type="password"], 
+              input[type="email"],
+              input[id="datepicker"],
+              select {
+    font: 12px normal verdana, arial;
+    border: solid 1px #AAA;
+    font-size: 14px;
+    padding: 4px;
+    width: 200px;
+}
+
+#formRegistro textarea{
+    font: 12px normal verdana, arial;
+    border: solid 1px #AAA;
+    font-size: 14px;
+    padding: 4px;
+    text-align: justify;
+    height: 75px;
+    max-width: 200px;
+    min-width: 200px;
+}
+
+
+#grid1, #grid2{
+    background-color: #eff1f2;
+    border: 1px solid #d9d9d9;
+    width: 410px;
+    float: left;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+}
+
+#grid2 a{
+    text-decoration: none;
+}
+
+#grid0{
+    width: 124px;
+    float: left;
+}
+
+#tituloForm{
+    box-shadow: 0px 0px 2px 1px #fff;
+    border-radius: 0px;
+    font: 15px normal  verdana, arial;
+    background-color: #30a2ce;
+    margin: 0px 15px 17px 15px;
+    padding: 5px 4px 5px 8px;
+    opacity: 1;
+    color: #fff;
+    z-index: 2;
+    position: relative;
+}
+
+
+#notaForm{
+    font: 11px normal verdana, arial;
+    color: #aaaaaa;
+    margin: 30px 0px 10px 0px;
+}
+
+#botonForm{
+    font: normal 13px "verdana", arial;
+    background-color: #696c6d;
+    box-shadow: 0px 0px 8px  #fff;
+    color: #fff;
+    padding: 6px 14px 6px 14px; 
+    margin: -10px 0px 0px 0px;
+    border:none;
+    cursor: pointer;
+}
+
+#botonForm2{
+    font: normal 13px "verdana", arial;
+    background-color: #696c6d;
+    box-shadow: 0px 0px 8px  #fff;
+    color: #fff;
+    padding: 6px 14px 6px 14px; 
+    margin: -10px 5px 0px 180px;
+    border:none;
+    cursor: pointer;
+}
+
+#botonForm:hover, #botonForm2:hover{
+    background-color: #94c459;
+    text-shadow: 0px 0px 1px #666;
+}
+
+#barra{
+    background-color: #2d9dc8;
+    z-index: 1;
+    position: absolute;
+    margin: -36px 0px 0px 0px;
+    width: 400px;
+    height: 15px;
+}
+
+#grid2 ul,
+#grid1 ul{
+    text-align: center;
+    position: absolute;
+    z-index: 2;
+    width: 400px;
+    margin-top: 3px;
+    padding: 0px;
+}
+
+#grid2 ul li,
+#grid1 ul li{
+    border: 2px solid #fff;
+    box-shadow: 0px 0px 6px 0px #555;
+    color: #fff;
+    margin-left: 10px;
+    font: 12px normal verdana, arial;
+    border-radius: 15px;
+    padding: 1px 5px 1px 5px;
+    z-index: 2;
+    opacity: 1;
+    position: absolute;
+    text-align: center;
+    margin-top: -16px;
+    background-color: #333;
+    list-style: none;
+}
+
+#grid2 ul li:after,
+#grid1 ul li:after{
+    content: "";
+    position: absolute;
+    border: 5px solid red;
+    bottom: -14px;
+    margin-left: -65px;
+    border-bottom: 7px solid transparent;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #333;
+} 
+
+/* estilo del login */
+
+#gridLogin{
+    background-color: #eff1f2;
+    border: 1px solid #d9d9d9;
+    width: 400px;
+    height: 210px;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+    margin: 13% auto 5% auto;
+}
+
+#formLogin input[type="text"],
+              input[type="password"]
+              {
+    font: 12px normal verdana, arial;
+    border: solid 1px #AAA;
+    font-size: 14px;
+    padding: 4px;
+    width: 200px;
+}
+
+#formLogin{
+    position: relative;
+}
+
+#formLogin:before, #formLogin:after
+{
+/* Posiciona la sobora por detras del color de la caja*/
+                  z-index: -1;
+                  position: absolute;
+                  /* no aplico ningún contenidos HTML */
+                  content: "";
+                  /* posiciona la sombra con respecto al borde inferior, izquierdo y superior */
+                  bottom: 15px;
+                  left: 10px;
+                  top: 80%;
+                  /* configura el ancho */
+                  width: 50%;
+/* color de fondo */
+                  background: red;
+                  /* definicion de la sombra estandar para box-shadow */
+                  -webkit-box-shadow: 0 23px 15px #777;
+                  -moz-box-shadow: 0 23px 15px #777;
+                  box-shadow: 0 23px 15px #777;
+                  /* rotacion de la sombra */
+                  -webkit-transform: rotate(-4deg);
+                  -moz-transform: rotate(-4deg);
+                  -o-transform: rotate(-4deg);
+                  -ms-transform: rotate(-4deg);
+                  transform: rotate(-4deg);
+}
+
+#formLogin:after
+{
+                  /* rotacion de la sombra */
+                  -webkit-transform: rotate(4deg);
+                  -moz-transform: rotate(4deg);
+                  -o-transform: rotate(4deg);
+                  -ms-transform: rotate(4deg);
+                  transform: rotate(4deg);
+                  /* posiciona la sombra con respecto al borde izquierdo y derecho */
+                  right: 10px;
+                  left: auto;
+}
+
+#olvidoContraseña
+{
+    font: 11px normal verdad, arial;
+    color: orangered;  
+    display: inline-block;
+    margin: 0px 0px 2px 210px;
+    -webkit-transition: all 250ms ease-out;
+    -moz-transition: all 250ms ease-out;
+    -o-transition: all 250ms ease-out;
+    transition: all 250ms ease-out;
+}
+
+#registrese
+{
+    font: 11px normal verdad, arial;
+    color: orangered;  
+    margin: 0px 40px 15px 328px;
+    display: inline-block;
+    -webkit-transition: all 250ms ease-out;
+    -moz-transition: all 250ms ease-out;
+    -o-transition: all 250ms ease-out;
+    transition: all 250ms ease-out;
+    
+    
+}
+
+#registrese:hover,
+#olvidoContraseña:hover
+{
+    text-decoration: underline;
+    -webkit-transition: all 250ms ease-out;
+    -moz-transition: all 250ms ease-out;
+    -o-transition: all 250ms ease-out;
+    transition: all 250ms ease-out;
+}
+
+#formLogin a
+{
+    text-decoration: none;
+}
+

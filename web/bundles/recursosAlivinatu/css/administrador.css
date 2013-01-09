@@ -1,0 +1,142 @@
+#cajaContenido{
+    background-color: #eff1f2;
+    border: 1px solid #d9d9d9;
+    width: 900px;
+    margin: 100px auto 0px auto;
+    text-align: center;
+    padding: 10px 0px 0px 0px;
+    display: block;
+}
+
+#cajaContenido #columnaCU1{
+    width: 276px;
+    height: 150px;
+    border-radius: 2px;
+    border: 2px solid #ccc;
+    font: 15px normal  verdana, arial;
+    background-color: #30a2ce;
+    margin: 5px 10px 25px 10px ;
+    opacity: 1;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+#cajaContenido #columnaCU1:before,
+#cajaContenido #columnaCU1:after
+{
+/* Posiciona la sobora por detras del color de la caja*/
+                  z-index: -1;
+                  position: absolute;
+                  /* no aplico ningún contenidos HTML */
+                  content: "";
+                  /* posiciona la sombra con respecto al borde inferior, izquierdo y superior */
+                  bottom: 15px;
+                  left: 7px;
+                  top: 80%;
+                  /* configura el ancho */
+                  width: 50%;
+/* color de fondo */
+                  background: red;
+                  /* definicion de la sombra estandar para box-shadow */
+                  -webkit-box-shadow: 0 17px 12px #666;
+                  -moz-box-shadow: 0 17px 12px #666;
+                  box-shadow: 0 18px 12px #666;
+                  /* rotacion de la sombra */
+                  -webkit-transform: rotate(-4deg);
+                  -moz-transform: rotate(-4deg);
+                  -o-transform: rotate(-4deg);
+                  -ms-transform: rotate(-4deg);
+                  transform: rotate(-4deg);
+}
+
+#cajaContenido #columnaCU1:after
+{
+                  /* rotacion de la sombra */
+                  -webkit-transform: rotate(4deg);
+                  -moz-transform: rotate(4deg);
+                  -o-transform: rotate(4deg);
+                  -ms-transform: rotate(4deg);
+                  transform: rotate(4deg);
+                  /* posiciona la sombra con respecto al borde izquierdo y derecho */
+                  right: 7px;
+                  left: auto;
+}
+
+.clear{
+    clear: both
+}
+
+#columnaCU1 a{
+    text-decoration: none;
+    color: #fff;
+}
+
+#tituloCU{
+    background-color: #30a2ce;
+    padding: 5px 8px 5px 8px;
+    position: absolute;
+    left: 0px;
+    bottom: 20px;
+    -webkit-transition: all 450ms ease-out;
+    -moz-transition: all 450ms ease-out;
+    -o-transition: all 450ms ease-out;
+    transition: all 450ms ease-out;
+    cursor: pointer;
+    opacity: .9;
+}
+
+#tituloCU:hover{
+    opacity: 1;
+    background-color: #94c459;
+    border-radius: 0px 5px 5px 0px;
+    
+    padding: 5px 8px 5px 75px;
+    text-shadow: 0px 0px 1px #666;
+    -webkit-transition: all 250ms ease-out;
+    -moz-transition: all 250ms ease-out;
+    -o-transition: all 250ms ease-out;
+    transition: all 250ms ease-out;
+}
+
+/* estilo para los titulos de los casos de uso */
+
+#tituloAdminCU{
+    font: 12px normal verdana, arial;
+    font-weight: bold;
+    text-align: left;
+    margin: 30px 0px 20px 20px;
+    color: #333;
+
+}
+
+#inputCUBuscar{
+    font: 12px normal verdana, arial;
+    padding: 2px 5px 2px 5px;
+    color: #333;
+    width: 250px;
+    margin: 0px 10px 0px auto;
+}
+
+#botonCUBuscar,
+#botonCU{
+    font: normal 13px "verdana", arial;
+    background-color: #696c6d;
+    box-shadow: 0px 0px 8px  #fff;
+    color: #fff;
+    padding: 6px 14px 6px 14px; 
+    margin: 0px 5px 0px 0px;
+    border:none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+#botonCUBuscar:hover,
+#botonCU:hover{
+    background-color: #94c459;
+    text-shadow: 0px 0px 1px #666;
+}

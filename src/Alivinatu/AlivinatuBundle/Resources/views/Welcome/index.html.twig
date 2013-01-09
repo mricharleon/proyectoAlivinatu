@@ -22,15 +22,14 @@
     </div>
 {% endblock %}
 
-{% block contenido %}
-<div id="contenido">
-    
-    {% block ofertaTexto %}
-        <br>
-        <hr>
-        <div id="tituloOferta"> Conoce Nuestros Servicios </div>
-        <hr>  
-       
+{% block ofertaTexto %}     
+    <div id="contenido">
+        {% block tituloContenido %}
+            <br>
+            <hr>
+            <div id="tituloOferta"> Conoce Nuestros Servicios </div>
+            <hr>
+        {% endblock %}
         <!-- fila 1 de las ofertas -->
         
         <div id="columna0">
@@ -505,8 +504,8 @@
         </span>
         
         
-
-    {% endblock %}
-</div>
+    </div>
 {% endblock %}
+
+
 

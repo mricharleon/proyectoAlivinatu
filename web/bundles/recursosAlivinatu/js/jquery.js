@@ -1,3 +1,14 @@
+$(function calendario () {
+        $( "#datepicker" ).datepicker({
+            changeMonth: true,
+            dateFormat: "yy-mm-dd",
+            
+            yearRange: "1920:2003",
+            changeYear: true
+        });
+});
+
+
 function updateBackground() {
     anchoPantalla = $(window).width();
     altoPantalla = $(window).height();

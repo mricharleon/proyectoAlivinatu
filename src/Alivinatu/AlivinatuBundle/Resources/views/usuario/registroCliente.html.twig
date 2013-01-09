@@ -1,0 +1,116 @@
+{% extends 'AlivinatuBundle::layout.html.twig' %}
+
+{% block title %}Registro{% endblock %}
+
+{% block contenido %}
+      
+<div id="contenido">
+    
+    {% block tituloContenido %}
+        <br>
+        <hr>
+        <div id="tituloOferta">Crea tu cuenta Alivinatu</div>
+        <hr>
+    {% endblock %}
+    
+        <div id="notaForm"><b><u>NOTA:</u></b> Bienvenido(a) al Sistema de Registro de una Nueva Cuenta Alivinatu, para la 
+            correcta creación de la cuenta se solicita muy comedidamente ingresar TODOS LOS CAMPOS que se exponen a continuación. </div>
+        
+    
+        
+    <form action="{{ path('registroCliente') }}" method="post" id="formRegistro" >
+
+        <div id="grid1">
+            
+            <div id="tituloForm"><b>Ingresa</b> | Datos de Usuario</div>
+            {#<div id="barra">&nbsp;</div>#}
+            
+            {{ form_errors(formCliente.usuario) }}
+                {{ form_label(formCliente.usuario) }}
+                {{ form_widget(formCliente.usuario) }}
+            
+            
+            {{ form_errors(formCliente.password.first) }}
+                {{ form_label(formCliente.password.first, 'Contraseña') }}
+                {{ form_widget(formCliente.password.first) }}
+           
+            
+            {{ form_errors(formCliente.password.second) }}
+                {{ form_label(formCliente.password.second, 'Verifica Contraseña') }}
+                {{ form_widget(formCliente.password.second) }}
+
+            
+            {{ form_errors(formCliente.nombre) }}
+                {{ form_label(formCliente.nombre) }}
+                {{ form_widget(formCliente.nombre) }}
+            
+            {{ form_errors(formCliente.apellido) }}
+                {{ form_label(formCliente.apellido) }}
+                {{ form_widget(formCliente.apellido) }}
+            
+            {{ form_errors(formCliente.cedula) }}
+                {{ form_label(formCliente.cedula) }}
+                {{ form_widget(formCliente.cedula) }}
+            
+            {{ form_errors(formCliente.genero) }}
+                {{ form_label(formCliente.genero) }}
+                {{ form_widget(formCliente.genero) }}
+            
+            {{ form_errors(formCliente.fNacimiento) }}
+                {{ form_label(formCliente.fNacimiento) }}
+                
+            <input id="datepicker" name="usuario_form[fNacimiento]" required="required" />
+            
+            {{ form_errors(formCliente.rol) }}
+                {{ form_label(formCliente.rol) }}
+                {{ form_widget(formCliente.rol) }}
+        
+        </div>
+            
+            
+        <div id="grid0"> &nbsp;
+        </div>
+            
+        <div id="grid2">
+            <div id="tituloForm"><b>Ingresa</b> | Datos de Contacto</div>
+            {#<div id="barra">&nbsp;</div>#}
+            
+            {{ form_errors(formContacto.celular) }}
+                {{ form_label(formContacto.celular) }}
+                {{ form_widget(formContacto.celular) }}
+            
+            {{ form_errors(formContacto.telefono) }}
+                {{ form_label(formContacto.telefono) }}
+                {{ form_widget(formContacto.telefono) }}
+            
+            {{ form_errors(formContacto.email) }}
+                {{ form_label(formContacto.email) }}
+                {{ form_widget(formContacto.email) }}
+            
+            {{ form_errors(formContacto.provincia) }}
+                {{ form_label(formContacto.provincia) }}
+                {{ form_widget(formContacto.provincia) }}
+            
+            {{ form_errors(formContacto.ciudad) }}
+                {{ form_label(formContacto.ciudad) }}
+                {{ form_widget(formContacto.ciudad) }}
+            
+            {{ form_errors(formContacto.calle) }}
+                {{ form_label(formContacto.calle) }}
+                {{ form_widget(formContacto.calle) }}
+            
+            {{ form_errors(formContacto.observacion) }}
+                {{ form_label(formContacto.observacion) }}
+                {{ form_widget(formContacto.observacion, { 'attr': { 'wrap': 'soft' } }) }}
+            
+            <a href="{{ path('alivinatu_homepage') }}"><span id="botonForm2">Cancelar</span></a>
+            <input id="botonForm" type="submit" value="Crear Cuenta" />
+            
+        </div>
+          
+        
+    </form>
+    
+</div>
+
+{% endblock %}
