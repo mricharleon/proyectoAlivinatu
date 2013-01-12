@@ -1,7 +1,7 @@
 #cajaContenido{
     background-color: #eff1f2;
     border: 1px solid #d9d9d9;
-    width: 900px;
+    width: 948px;
     margin: 100px auto 0px auto;
     text-align: center;
     padding: 10px 0px 0px 0px;
@@ -62,7 +62,7 @@
                   right: 7px;
                   left: auto;
 }
-
+/* para el salto de linea  */
 .clear{
     clear: both
 }
@@ -111,11 +111,13 @@
 }
 
 #inputCUBuscar{
-    font: 12px normal verdana, arial;
+    font: 13px normal verdana, arial;
+    height: 18px;
     padding: 2px 5px 2px 5px;
-    color: #333;
+    color: #777;
+    font-style: italic;
     width: 250px;
-    margin: 0px 10px 0px auto;
+    margin: 0px 10px 0px 5px;
 }
 
 #botonCUBuscar,
@@ -139,4 +141,84 @@ a{
 #botonCU:hover{
     background-color: #94c459;
     text-shadow: 0px 0px 1px #666;
+}
+
+
+/* estilo de las tablas */
+
+#cajaScroll{
+    overflow: auto;
+    height: 300px;
+    margin-top: 35px;
+}
+
+
+#cajaContenido table {
+  clear: both;
+  margin: 0em auto 2em auto;
+  width: 97%;
+  font: 12px normal verdana, arial;
+}
+
+#cajaContenido tbody{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+#cajaContenido thead th {
+  background: #555;
+  border-right: 1px solid #CCC !important;
+  color: #FFF;
+  font-size: 13px;
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+#cajaContenido tr, #cajaContenido th, #cajaContenido td {
+  border-bottom: 1px solid #CCC;
+  padding: .6em .25em;
+  background: #f9f9f9;
+  text-align: left;
+}
+
+#cajaContenido tr:nth-child(2n+1) td {
+  background: #e5e8e9;
+}
+
+#cajaContenido table a {
+  text-decoration: none;
+}
+#cajaContenido table a + a {
+  margin-left: 1em;
+}
+#cajaContenido table a[href*="editarCliente"] {
+  text-decoration: none;
+  margin-right: 1em;
+  color: #1148a6;
+}
+
+#cajaContenido table a[href*="cliente"]{
+    text-decoration: none;
+  margin-right: 1em;
+  color: #c61b23;
+}
+#cajaContenido table a[href*="editarCliente"]:hover, #cajaContenido table a[href*="cliente"]:hover{
+  text-decoration: underline;
+}
+
+#cajaContenido tr:hover td {
+  background: #fefea5;
+  color: #000;
+  text-decoration: none;
+}
+#cajaContenido tr:hover a {
+  text-decoration: none;
+}
+
+/* estilo del formulario de busqueda */
+#formAdminClienteBuscar{
+    margin-top: 30px;
+    
 }

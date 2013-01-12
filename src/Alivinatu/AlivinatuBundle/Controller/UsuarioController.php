@@ -56,10 +56,10 @@ class UsuarioController extends Controller
                 //$usuario = $formAdmin->getData();
 
                 // Codificamos el password
-                $factory = $this->get('security.encoder_factory');
-                $codificador = $factory->getEncoder($usuario);
-                $password = $codificador->encodePassword($usuario->getPassword(), $usuario->getSalt());
-                $usuario->setPassword($password);
+//                $factory = $this->get('security.encoder_factory');
+//                $codificador = $factory->getEncoder($usuario);
+//                $password = $codificador->encodePassword($usuario->getPassword(), $usuario->getSalt());
+//                $usuario->setPassword($password);
 
      
                 $role = $usuario->getRol();
@@ -85,7 +85,7 @@ class UsuarioController extends Controller
                     $em->Persist($cliente);
                     $em->flush();
                 }
-                return $this->redirect($this->generateURL('alivinatu_homepage'));
+                return $this->redirect($this->generateURL('adminCliente'));
          
            // }
         }
@@ -118,10 +118,10 @@ class UsuarioController extends Controller
             //if($formContacto->isValid()){
 
             // Codificamos el password
-            $factory = $this->get('security.encoder_factory');
-            $codificador = $factory->getEncoder($cliente);
-            $password = $codificador->encodePassword($cliente->getPassword(), $cliente->getSalt());
-            $cliente->setPassword($password);
+//            $factory = $this->get('security.encoder_factory');
+//            $codificador = $factory->getEncoder($cliente);
+//            $password = $codificador->encodePassword($cliente->getPassword(), $cliente->getSalt());
+//            $cliente->setPassword($password);
 
             $cliente->setContacto($contacto);
             $em = $this->get('doctrine')->getEntityManager();
@@ -130,7 +130,6 @@ class UsuarioController extends Controller
             $em->flush();
                     
             return $this->redirect($this->generateURL('alivinatu_homepage'));
-           // }
         }
 
     
@@ -140,4 +139,3 @@ class UsuarioController extends Controller
     }
 }
 
-?>

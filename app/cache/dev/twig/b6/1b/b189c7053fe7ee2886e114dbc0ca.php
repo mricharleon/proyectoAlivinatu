@@ -38,7 +38,10 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
         // line 8
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, "now", "d/m/y"), "html", null, true);
         echo " </spam> <br>
-                    <a href=\"\">
+                    <a href=\"";
+        // line 9
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("registroCliente"), "html", null, true);
+        echo "\">
                         <spam id=\"textoAnuncio\">Totalmente Gratis..!<br> Regístrate y obtén tu Cuenta Alivinatu</spam> <br><br>
                         <spam id=\"botonAnuncio\">Registrarse</spam>
                     </a>
@@ -634,6 +637,6 @@ class __TwigTemplate_b61bb189c7053fe7ee2886e114dbc0ca extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  616 => 28,  613 => 27,  583 => 483,  555 => 458,  535 => 441,  515 => 424,  484 => 396,  456 => 371,  427 => 345,  408 => 329,  389 => 313,  370 => 297,  338 => 268,  311 => 244,  282 => 218,  263 => 202,  244 => 186,  225 => 170,  193 => 141,  164 => 115,  135 => 89,  115 => 72,  96 => 56,  74 => 37,  68 => 33,  66 => 27,  60 => 25,  49 => 17,  37 => 8,  31 => 4,  28 => 3,);
+        return array (  619 => 28,  616 => 27,  586 => 483,  558 => 458,  538 => 441,  518 => 424,  487 => 396,  459 => 371,  430 => 345,  411 => 329,  392 => 313,  373 => 297,  341 => 268,  314 => 244,  285 => 218,  266 => 202,  247 => 186,  228 => 170,  196 => 141,  167 => 115,  138 => 89,  118 => 72,  99 => 56,  77 => 37,  71 => 33,  69 => 27,  63 => 25,  52 => 17,  41 => 9,  37 => 8,  31 => 4,  28 => 3,);
     }
 }

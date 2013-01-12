@@ -7,7 +7,7 @@
 <div id="contenido">
     
     {% block tituloContenido %}
-        <br>
+        
         <hr>
         <div id="tituloOferta">Crea tu cuenta Alivinatu</div>
         <hr>
@@ -106,7 +106,7 @@
                 {{ form_label(formContacto.observacion) }}
                 {{ form_widget(formContacto.observacion, { 'attr': { 'wrap': 'soft' } }) }}
             
-            <a href="{{ path('alivinatu_homepage') }}"><span id="botonForm2">Cancelar</span></a>
+            <a href="{{ path('adminCliente') }}"><span id="botonForm2">Cancelar</span></a>
             <input id="botonForm" type="submit" value="Crear Cuenta" />
             
         </div>

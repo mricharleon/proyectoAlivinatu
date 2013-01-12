@@ -2,6 +2,7 @@
 
 namespace Alivinatu\AlivinatuBundle\Entity;
 
+use Alivinatu\AlivinatuBundle\Entity\Contacto;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -21,11 +22,12 @@ use Alivinatu\AlivinatuBundle\Validator\CI;
 
 class Usuario implements UserInterface
 {
+    
     /**
-     * @ORM\OneToOne(targetEntity="Contacto", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="Contacto", inversedBy="usuario", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="contacto_id", referencedColumnName="id")
      */
-    private $contacto;
+    private $contacto;    
     
     
     
@@ -341,7 +343,6 @@ class Usuario implements UserInterface
         return $user->getUsername() == $this->getUsername();
     }
 
-    
 
     /**
      * Set contacto

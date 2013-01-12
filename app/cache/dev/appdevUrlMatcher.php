@@ -148,21 +148,6 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\ComentariosController::crearAction',  '_route' => 'comentario_crear',);
         }
 
-        // registroAdmin
-        if ($pathinfo === '/admin/registro') {
-            return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\UsuarioController::registroAdminAction',  '_route' => 'registroAdmin',);
-        }
-
-        // registroCliente
-        if ($pathinfo === '/user/registro') {
-            return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\UsuarioController::registroClienteAction',  '_route' => 'registroCliente',);
-        }
-
-        // menuAdmin
-        if ($pathinfo === '/admin') {
-            return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::menuAdminAction',  '_route' => 'menuAdmin',);
-        }
-
         // login
         if ($pathinfo === '/login') {
             return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\UsuarioController::loginAction',  '_route' => 'login',);
@@ -178,9 +163,39 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array('_route' => 'logout');
         }
 
+        // registroAdmin
+        if ($pathinfo === '/admin/registro') {
+            return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\UsuarioController::registroAdminAction',  '_route' => 'registroAdmin',);
+        }
+
+        // registroCliente
+        if ($pathinfo === '/user/registro') {
+            return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\UsuarioController::registroClienteAction',  '_route' => 'registroCliente',);
+        }
+
+        // menuAdmin
+        if ($pathinfo === '/admin') {
+            return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::menuAdminAction',  '_route' => 'menuAdmin',);
+        }
+
         // adminCliente
         if ($pathinfo === '/admin/cliente') {
             return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::adminClienteAction',  '_route' => 'adminCliente',);
+        }
+
+        // borrarCliente
+        if (0 === strpos($pathinfo, '/admin/client') && preg_match('#^/admin/cliente(?<id>[^e]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::borrarClienteAction',)), array('_route' => 'borrarCliente'));
+        }
+
+        // editarCliente
+        if (0 === strpos($pathinfo, '/admin/editarClient') && preg_match('#^/admin/editarCliente(?<id>[^e]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::editarClienteAction',)), array('_route' => 'editarCliente'));
+        }
+
+        // buscarCliente
+        if (0 === strpos($pathinfo, '/admin/buscarClient') && preg_match('#^/admin/buscarCliente(?<id>[^e]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::buscarClienteAction',)), array('_route' => 'buscarCliente'));
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
