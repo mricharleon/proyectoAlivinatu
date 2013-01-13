@@ -120,7 +120,7 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         // comentarioListar
         if ($pathinfo === '/comentarios/listar') {
-            return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\ComentariosController::listarComentariosAction',  '_route' => 'comentarioListar',);
+            return array (  '_controller' => 'AlivinatuBundle:Comentarios:listarComentarios',  '_route' => 'comentarioListar',);
         }
 
         // articulo_crear
@@ -145,7 +145,7 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         // comentario_crear
         if ($pathinfo === '/comentarios/crear') {
-            return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\ComentariosController::crearAction',  '_route' => 'comentario_crear',);
+            return array (  '_controller' => 'AlivinatuBundle:Comentarios:crear',  '_route' => 'comentario_crear',);
         }
 
         // login
@@ -193,9 +193,44 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::editarClienteAction',)), array('_route' => 'editarCliente'));
         }
 
-        // buscarCliente
-        if (0 === strpos($pathinfo, '/admin/buscarClient') && preg_match('#^/admin/buscarCliente(?<id>[^e]+)$#s', $pathinfo, $matches)) {
-            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::buscarClienteAction',)), array('_route' => 'buscarCliente'));
+        // adminSala
+        if ($pathinfo === '/admin/sala') {
+            return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::adminSalaAction',  '_route' => 'adminSala',);
+        }
+
+        // registroSala
+        if ($pathinfo === '/admin/registroSala') {
+            return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::registroSalaAction',  '_route' => 'registroSala',);
+        }
+
+        // borrarSala
+        if (0 === strpos($pathinfo, '/admin/sal') && preg_match('#^/admin/sala(?<id>[^a]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::borrarSalaAction',)), array('_route' => 'borrarSala'));
+        }
+
+        // editarSala
+        if (0 === strpos($pathinfo, '/admin/editarSal') && preg_match('#^/admin/editarSala(?<id>[^a]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::editarSalaAction',)), array('_route' => 'editarSala'));
+        }
+
+        // adminServicio
+        if ($pathinfo === '/admin/servicio') {
+            return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::adminServicioAction',  '_route' => 'adminServicio',);
+        }
+
+        // registroServicio
+        if ($pathinfo === '/admin/registroServicio') {
+            return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::registroServicioAction',  '_route' => 'registroServicio',);
+        }
+
+        // borrarServicio
+        if (0 === strpos($pathinfo, '/admin/servici') && preg_match('#^/admin/servicio(?<id>[^o]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::borrarServicioAction',)), array('_route' => 'borrarServicio'));
+        }
+
+        // editarServicio
+        if (0 === strpos($pathinfo, '/admin/editarServici') && preg_match('#^/admin/editarServicio(?<id>[^o]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::editarServicioAction',)), array('_route' => 'editarServicio'));
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

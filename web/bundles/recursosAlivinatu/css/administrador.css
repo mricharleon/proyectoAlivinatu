@@ -37,7 +37,7 @@
                   /* configura el ancho */
                   width: 50%;
 /* color de fondo */
-                  background: red;
+
                   /* definicion de la sombra estandar para box-shadow */
                   -webkit-box-shadow: 0 17px 12px #666;
                   -moz-box-shadow: 0 17px 12px #666;
@@ -125,10 +125,10 @@
     font: normal 13px "verdana", arial;
     background-color: #696c6d;
     box-shadow: 0px 0px 8px  #fff;
+    border: none;
     color: #fff;
     padding: 6px 14px 6px 14px; 
     margin: 0px 5px 0px 0px;
-    border:none;
     cursor: pointer;
     text-decoration: none;
 }
@@ -193,18 +193,27 @@ a{
 #cajaContenido table a + a {
   margin-left: 1em;
 }
-#cajaContenido table a[href*="editarCliente"] {
+#cajaContenido table a[href*="editarCliente"],
+#cajaContenido table a[href*="editarSala"],
+#cajaContenido table a[href*="editarServicio"]{
   text-decoration: none;
   margin-right: 1em;
   color: #1148a6;
 }
 
-#cajaContenido table a[href*="cliente"]{
+#cajaContenido table a[href*="cliente"],
+#cajaContenido table a[href*="sala"],
+#cajaContenido table a[href*="servicio"]{
     text-decoration: none;
   margin-right: 1em;
   color: #c61b23;
 }
-#cajaContenido table a[href*="editarCliente"]:hover, #cajaContenido table a[href*="cliente"]:hover{
+#cajaContenido table a[href*="editarCliente"]:hover,
+#cajaContenido table a[href*="cliente"]:hover,
+#cajaContenido table a[href*="editarSala"]:hover,
+#cajaContenido table a[href*="sala"]:hover,
+#cajaContenido table a[href*="editarServicio"]:hover,
+#cajaContenido table a[href*="servicio"]:hover{
   text-decoration: underline;
 }
 

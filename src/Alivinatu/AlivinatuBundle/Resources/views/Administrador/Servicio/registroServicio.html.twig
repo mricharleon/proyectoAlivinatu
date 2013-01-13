@@ -1,0 +1,48 @@
+{% extends 'AlivinatuBundle::layout.html.twig' %}
+
+{% block title %}Registro Servicio{% endblock %}
+
+{% block contenido %}
+      
+<div id="contenido">
+    
+    {% block tituloContenido %}
+        
+        <hr>
+        <div id="tituloOferta">Crea un Nuevo Servicio</div>
+        <hr>
+    {% endblock %}
+    
+        <div id="notaForm"><b><u>NOTA:</u></b> Bienvenido(a) al Sistema de Registro de un Nuevo Servicio Alivinatu, para la 
+            correcta creación del servicio se solicita muy comedidamente ingresar TODOS LOS CAMPOS que se exponen a continuación. </div>
+        
+    
+        
+    <form action="{{ path('registroServicio') }}" method="post" id="formRegistro" >
+
+        <div id="grid1">
+            
+            <div id="tituloForm"><b>Ingresa</b> | Datos de Servicio</div>
+            
+            {{ form_errors(formServicio.nombre) }}
+                {{ form_label(formServicio.nombre) }}
+                {{ form_widget(formServicio.nombre) }}
+           
+            {{ form_errors(formServicio.costo) }}
+                {{ form_label(formServicio.costo) }}
+                {{ form_widget(formServicio.costo) }}
+
+            {{ form_errors(formServicio.descripcion) }}
+                {{ form_label(formServicio.descripcion) }}
+                {{ form_widget(formServicio.descripcion) }}
+            
+            <a href="{{ path('adminServicio') }}"><span id="botonForm2">Cancelar</span></a>
+            <input id="botonForm" type="submit" value="Crear Servicio" />
+        
+        </div>
+
+    </form>
+    
+</div>
+
+{% endblock %}

@@ -1,7 +1,8 @@
 alivinatu:
     resource: "@AlivinatuBundle/Resources/config/routing.yml"
     prefix:   /
-    
+
+# rutas para el login  
 login:
     pattern:  /login
     defaults: { _controller: 'AlivinatuBundle:Usuario:login' }
@@ -12,6 +13,7 @@ check_path:
 logout:
     pattern:  /logout
 
+# rutas para registrar el cliente
 registroAdmin:
   pattern: /admin/registro
   defaults: { _controller: 'AlivinatuBundle:Usuario:registroAdmin' }
@@ -20,10 +22,12 @@ registroCliente:
   pattern: /user/registro
   defaults: { _controller: 'AlivinatuBundle:Usuario:registroCliente' }
   
+# ruta para el menu del administrador
 menuAdmin:
   pattern:  /admin
   defaults: { _controller: 'AlivinatuBundle:Admin:menuAdmin' }
     
+# rutas para el CU de adminitrar cliente
 adminCliente:
   pattern:  /admin/cliente
   defaults: { _controller: 'AlivinatuBundle:Admin:adminCliente' }
@@ -36,10 +40,39 @@ editarCliente:
   pattern:  /admin/editarCliente{id}
   defaults: { _controller: 'AlivinatuBundle:Admin:editarCliente' }
   
-buscarCliente:
-  pattern:  /admin/buscarCliente{id}
-  defaults: { _controller: 'AlivinatuBundle:Admin:buscarCliente' }
+# rutas para el CU de administrar sala
+adminSala:
+  pattern:  /admin/sala
+  defaults: { _controller: 'AlivinatuBundle:Admin:adminSala' }
+  
+registroSala:
+  pattern:  /admin/registroSala
+  defaults: { _controller: 'AlivinatuBundle:Admin:registroSala' }
+  
+borrarSala:
+  pattern:  /admin/sala{id}
+  defaults: { _controller: 'AlivinatuBundle:Admin:borrarSala' }
+  
+editarSala:
+  pattern:  /admin/editarSala{id}
+  defaults: { _controller: 'AlivinatuBundle:Admin:editarSala' }
 
+# rutas para el CU de administrar sala
+adminServicio:
+  pattern:  /admin/servicio
+  defaults: { _controller: 'AlivinatuBundle:Admin:adminServicio' }
+  
+registroServicio:
+  pattern:  /admin/registroServicio
+  defaults: { _controller: 'AlivinatuBundle:Admin:registroServicio' }
+  
+borrarServicio:
+  pattern:  /admin/servicio{id}
+  defaults: { _controller: 'AlivinatuBundle:Admin:borrarServicio' }
+  
+editarServicio:
+  pattern:  /admin/editarServicio{id}
+  defaults: { _controller: 'AlivinatuBundle:Admin:editarServicio' }
 
       
 # Internal routing configuration to handle ESI

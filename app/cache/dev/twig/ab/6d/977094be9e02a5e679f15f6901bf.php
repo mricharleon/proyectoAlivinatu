@@ -41,9 +41,12 @@ class __TwigTemplate_ab6d977094be9e02a5e679f15f6901bf extends Twig_Template
         
         <div id=\"cajaContenido\">
             <div id=\"tituloForm\"><b>Administración de Cliente</b> | Administra todas las cuentas de usuario</div>
-            <form id=\"formAdminClienteBuscar\">
+            <form id=\"formAdminClienteBuscar\" action=\"";
+        // line 12
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("adminCliente"), "html", null, true);
+        echo "\" method=\"POST\">
                 <spam id=\"tituloAdminCU\">Ingresa Criterio de Búsqueda</spam>
-                <input type=\"text\" id=\"inputCUBuscar\" placeholder=\"Ingresa tu búsqueda\" />
+                <input type=\"text\" id=\"inputCUBuscar\" name=\"datoBuscar\" placeholder=\"Ingresa tu búsqueda\" />
                 
                 <input id=\"botonCUBuscar\" type=\"submit\" value=\"Buscar\">
                 <a href=\"";
@@ -149,7 +152,7 @@ class __TwigTemplate_ab6d977094be9e02a5e679f15f6901bf extends Twig_Template
         </table>
                 </div>
         </div>
-        
+
     </div>
 ";
     }
@@ -166,6 +169,6 @@ class __TwigTemplate_ab6d977094be9e02a5e679f15f6901bf extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  144 => 60,  135 => 56,  125 => 51,  121 => 50,  116 => 48,  112 => 47,  108 => 46,  104 => 45,  100 => 44,  96 => 43,  92 => 42,  88 => 41,  84 => 39,  79 => 38,  57 => 19,  53 => 18,  49 => 17,  35 => 7,  30 => 4,  27 => 3,);
+        return array (  147 => 60,  138 => 56,  128 => 51,  124 => 50,  119 => 48,  115 => 47,  111 => 46,  107 => 45,  103 => 44,  99 => 43,  95 => 42,  91 => 41,  87 => 39,  82 => 38,  60 => 19,  56 => 18,  52 => 17,  44 => 12,  35 => 7,  30 => 4,  27 => 3,);
     }
 }

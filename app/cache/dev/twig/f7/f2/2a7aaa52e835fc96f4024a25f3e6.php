@@ -59,7 +59,10 @@ class __TwigTemplate_f7f22a7aaa52e835fc96f4024a25f3e6 extends Twig_Template
         // line 20
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/administrador/menu/adminServicio.jpg"), "html", null, true);
         echo "\">
-                <a href=\"\"><span id=\"tituloCU\">Administrar Servicio</span></a>
+                <a href=\"";
+        // line 21
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("adminServicio"), "html", null, true);
+        echo "\"><span id=\"tituloCU\">Administrar Servicio</span></a>
             </div>
             
             <div id=\"columnaCU1\">
@@ -67,7 +70,10 @@ class __TwigTemplate_f7f22a7aaa52e835fc96f4024a25f3e6 extends Twig_Template
         // line 25
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recursosAlivinatu/images/administrador/menu/adminSala.jpg"), "html", null, true);
         echo "\">
-                <span id=\"tituloCU\">Administrar Sala</span>
+                <a href=\"";
+        // line 26
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("adminSala"), "html", null, true);
+        echo "\"><span id=\"tituloCU\">Administrar Sala</span></a>
             </div>
             
             <div id=\"columnaCU1\">
@@ -108,6 +114,6 @@ class __TwigTemplate_f7f22a7aaa52e835fc96f4024a25f3e6 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  90 => 41,  82 => 35,  74 => 30,  66 => 25,  58 => 20,  51 => 16,  47 => 15,  35 => 7,  30 => 4,  27 => 3,);
+        return array (  96 => 41,  88 => 35,  80 => 30,  73 => 26,  69 => 25,  62 => 21,  58 => 20,  51 => 16,  47 => 15,  35 => 7,  30 => 4,  27 => 3,);
     }
 }

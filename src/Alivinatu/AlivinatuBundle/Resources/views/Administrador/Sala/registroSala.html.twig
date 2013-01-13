@@ -1,0 +1,56 @@
+{% extends 'AlivinatuBundle::layout.html.twig' %}
+
+{% block title %}Registro Sala{% endblock %}
+
+{% block contenido %}
+      
+<div id="contenido">
+    
+    {% block tituloContenido %}
+        
+        <hr>
+        <div id="tituloOferta">Crea una Nueva Sala</div>
+        <hr>
+    {% endblock %}
+    
+        <div id="notaForm"><b><u>NOTA:</u></b> Bienvenido(a) al Sistema de Registro de una Nueva Sala Alivinatu, para la 
+            correcta creación de la sala se solicita muy comedidamente ingresar TODOS LOS CAMPOS que se exponen a continuación. </div>
+        
+    
+        
+    <form action="{{ path('registroSala') }}" method="post" id="formRegistro" >
+
+        <div id="grid1">
+            
+            <div id="tituloForm"><b>Ingresa</b> | Datos de Sala</div>
+            {#<div id="barra">&nbsp;</div>#}
+            
+            {{ form_errors(formSala.numero) }}
+                {{ form_label(formSala.numero) }}
+                {{ form_widget(formSala.numero) }}
+            
+            
+            {{ form_errors(formSala.nombre) }}
+                {{ form_label(formSala.nombre) }}
+                {{ form_widget(formSala.nombre) }}
+           
+            
+            {{ form_errors(formSala.estado) }}
+                {{ form_label(formSala.estado) }}
+                {{ form_widget(formSala.estado) }}
+
+            
+            {{ form_errors(formSala.descripcion) }}
+                {{ form_label(formSala.descripcion) }}
+                {{ form_widget(formSala.descripcion) }}
+            
+            <a href="{{ path('adminSala') }}"><span id="botonForm2">Cancelar</span></a>
+            <input id="botonForm" type="submit" value="Crear Sala" />
+        
+        </div>
+
+    </form>
+    
+</div>
+
+{% endblock %}

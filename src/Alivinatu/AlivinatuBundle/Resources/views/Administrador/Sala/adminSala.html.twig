@@ -1,0 +1,63 @@
+{% extends 'AlivinatuBundle::layout.html.twig' %}
+    
+{% block title %}
+    Admin. Sala
+{% endblock %}
+
+{% block contenido %}     
+    <div id="contenido">
+        
+        <div id="cajaContenido">
+            <div id="tituloForm"><b>Administración de Sala</b> | Administra todas las Salas</div>
+            <form id="formAdminClienteBuscar" action="{{ path('adminSala') }}" method="POST">
+                <spam id="tituloAdminCU">Ingresa Criterio de Búsqueda</spam>
+                <input type="text" id="inputCUBuscar" name="datoBuscar" placeholder="Ingresa tu búsqueda" />
+                
+                <input id="botonCUBuscar" type="submit" value="Buscar">
+                <a href="{{ path('adminSala') }}"><span id="botonCU">Restaurar</span></a>
+                <a href="{{ path('registroSala') }}"><span id="botonCU">Nueva Sala</span></a>
+                <a href="{{ path('menuAdmin') }}"><span id="botonCU">Menu</span></a>
+            </form>
+            <div id="cajaScroll">
+                <table cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <th>Número</th>
+                    <th>Nombre</th>
+                    <th>Estado</th>
+                    <th>Descripción</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for sala in salas %}
+                    
+                <tr>
+                    <td>{{ sala.numero }}</td>
+                    <td>{{ sala.nombre }}</td>
+                    <td>{{ sala.estado }}</td>
+                    <td>{{ sala.descripcion }}</td>
+                    <td>
+                        <a href="{{ path('editarSala', { 'id': sala.id }) }}">Editar</a>
+                        <a href="{{ path('borrarSala', { 'id': sala.id }) }}">Borrar</a>
+                    </td>
+  
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5">No existe ninguna Sala</td>
+                </tr>
+                {% endfor %}
+                
+                
+            </tbody>
+        </table>
+                </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+
+
