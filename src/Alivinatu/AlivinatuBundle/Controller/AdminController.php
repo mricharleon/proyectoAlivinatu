@@ -308,18 +308,22 @@ public function adminClienteAction()
         
         $formServicio = $this->createForm(new ServicioType(), $servicio);        
         
-        if ($request->getMethod() == 'POST') {
-            $servicio = new Servicio();
-            $formServicio = $this->createForm(new ServicioType(), $servicio);
-            $formServicio->bindRequest($request);
-            
-            $em = $this->get('doctrine')->getEntityManager();
-            $em->persist($servicio);
-            $em->flush();
-                    
-            return $this->redirect($this->generateURL('adminServicio'));
-        }
+        
+            if ($request->getMethod() == 'POST') {
+                
+                $servicio = new Servicio();
+                $formServicio = $this->createForm(new ServicioType(), $servicio);
+                $formServicio->bindRequest($request);
+                
+                if ( $formServicio->isValid() ) {
+                
+                    $em = $this->get('doctrine')->getEntityManager();
+                    $em->persist($servicio);
+                    $em->flush();
 
+                    return $this->redirect($this->generateURL('adminServicio'));
+              }
+        }
         return $this->render('AlivinatuBundle:Administrador\Servicio:registroServicio.html.twig',
                 array('formServicio' => $formServicio->createView()
                     ));

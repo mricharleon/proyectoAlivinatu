@@ -4,6 +4,8 @@ namespace Alivinatu\AlivinatuBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * Alivinatu\AlivinatuBundle\Entity\Servicio
  *
@@ -25,6 +27,9 @@ class Servicio
      * @var string $costo
      *
      * @ORM\Column(name="costo", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\MinLength(4)
+     * @Assert\MaxLength(4)
      */
     private $costo;
 
@@ -32,6 +37,8 @@ class Servicio
      * @var string $descripcion
      *
      * @ORM\Column(name="descripcion", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\MinLength(5)
      */
     private $descripcion;
 
@@ -39,6 +46,9 @@ class Servicio
      * @var string $nombre
      *
      * @ORM\Column(name="nombre", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\MinLength(10)
+     * @Assert\MaxLength(30)
      */
     private $nombre;
 
