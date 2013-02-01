@@ -33,7 +33,32 @@
             {{ form_errors(formServicio.descripcion) }}
                 {{ form_label(formServicio.descripcion) }}
                 {{ form_widget(formServicio.descripcion) }}
+        
+        </div>
+        
+        <div id="grid0">
+            &nbsp;
+        </div>
+        
+        <div id="grid2">
             
+            <div id="tituloForm"><b>Agrega</b> | Opciones Adicionales</div>
+            <label>Agrega una Sala</label>
+            <select name="nombreSala">
+               <option></option>
+                {% for sala in salas %}
+                    <option>{{ sala.nombreSala }}</option>
+                {% endfor %}
+            </select>
+            
+            <label>Agrega una Promoción</label>
+            <select name="nombrePromocion">
+                
+                 {% for promocion in promociones %}
+                     <option>{{ promocion.nombrePromocion }}</option>
+                 {% endfor %}
+             </select>
+                
             <a href="{{ path('adminServicio') }}"><span id="botonForm2">Cancelar</span></a>
             <input id="botonForm" type="submit" value="Crear Servicio" />
         

@@ -13,6 +13,18 @@ use Doctrine\ORM\Mapping as ORM;
 class Promocion
 {
     /**
+     * @ORM\OneToMany(targetEntity="Servicio", mappedBy="promocion")
+     */
+    private $servicios;
+    // ...
+
+    public function __construct() {
+        $this->servicios = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    
+    
+    /**
      * @var integer $id
      *
      * @ORM\Column(name="id", type="integer")
@@ -29,25 +41,18 @@ class Promocion
     private $descripcion;
 
     /**
-     * @var \DateTime $fInicio
+     * @var string $descuento
      *
-     * @ORM\Column(name="fInicio", type="date")
+     * @ORM\Column(name="descuento", type="string", length=255)
      */
-    private $fInicio;
-
+    private $descuento;
+    
     /**
-     * @var \DateTime $fFin
+     * @var string $nombrePromocion
      *
-     * @ORM\Column(name="fFin", type="date")
+     * @ORM\Column(name="nombrePromocion", type="string", length=255)
      */
-    private $fFin;
-
-    /**
-     * @var string $nombre
-     *
-     * @ORM\Column(name="nombre", type="string", length=255)
-     */
-    private $nombre;
+    private $nombrePromocion;
 
 
     /**
@@ -84,71 +89,81 @@ class Promocion
     }
 
     /**
-     * Set fInicio
+     * Set nombrePromocion
      *
-     * @param \DateTime $fInicio
+     * @param string $nombrePromocion
      * @return promocion
      */
-    public function setFInicio($fInicio)
+    public function setNombrePromocion($nombrePromocion)
     {
-        $this->fInicio = $fInicio;
+        $this->nombrePromocion = $nombrePromocion;
     
         return $this;
     }
 
     /**
-     * Get fInicio
-     *
-     * @return \DateTime 
-     */
-    public function getFInicio()
-    {
-        return $this->fInicio;
-    }
-
-    /**
-     * Set fFin
-     *
-     * @param \DateTime $fFin
-     * @return promocion
-     */
-    public function setFFin($fFin)
-    {
-        $this->fFin = $fFin;
-    
-        return $this;
-    }
-
-    /**
-     * Get fFin
-     *
-     * @return \DateTime 
-     */
-    public function getFFin()
-    {
-        return $this->fFin;
-    }
-
-    /**
-     * Set nombre
-     *
-     * @param string $nombre
-     * @return promocion
-     */
-    public function setNombre($nombre)
-    {
-        $this->nombre = $nombre;
-    
-        return $this;
-    }
-
-    /**
-     * Get nombre
+     * Get nombrePromocion
      *
      * @return string 
      */
-    public function getNombre()
+    public function getNombrePromocion()
     {
-        return $this->nombre;
+        return $this->nombrePromocion;
+    }
+
+    /**
+     * Set descuento
+     *
+     * @param string $descuento
+     * @return Promocion
+     */
+    public function setDescuento($descuento)
+    {
+        $this->descuento = $descuento;
+    
+        return $this;
+    }
+
+    /**
+     * Get descuento
+     *
+     * @return string 
+     */
+    public function getDescuento()
+    {
+        return $this->descuento;
+    }
+
+    /**
+     * Add servicios
+     *
+     * @param Alivinatu\AlivinatuBundle\Entity\Servicio $servicios
+     * @return Promocion
+     */
+    public function addServicio(\Alivinatu\AlivinatuBundle\Entity\Servicio $servicios)
+    {
+        $this->servicios[] = $servicios;
+    
+        return $this;
+    }
+
+    /**
+     * Remove servicios
+     *
+     * @param Alivinatu\AlivinatuBundle\Entity\Servicio $servicios
+     */
+    public function removeServicio(\Alivinatu\AlivinatuBundle\Entity\Servicio $servicios)
+    {
+        $this->servicios->removeElement($servicios);
+    }
+
+    /**
+     * Get servicios
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getServicios()
+    {
+        return $this->servicios;
     }
 }

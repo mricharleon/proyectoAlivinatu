@@ -25,7 +25,9 @@
                     <th>Nombre</th>
                     <th>Costo</th>
                     <th>Descripción</th>
-                    <th>Opciones</th>
+                    <th>Sala</th>
+                    <th>Promoción</th>
+                    <th colspan="2">Opciones</th>
                 </tr>
             </thead>
 
@@ -36,9 +38,14 @@
                     <td>{{ servicio.nombre }}</td>
                     <td>${{ servicio.costo }}</td>
                     <td>{{ servicio.descripcion }}</td>
+                    <td>{{ servicio.nombreSala }}</td>
+                    <td>{{ servicio.nombrePromocion }}</td>
                     <td>
-                        <a href="{{ path('editarServicio', { 'id': servicio.id }) }}">Editar</a>
-                        <a href="{{ path('borrarServicio', { 'id': servicio.id }) }}">Borrar</a>
+                        <a href="{{ path('editarServicio', { 'id': servicio.id, 
+                            'nSala': servicio.nombreSala, 'nPromocion':servicio.nombrePromocion }) }}">Editar</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('borrarServicio', { 'id': servicio.id, 'nSala': servicio.nombreSala }) }}">Borrar</a>
                     </td>
   
                 </tr>
@@ -47,8 +54,7 @@
                     <td colspan="5">No existe ningun Servicio</td>
                 </tr>
                 {% endfor %}
-                
-                
+ 
             </tbody>
         </table>
                 </div>

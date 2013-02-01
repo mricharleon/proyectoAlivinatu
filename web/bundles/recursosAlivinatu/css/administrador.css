@@ -153,21 +153,24 @@ a{
 }
 
 
-#cajaContenido table {
+#cajaContenido table,
+#contenido table{
   clear: both;
   margin: 0em auto 2em auto;
   width: 97%;
   font: 12px normal verdana, arial;
 }
 
-#cajaContenido tbody{
+#cajaContenido tbody,
+#contenido tbody{
     border: 0;
     margin: 0;
     padding: 0;
     font-size: 100%;
 }
 
-#cajaContenido thead th {
+#cajaContenido thead th,
+#contenido thead th {
   background: #555;
   border-right: 1px solid #CCC !important;
   color: #FFF;
@@ -176,26 +179,35 @@ a{
   padding-left: 5px;
 }
 
-#cajaContenido tr, #cajaContenido th, #cajaContenido td {
+#cajaContenido tr,
+#cajaContenido th,
+#cajaContenido td,
+#contenido tr,
+#contenido th,
+#contenido td{
   border-bottom: 1px solid #CCC;
   padding: .6em .25em;
   background: #f9f9f9;
   text-align: left;
 }
 
-#cajaContenido tr:nth-child(2n+1) td {
+#cajaContenido tr:nth-child(2n+1) td,
+#contenido tr:nth-child(2n+1) td{
   background: #e5e8e9;
 }
 
-#cajaContenido table a {
+#cajaContenido table a,
+#contenido table a{
   text-decoration: none;
 }
-#cajaContenido table a + a {
+#cajaContenido table a + a,
+#contenido table a + a{
   margin-left: 1em;
 }
 #cajaContenido table a[href*="editarCliente"],
 #cajaContenido table a[href*="editarSala"],
-#cajaContenido table a[href*="editarServicio"]{
+#cajaContenido table a[href*="editarServicio"],
+#cajaContenido table a[href*="editarPromocion"]{
   text-decoration: none;
   margin-right: 1em;
   color: #1148a6;
@@ -203,7 +215,8 @@ a{
 
 #cajaContenido table a[href*="cliente"],
 #cajaContenido table a[href*="sala"],
-#cajaContenido table a[href*="servicio"]{
+#cajaContenido table a[href*="servicio"],
+#cajaContenido table a[href*="promocion"]{
     text-decoration: none;
   margin-right: 1em;
   color: #c61b23;
@@ -213,16 +226,20 @@ a{
 #cajaContenido table a[href*="editarSala"]:hover,
 #cajaContenido table a[href*="sala"]:hover,
 #cajaContenido table a[href*="editarServicio"]:hover,
-#cajaContenido table a[href*="servicio"]:hover{
+#cajaContenido table a[href*="servicio"]:hover,
+#cajaContenido table a[href*="editarPromocion"]:hover,
+#cajaContenido table a[href*="promocion"]:hover{
   text-decoration: underline;
 }
 
-#cajaContenido tr:hover td {
+#cajaContenido tr:hover td,
+#contenido tr:hover td{
   background: #fefea5;
   color: #000;
   text-decoration: none;
 }
-#cajaContenido tr:hover a {
+#cajaContenido tr:hover a,
+#contenido tr:hover a{
   text-decoration: none;
 }
 

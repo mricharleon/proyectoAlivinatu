@@ -33,12 +33,10 @@ class UsuarioController extends Controller
     public function registroAdminAction()
     {
         $usuario = new Usuario();
-        $contacto = new Contacto();
         $administrador = new Administrador();
         $cliente = new Cliente();
         
         $formAdmin = $this->createForm(new UsuarioAdminType(), $usuario);
-        $formContacto = $this->createForm(new ContactoType(), $contacto);
 //        $formAdmin = $this->get('form.factory')->create(new UsuarioAdminType(), array() );
 //        $formContacto = $this->get('form.factory')->create(new ContactoType(), array() );
 
@@ -48,7 +46,6 @@ class UsuarioController extends Controller
         if ($request->getMethod() == 'POST') {
             
             $formAdmin->bindRequest($request);
-            $formContacto->bindRequest($request);
             
            // if ( $formAdmin->isValid() ) {
                 
@@ -69,9 +66,7 @@ class UsuarioController extends Controller
                     $formAdmin = $this->createForm(new UsuarioAdminType(), $administrador);
                     $formAdmin->bindRequest($request);
                     // Guardamos el objeto en base de datos
-                    $administrador->setContacto($contacto);
                     $em = $this->get('doctrine')->getEntityManager();
-                    $em->persist($contacto);
                     $em->Persist($administrador);
                     $em->flush();
                     
@@ -79,9 +74,7 @@ class UsuarioController extends Controller
                     $cliente = new Cliente();
                     $formAdmin = $this->createForm(new UsuarioAdminType(), $cliente);
                     $formAdmin->bindRequest($request);
-                    $cliente->setContacto($contacto);
                     $em = $this->get('doctrine')->getEntityManager();
-                    $em->persist($contacto);
                     $em->Persist($cliente);
                     $em->flush();
                 }
@@ -92,7 +85,7 @@ class UsuarioController extends Controller
         
         
         return $this->render('AlivinatuBundle:Usuario:registro.html.twig',
-                array('formAdmin' => $formAdmin->createView(), 'formContacto' => $formContacto->createView()
+                array('formAdmin' => $formAdmin->createView()
                     ));
     }
     
@@ -104,16 +97,12 @@ class UsuarioController extends Controller
         $request = $this->get('request');
          
         $cliente = new Cliente();
-        $contacto = new Contacto();
         
         $formCliente = $this->createForm(new UsuarioClienteType(), $cliente);
-        $formContacto = $this->createForm(new ContactoType(), $contacto);
-        
         
         if ($request->getMethod() == 'POST') {
             
             $formCliente->bindRequest($request);
-            $formContacto->bindRequest($request);
             
             //if($formContacto->isValid()){
 
@@ -123,9 +112,7 @@ class UsuarioController extends Controller
 //            $password = $codificador->encodePassword($cliente->getPassword(), $cliente->getSalt());
 //            $cliente->setPassword($password);
 
-            $cliente->setContacto($contacto);
             $em = $this->get('doctrine')->getEntityManager();
-            $em->persist($contacto);
             $em->Persist($cliente);
             $em->flush();
                     
@@ -134,7 +121,7 @@ class UsuarioController extends Controller
 
     
         return $this->render('AlivinatuBundle:Usuario:registroCliente.html.twig',
-                array('formCliente' => $formCliente->createView(), 'formContacto' => $formContacto->createView()
+                array('formCliente' => $formCliente->createView()
                     ));
     }
 }

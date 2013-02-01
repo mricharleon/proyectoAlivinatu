@@ -14,6 +14,14 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Servicio
 {
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Promocion", inversedBy="servicios")
+     * @ORM\JoinColumn(name="promocion_id", referencedColumnName="id")
+     */
+    private $promocion;
+    
+    
     /**
      * @var integer $id
      *
@@ -130,5 +138,28 @@ class Servicio
     public function getNombre()
     {
         return $this->nombre;
+    }
+
+    /**
+     * Set promocion
+     *
+     * @param Alivinatu\AlivinatuBundle\Entity\Promocion $promocion
+     * @return Servicio
+     */
+    public function setPromocion(\Alivinatu\AlivinatuBundle\Entity\Promocion $promocion = null)
+    {
+        $this->promocion = $promocion;
+    
+        return $this;
+    }
+
+    /**
+     * Get promocion
+     *
+     * @return Alivinatu\AlivinatuBundle\Entity\Promocion 
+     */
+    public function getPromocion()
+    {
+        return $this->promocion;
     }
 }

@@ -69,40 +69,53 @@ class __TwigTemplate_cb37a981a765464195e0316ca3c2fb34 extends Twig_Template
                     <th>Nombre</th>
                     <th>Costo</th>
                     <th>Descripción</th>
-                    <th>Opciones</th>
+                    <th>Sala</th>
+                    <th>Promoción</th>
+                    <th colspan=\"2\">Opciones</th>
                 </tr>
             </thead>
 
             <tbody>
                 ";
-        // line 33
+        // line 35
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getContext($context, "servicios"));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["servicio"]) {
-            // line 34
+            // line 36
             echo "                    
                 <tr>
                     <td>";
-            // line 36
+            // line 38
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "servicio"), "nombre"), "html", null, true);
             echo "</td>
                     <td>\$";
-            // line 37
+            // line 39
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "servicio"), "costo"), "html", null, true);
             echo "</td>
                     <td>";
-            // line 38
+            // line 40
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "servicio"), "descripcion"), "html", null, true);
+            echo "</td>
+                    <td>";
+            // line 41
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "servicio"), "nombreSala"), "html", null, true);
+            echo "</td>
+                    <td>";
+            // line 42
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "servicio"), "nombrePromocion"), "html", null, true);
             echo "</td>
                     <td>
                         <a href=\"";
-            // line 40
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("editarServicio", array("id" => $this->getAttribute($this->getContext($context, "servicio"), "id"))), "html", null, true);
+            // line 44
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("editarServicio", array("id" => $this->getAttribute($this->getContext($context, "servicio"), "id"), "nSala" => $this->getAttribute($this->getContext($context, "servicio"), "nombreSala"), "nPromocion" => $this->getAttribute($this->getContext($context, "servicio"), "nombrePromocion"))), "html", null, true);
+            // line 45
             echo "\">Editar</a>
+                    </td>
+                    <td>
                         <a href=\"";
-            // line 41
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("borrarServicio", array("id" => $this->getAttribute($this->getContext($context, "servicio"), "id"))), "html", null, true);
+            // line 48
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("borrarServicio", array("id" => $this->getAttribute($this->getContext($context, "servicio"), "id"), "nSala" => $this->getAttribute($this->getContext($context, "servicio"), "nombreSala"))), "html", null, true);
             echo "\">Borrar</a>
                     </td>
   
@@ -111,7 +124,7 @@ class __TwigTemplate_cb37a981a765464195e0316ca3c2fb34 extends Twig_Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 46
+            // line 53
             echo "                <tr>
                     <td colspan=\"5\">No existe ningun Servicio</td>
                 </tr>
@@ -120,9 +133,8 @@ class __TwigTemplate_cb37a981a765464195e0316ca3c2fb34 extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['servicio'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 50
-        echo "                
-                
+        // line 57
+        echo " 
             </tbody>
         </table>
                 </div>
@@ -144,6 +156,6 @@ class __TwigTemplate_cb37a981a765464195e0316ca3c2fb34 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  122 => 50,  113 => 46,  103 => 41,  99 => 40,  94 => 38,  90 => 37,  86 => 36,  82 => 34,  77 => 33,  60 => 19,  56 => 18,  52 => 17,  44 => 12,  35 => 7,  30 => 4,  27 => 3,);
+        return array (  135 => 57,  126 => 53,  116 => 48,  111 => 45,  109 => 44,  104 => 42,  100 => 41,  96 => 40,  92 => 39,  88 => 38,  84 => 36,  79 => 35,  60 => 19,  56 => 18,  52 => 17,  44 => 12,  35 => 7,  30 => 4,  27 => 3,);
     }
 }

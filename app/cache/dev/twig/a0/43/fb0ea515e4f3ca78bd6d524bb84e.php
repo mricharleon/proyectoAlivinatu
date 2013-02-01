@@ -21,9 +21,9 @@ class __TwigTemplate_a043fb0ea515e4f3ca78bd6d524bb84e extends Twig_Template
             'ofertaTexto' => array($this, 'block_ofertaTexto'),
             'tituloContenido' => array($this, 'block_tituloContenido'),
             'footer' => array($this, 'block_footer'),
-            '__internal_e50f2a93650fe9ee539a70c79f0bd7f7e01ef0c8' => array($this, 'block___internal_e50f2a93650fe9ee539a70c79f0bd7f7e01ef0c8'),
-            '__internal_9ebab063a7cc83dad0608e2b2200d3ada5fd4b25' => array($this, 'block___internal_9ebab063a7cc83dad0608e2b2200d3ada5fd4b25'),
-            '__internal_a91f22261e49e9518fa7691a19853c5eaf3e5127' => array($this, 'block___internal_a91f22261e49e9518fa7691a19853c5eaf3e5127'),
+            '__internal_7c3ab581109949f8d33099b9186f444f384470dd' => array($this, 'block___internal_7c3ab581109949f8d33099b9186f444f384470dd'),
+            '__internal_73c9af7d6fef00e11c76930225d8eecf6f7422b6' => array($this, 'block___internal_73c9af7d6fef00e11c76930225d8eecf6f7422b6'),
+            '__internal_af45a1a048766fff0893746830561e713822f7f5' => array($this, 'block___internal_af45a1a048766fff0893746830561e713822f7f5'),
         );
     }
 
@@ -211,7 +211,7 @@ class __TwigTemplate_a043fb0ea515e4f3ca78bd6d524bb84e extends Twig_Template
             <div id=\"tituloFooter\">
                 ";
         // line 83
-        echo twig_escape_filter($this->env, twig_upper_filter($this->env, (string) $this->renderBlock("__internal_e50f2a93650fe9ee539a70c79f0bd7f7e01ef0c8", $context, $blocks)), "html", null, true);
+        echo twig_escape_filter($this->env, twig_upper_filter($this->env, (string) $this->renderBlock("__internal_7c3ab581109949f8d33099b9186f444f384470dd", $context, $blocks)), "html", null, true);
         // line 86
         echo "            </div>
             <ul class=\"social\">
@@ -237,7 +237,7 @@ class __TwigTemplate_a043fb0ea515e4f3ca78bd6d524bb84e extends Twig_Template
             <div id=\"tituloFooter\">
                 ";
         // line 108
-        echo twig_escape_filter($this->env, twig_upper_filter($this->env, (string) $this->renderBlock("__internal_9ebab063a7cc83dad0608e2b2200d3ada5fd4b25", $context, $blocks)), "html", null, true);
+        echo twig_escape_filter($this->env, twig_upper_filter($this->env, (string) $this->renderBlock("__internal_73c9af7d6fef00e11c76930225d8eecf6f7422b6", $context, $blocks)), "html", null, true);
         // line 111
         echo "            </div>
             <span id=\"textoCuadroFooter\">
@@ -264,7 +264,7 @@ class __TwigTemplate_a043fb0ea515e4f3ca78bd6d524bb84e extends Twig_Template
             <div id=\"tituloFooter\">
                 ";
         // line 134
-        echo twig_escape_filter($this->env, twig_upper_filter($this->env, (string) $this->renderBlock("__internal_a91f22261e49e9518fa7691a19853c5eaf3e5127", $context, $blocks)), "html", null, true);
+        echo twig_escape_filter($this->env, twig_upper_filter($this->env, (string) $this->renderBlock("__internal_af45a1a048766fff0893746830561e713822f7f5", $context, $blocks)), "html", null, true);
         // line 137
         echo "            </div>
             <span id=\"galeriaFooter\">
@@ -355,7 +355,7 @@ class __TwigTemplate_a043fb0ea515e4f3ca78bd6d524bb84e extends Twig_Template
     }
 
     // line 83
-    public function block___internal_e50f2a93650fe9ee539a70c79f0bd7f7e01ef0c8($context, array $blocks = array())
+    public function block___internal_7c3ab581109949f8d33099b9186f444f384470dd($context, array $blocks = array())
     {
         // line 84
         echo "                        Visitanos...!
@@ -363,7 +363,7 @@ class __TwigTemplate_a043fb0ea515e4f3ca78bd6d524bb84e extends Twig_Template
     }
 
     // line 108
-    public function block___internal_9ebab063a7cc83dad0608e2b2200d3ada5fd4b25($context, array $blocks = array())
+    public function block___internal_73c9af7d6fef00e11c76930225d8eecf6f7422b6($context, array $blocks = array())
     {
         // line 109
         echo "                    Noticias...
@@ -371,7 +371,7 @@ class __TwigTemplate_a043fb0ea515e4f3ca78bd6d524bb84e extends Twig_Template
     }
 
     // line 134
-    public function block___internal_a91f22261e49e9518fa7691a19853c5eaf3e5127($context, array $blocks = array())
+    public function block___internal_af45a1a048766fff0893746830561e713822f7f5($context, array $blocks = array())
     {
         // line 135
         echo "                    Visista Nuestra Galeria
@@ -390,6 +390,6 @@ class __TwigTemplate_a043fb0ea515e4f3ca78bd6d524bb84e extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  375 => 135,  372 => 134,  367 => 109,  364 => 108,  359 => 84,  356 => 83,  339 => 162,  335 => 161,  330 => 159,  326 => 158,  321 => 156,  317 => 155,  312 => 153,  308 => 152,  303 => 150,  299 => 149,  294 => 147,  290 => 146,  285 => 144,  281 => 143,  275 => 140,  271 => 139,  267 => 137,  265 => 134,  240 => 111,  238 => 108,  214 => 86,  212 => 83,  207 => 80,  204 => 79,  198 => 75,  194 => 76,  191 => 75,  184 => 74,  181 => 73,  174 => 62,  171 => 61,  162 => 66,  160 => 61,  154 => 58,  149 => 55,  146 => 54,  141 => 49,  138 => 48,  133 => 51,  131 => 48,  111 => 30,  108 => 29,  100 => 24,  95 => 21,  92 => 20,  85 => 16,  81 => 15,  77 => 14,  72 => 13,  69 => 12,  63 => 9,  59 => 8,  55 => 7,  42 => 4,  39 => 3,  90 => 41,  82 => 35,  74 => 30,  66 => 25,  58 => 20,  51 => 6,  47 => 5,  35 => 7,  30 => 4,  27 => 3,);
+        return array (  375 => 135,  372 => 134,  367 => 109,  364 => 108,  359 => 84,  356 => 83,  339 => 162,  335 => 161,  330 => 159,  326 => 158,  321 => 156,  317 => 155,  312 => 153,  308 => 152,  303 => 150,  299 => 149,  294 => 147,  290 => 146,  281 => 143,  275 => 140,  271 => 139,  267 => 137,  265 => 134,  240 => 111,  238 => 108,  214 => 86,  212 => 83,  207 => 80,  204 => 79,  198 => 75,  194 => 76,  191 => 75,  184 => 74,  181 => 73,  174 => 62,  171 => 61,  162 => 66,  160 => 61,  154 => 58,  149 => 55,  146 => 54,  141 => 49,  133 => 51,  131 => 48,  111 => 30,  108 => 29,  100 => 24,  95 => 21,  92 => 20,  85 => 16,  81 => 15,  72 => 13,  59 => 8,  55 => 7,  51 => 6,  47 => 5,  42 => 4,  39 => 3,  619 => 28,  616 => 27,  586 => 483,  558 => 458,  538 => 441,  518 => 424,  487 => 396,  459 => 371,  430 => 345,  411 => 329,  392 => 313,  373 => 297,  341 => 268,  314 => 244,  285 => 144,  266 => 202,  247 => 186,  228 => 170,  196 => 141,  167 => 115,  138 => 48,  118 => 72,  99 => 56,  77 => 14,  71 => 33,  69 => 12,  63 => 9,  52 => 17,  41 => 9,  37 => 8,  31 => 4,  28 => 3,);
     }
 }

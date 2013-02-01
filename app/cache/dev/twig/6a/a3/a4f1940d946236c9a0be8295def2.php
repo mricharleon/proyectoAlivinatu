@@ -70,7 +70,7 @@ class __TwigTemplate_6aa3a4f1940d946236c9a0be8295def2 extends Twig_Template
                     <th>Nombre</th>
                     <th>Estado</th>
                     <th>Descripción</th>
-                    <th>Opciones</th>
+                    <th colspan=\"2\">Opciones</th>
                 </tr>
             </thead>
 
@@ -90,7 +90,7 @@ class __TwigTemplate_6aa3a4f1940d946236c9a0be8295def2 extends Twig_Template
             echo "</td>
                     <td>";
             // line 38
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "sala"), "nombre"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "sala"), "nombreSala"), "html", null, true);
             echo "</td>
                     <td>";
             // line 39
@@ -105,8 +105,10 @@ class __TwigTemplate_6aa3a4f1940d946236c9a0be8295def2 extends Twig_Template
             // line 42
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("editarSala", array("id" => $this->getAttribute($this->getContext($context, "sala"), "id"))), "html", null, true);
             echo "\">Editar</a>
+                    </td>
+                    <td>
                         <a href=\"";
-            // line 43
+            // line 45
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("borrarSala", array("id" => $this->getAttribute($this->getContext($context, "sala"), "id"))), "html", null, true);
             echo "\">Borrar</a>
                     </td>
@@ -116,7 +118,7 @@ class __TwigTemplate_6aa3a4f1940d946236c9a0be8295def2 extends Twig_Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 48
+            // line 50
             echo "                <tr>
                     <td colspan=\"5\">No existe ninguna Sala</td>
                 </tr>
@@ -125,7 +127,7 @@ class __TwigTemplate_6aa3a4f1940d946236c9a0be8295def2 extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['sala'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 52
+        // line 54
         echo "                
                 
             </tbody>
@@ -149,6 +151,6 @@ class __TwigTemplate_6aa3a4f1940d946236c9a0be8295def2 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  127 => 52,  118 => 48,  108 => 43,  104 => 42,  99 => 40,  95 => 39,  91 => 38,  87 => 37,  83 => 35,  78 => 34,  60 => 19,  56 => 18,  52 => 17,  44 => 12,  35 => 7,  30 => 4,  27 => 3,);
+        return array (  129 => 54,  120 => 50,  110 => 45,  104 => 42,  99 => 40,  95 => 39,  91 => 38,  87 => 37,  83 => 35,  78 => 34,  60 => 19,  56 => 18,  52 => 17,  44 => 12,  35 => 7,  30 => 4,  27 => 3,);
     }
 }

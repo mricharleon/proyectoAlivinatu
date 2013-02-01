@@ -17,6 +17,15 @@ class UsuarioAdminType extends AbstractType
                 ->add('genero', 'choice', array(
                         'choices' => array('m' => 'Masculino', 'f' => 'Femenino')))
                 ->add('fNacimiento', 'text', array('label'=>'Nacimiento'))
+                
+                ->add('celular', 'text', array('label'=>'Celular'))
+                ->add('telefono', 'text', array('label'=>'Telefono'))
+                ->add('email', 'email', array('label'=>'Email'))
+                ->add('provincia', 'text', array('label'=>'Provincia'))
+                ->add('ciudad', 'text', array('label'=>'Ciudad'))
+                ->add('calle', 'text', array('label'=>'Calles'))
+                ->add('observacion', 'textarea', array('label'=>'Observaciones'))
+                
                 ->add('rol', 'choice', array(
                         'choices' => array('ROLE_USER' => 'Usuario', 'ROLE_ADMIN' => 'Administrador')
         ));

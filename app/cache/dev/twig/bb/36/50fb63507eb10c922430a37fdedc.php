@@ -76,15 +76,15 @@ class __TwigTemplate_bb3650fb63507eb10c922430a37fdedc extends Twig_Template
             
             ";
         // line 33
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "formSala"), "nombre"), 'errors');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "formSala"), "nombreSala"), 'errors');
         echo "
                 ";
         // line 34
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "formSala"), "nombre"), 'label');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "formSala"), "nombreSala"), 'label');
         echo "
                 ";
         // line 35
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "formSala"), "nombre"), 'widget');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "formSala"), "nombreSala"), 'widget');
         echo "
            
             

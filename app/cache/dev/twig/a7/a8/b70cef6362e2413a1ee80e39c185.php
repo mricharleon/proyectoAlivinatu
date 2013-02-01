@@ -56,7 +56,7 @@ class __TwigTemplate_a7a8b70cef6362e2413a1ee80e39c185 extends Twig_Template
 
         <div id=\"grid1\">
             
-            <div id=\"tituloForm\"><b>Ingresa</b> | Datos de Servicio</div>
+            <div id=\"tituloForm\"><b>Edita</b> | Datos de Servicio</div>
             
             ";
         // line 27
@@ -104,6 +104,34 @@ class __TwigTemplate_a7a8b70cef6362e2413a1ee80e39c185 extends Twig_Template
             <input id=\"botonForm\" type=\"submit\" value=\"Actualizar\" />
         
         </div>
+        
+        <div id=\"grid0\">
+            &nbsp;
+        </div>
+        
+        <div id=\"grid2\">
+            
+            <div id=\"tituloForm\"><b>Edita</b> | Opciones Adicionales</div>
+            ";
+        // line 51
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "formSala"), "nombreSala"), 'errors');
+        echo "
+                ";
+        // line 52
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "formSala"), "nombreSala"), 'label');
+        echo "
+                ";
+        // line 53
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "formSala"), "nombreSala"), 'widget');
+        echo "
+                
+            <a href=\"";
+        // line 55
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("adminServicio"), "html", null, true);
+        echo "\"><span id=\"botonForm2\">Cancelar</span></a>
+            <input id=\"botonForm\" type=\"submit\" value=\"Crear Servicio\" />
+        
+        </div>
 
     </form>
     
@@ -135,6 +163,6 @@ class __TwigTemplate_a7a8b70cef6362e2413a1ee80e39c185 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  117 => 10,  114 => 9,  100 => 39,  95 => 37,  91 => 36,  87 => 35,  82 => 33,  78 => 32,  74 => 31,  69 => 29,  65 => 28,  61 => 27,  52 => 21,  44 => 15,  42 => 9,  37 => 6,  34 => 5,  28 => 3,);
+        return array (  145 => 10,  142 => 9,  128 => 55,  123 => 53,  119 => 52,  115 => 51,  100 => 39,  95 => 37,  91 => 36,  87 => 35,  82 => 33,  78 => 32,  74 => 31,  69 => 29,  65 => 28,  61 => 27,  52 => 21,  44 => 15,  42 => 9,  37 => 6,  34 => 5,  28 => 3,);
     }
 }

@@ -72,33 +72,33 @@
             <div id="tituloForm"><b>Ingresa</b> | Datos de Contacto</div>
             {#<div id="barra">&nbsp;</div>#}
             
-            {{ form_errors(formContacto.celular) }}
-                {{ form_label(formContacto.celular) }}
-                {{ form_widget(formContacto.celular) }}
+            {{ form_errors(formAdmin.celular) }}
+                {{ form_label(formAdmin.celular) }}
+                {{ form_widget(formAdmin.celular) }}
             
-            {{ form_errors(formContacto.telefono) }}
-                {{ form_label(formContacto.telefono) }}
-                {{ form_widget(formContacto.telefono) }}
+            {{ form_errors(formAdmin.telefono) }}
+                {{ form_label(formAdmin.telefono) }}
+                {{ form_widget(formAdmin.telefono) }}
             
-            {{ form_errors(formContacto.email) }}
-                {{ form_label(formContacto.email) }}
-                {{ form_widget(formContacto.email) }}
+            {{ form_errors(formAdmin.email) }}
+                {{ form_label(formAdmin.email) }}
+                {{ form_widget(formAdmin.email) }}
             
-            {{ form_errors(formContacto.provincia) }}
-                {{ form_label(formContacto.provincia) }}
-                {{ form_widget(formContacto.provincia) }}
+            {{ form_errors(formAdmin.provincia) }}
+                {{ form_label(formAdmin.provincia) }}
+                {{ form_widget(formAdmin.provincia) }}
             
-            {{ form_errors(formContacto.ciudad) }}
-                {{ form_label(formContacto.ciudad) }}
-                {{ form_widget(formContacto.ciudad) }}
+            {{ form_errors(formAdmin.ciudad) }}
+                {{ form_label(formAdmin.ciudad) }}
+                {{ form_widget(formAdmin.ciudad) }}
             
-            {{ form_errors(formContacto.calle) }}
-                {{ form_label(formContacto.calle) }}
-                {{ form_widget(formContacto.calle) }}
+            {{ form_errors(formAdmin.calle) }}
+                {{ form_label(formAdmin.calle) }}
+                {{ form_widget(formAdmin.calle) }}
             
-            {{ form_errors(formContacto.observacion) }}
-                {{ form_label(formContacto.observacion) }}
-                {{ form_widget(formContacto.observacion, { 'attr': { 'wrap': 'soft' } }) }}
+            {{ form_errors(formAdmin.observacion) }}
+                {{ form_label(formAdmin.observacion) }}
+                {{ form_widget(formAdmin.observacion, { 'attr': { 'wrap': 'soft' } }) }}
             
             <a href="{{ path('adminCliente') }}"><span id="botonForm2">Cancelar</span></a>
             <input id="botonForm" type="submit" value="Actualizar" />

@@ -24,15 +24,6 @@ class Usuario implements UserInterface
 {
     
     /**
-     * @ORM\OneToOne(targetEntity="Contacto", inversedBy="usuario", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(name="contacto_id", referencedColumnName="id")
-     */
-    private $contacto;    
-    
-    
-    
-    
-    /**
      * @var integer $id
      *
      * @ORM\Column(name="id", type="integer")
@@ -116,6 +107,75 @@ class Usuario implements UserInterface
      * @Assert\NotBlank()
      */
     private $rol;
+    
+    /**
+     * @var string $calle
+     *
+     * @ORM\Column(name="calle", type="string")
+     * @Assert\NotBlank()
+     * @Assert\MinLength(15)
+     * @Assert\MaxLength(50)
+     */
+    private $calle;
+
+    /**
+     * @var string $ciudad
+     *
+     * @ORM\Column(name="ciudad", type="string")
+     * @Assert\NotBlank()
+     * @Assert\MinLength(4)
+     * @Assert\MaxLength(12)
+     */
+    private $ciudad;
+
+    /**
+     * @var string $email
+     *
+     * @ORM\Column(name="email", type="string")
+     * @Assert\Email()
+     * @Assert\NotBlank()
+     */
+    private $email;
+
+    /**
+     * @var string $celular
+     *
+     * @ORM\Column(name="celular", type="string")
+     * @Assert\NotBlank()
+     * @Assert\MinLength(10)
+     * @Assert\MaxLength(10)
+     */
+    private $celular;
+
+    /**
+     * @var string $telefono
+     *
+     * @ORM\Column(name="telefono", type="string")
+     * @Assert\NotBlank()
+     * @Assert\MinLength(7)
+     * @Assert\MaxLength(10)
+     */
+    private $telefono;
+
+    /**
+     * @var string $observacion
+     *
+     * @ORM\Column(name="observacion", type="string")
+     * @Assert\NotBlank()
+     * @Assert\MinLength(10)
+     * @Assert\MaxLength(255)
+     */
+    private $observacion;
+
+    /**
+     * @var string $provincia
+     *
+     * @ORM\Column(name="provincia", type="string")
+     * @Assert\NotBlank()
+     * @Assert\MinLength(4)
+     * @Assert\MaxLength(12)
+     */
+    private $provincia;
 
 
     /**
@@ -321,8 +381,10 @@ class Usuario implements UserInterface
     {
         return $this->rol;
     }
-
     
+    /*
+     * 
+     */   
     
     
     public function eraseCredentials() {
@@ -365,5 +427,166 @@ class Usuario implements UserInterface
     public function getContacto()
     {
         return $this->contacto;
+    }
+
+    /**
+     * Set calle
+     *
+     * @param string $calle
+     * @return Usuario
+     */
+    public function setCalle($calle)
+    {
+        $this->calle = $calle;
+    
+        return $this;
+    }
+
+    /**
+     * Get calle
+     *
+     * @return string 
+     */
+    public function getCalle()
+    {
+        return $this->calle;
+    }
+
+    /**
+     * Set ciudad
+     *
+     * @param string $ciudad
+     * @return Usuario
+     */
+    public function setCiudad($ciudad)
+    {
+        $this->ciudad = $ciudad;
+    
+        return $this;
+    }
+
+    /**
+     * Get ciudad
+     *
+     * @return string 
+     */
+    public function getCiudad()
+    {
+        return $this->ciudad;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return Usuario
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string 
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set celular
+     *
+     * @param string $celular
+     * @return Usuario
+     */
+    public function setCelular($celular)
+    {
+        $this->celular = $celular;
+    
+        return $this;
+    }
+
+    /**
+     * Get celular
+     *
+     * @return string 
+     */
+    public function getCelular()
+    {
+        return $this->celular;
+    }
+
+    /**
+     * Set telefono
+     *
+     * @param string $telefono
+     * @return Usuario
+     */
+    public function setTelefono($telefono)
+    {
+        $this->telefono = $telefono;
+    
+        return $this;
+    }
+
+    /**
+     * Get telefono
+     *
+     * @return string 
+     */
+    public function getTelefono()
+    {
+        return $this->telefono;
+    }
+
+    /**
+     * Set observacion
+     *
+     * @param string $observacion
+     * @return Usuario
+     */
+    public function setObservacion($observacion)
+    {
+        $this->observacion = $observacion;
+    
+        return $this;
+    }
+
+    /**
+     * Get observacion
+     *
+     * @return string 
+     */
+    public function getObservacion()
+    {
+        return $this->observacion;
+    }
+
+    /**
+     * Set provincia
+     *
+     * @param string $provincia
+     * @return Usuario
+     */
+    public function setProvincia($provincia)
+    {
+        $this->provincia = $provincia;
+    
+        return $this;
+    }
+
+    /**
+     * Get provincia
+     *
+     * @return string 
+     */
+    public function getProvincia()
+    {
+        return $this->provincia;
     }
 }

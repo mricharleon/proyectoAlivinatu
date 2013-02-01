@@ -1,0 +1,79 @@
+{% extends 'AlivinatuBundle::layout.html.twig' %}
+    
+{% block title %}
+    Admin. Promoción
+{% endblock %}
+
+{% block contenido %}     
+    <div id="contenido">
+        
+        <div id="cajaContenido">
+            <div id="tituloForm"><b>Administración de Promociones</b> | Administra todas las Promociones</div>
+            <form id="formAdminClienteBuscar" action="{{ path('adminPromocion') }}" method="POST">
+                <spam id="tituloAdminCU">Ingresa Criterio de Búsqueda</spam>
+                <input type="text" id="inputCUBuscar" name="datoBuscar" placeholder="Ingresa tu búsqueda" />
+                
+                <input id="botonCUBuscar" type="submit" value="Buscar">
+                <a href="{{ path('adminPromocion') }}"><span id="botonCU">Restaurar</span></a>
+                <a href="{{ path('registroPromocion') }}"><span id="botonCU">Nueva Promoción</span></a>
+                <a href="{{ path('menuAdmin') }}"><span id="botonCU">Menu</span></a>
+            </form>
+            <div id="cajaScroll">
+            
+            <table cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descuento</th>
+                    <th>Descripción</th>
+                    <th>Servicios</th>
+                    <th colspan="2">Opciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% set np = '' %}
+                {% for promocion in promociones %}
+                
+                    {% if np != promocion.nombrePromocion %}
+                        {% if promocion.nombrePromocion != 'Ninguna' %}
+                            <tr>
+                                <td>{{ promocion.nombrePromocion }}</td>
+                                <td>{{ promocion.descuento }}%</td>
+                                <td>{{ promocion.descripcion }}</td>
+                                <td>
+                                    <ul style="list-style: symbols; margin: 0px; padding: 0px 0px 0px 15px">
+                                        {% for p in promociones %}
+                                           {% if p.nombrePromocion == promocion.nombrePromocion %}
+                                            <li style="left: 0px;">{{ p.nombre }}</li>
+                                           {% endif %}
+                                        {% endfor %} 
+                                    </ul>
+                                </td>
+                                <td>
+                                    <a href="{{ path('editarPromocion', { 'id': promocion.id }) }}">Editar</a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('borrarPromocion', { 'id': promocion.id }) }}">Borrar</a>
+                                </td>
+                            </tr>
+                            {% set np = promocion.nombrePromocion %}
+                        {% endif %} 
+                    {% endif %}
+                            
+                {% else %}
+                <tr>
+                    <td colspan="5">No existe ninguna Promoción</td>
+                </tr>
+                {% endfor %}
+ 
+            </tbody>
+        </table>
+                </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+
+

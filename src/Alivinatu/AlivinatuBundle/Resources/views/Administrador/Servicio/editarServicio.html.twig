@@ -22,7 +22,7 @@
 
         <div id="grid1">
             
-            <div id="tituloForm"><b>Ingresa</b> | Datos de Servicio</div>
+            <div id="tituloForm"><b>Edita</b> | Datos de Servicio</div>
             
             {{ form_errors(formServicio.nombre) }}
                 {{ form_label(formServicio.nombre) }}
@@ -38,6 +38,22 @@
             
             <a href="{{ path('adminServicio') }}"><span id="botonForm2">Cancelar</span></a>
             <input id="botonForm" type="submit" value="Actualizar" />
+        
+        </div>
+        
+        <div id="grid0">
+            &nbsp;
+        </div>
+        
+        <div id="grid2">
+            
+            <div id="tituloForm"><b>Edita</b> | Opciones Adicionales</div>
+            {{ form_errors(formSala.nombreSala) }}
+                {{ form_label(formSala.nombreSala) }}
+                {{ form_widget(formSala.nombreSala) }}
+                
+            <a href="{{ path('adminServicio') }}"><span id="botonForm2">Cancelar</span></a>
+            <input id="botonForm" type="submit" value="Crear Servicio" />
         
         </div>
 

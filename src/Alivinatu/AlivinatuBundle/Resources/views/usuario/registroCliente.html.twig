@@ -75,33 +75,33 @@
             <div id="tituloForm"><b>Ingresa</b> | Datos de Contacto</div>
             {#<div id="barra">&nbsp;</div>#}
             
-            {{ form_errors(formContacto.celular) }}
-                {{ form_label(formContacto.celular) }}
-                {{ form_widget(formContacto.celular) }}
+            {{ form_errors(formCliente.celular) }}
+                {{ form_label(formCliente.celular) }}
+                {{ form_widget(formCliente.celular) }}
             
-            {{ form_errors(formContacto.telefono) }}
-                {{ form_label(formContacto.telefono) }}
-                {{ form_widget(formContacto.telefono) }}
+            {{ form_errors(formCliente.telefono) }}
+                {{ form_label(formCliente.telefono) }}
+                {{ form_widget(formCliente.telefono) }}
             
-            {{ form_errors(formContacto.email) }}
-                {{ form_label(formContacto.email) }}
-                {{ form_widget(formContacto.email) }}
+            {{ form_errors(formCliente.email) }}
+                {{ form_label(formCliente.email) }}
+                {{ form_widget(formCliente.email) }}
             
-            {{ form_errors(formContacto.provincia) }}
-                {{ form_label(formContacto.provincia) }}
-                {{ form_widget(formContacto.provincia) }}
+            {{ form_errors(formCliente.provincia) }}
+                {{ form_label(formCliente.provincia) }}
+                {{ form_widget(formCliente.provincia) }}
             
-            {{ form_errors(formContacto.ciudad) }}
-                {{ form_label(formContacto.ciudad) }}
-                {{ form_widget(formContacto.ciudad) }}
+            {{ form_errors(formCliente.ciudad) }}
+                {{ form_label(formCliente.ciudad) }}
+                {{ form_widget(formCliente.ciudad) }}
             
-            {{ form_errors(formContacto.calle) }}
-                {{ form_label(formContacto.calle) }}
-                {{ form_widget(formContacto.calle) }}
+            {{ form_errors(formCliente.calle) }}
+                {{ form_label(formCliente.calle) }}
+                {{ form_widget(formCliente.calle) }}
             
-            {{ form_errors(formContacto.observacion) }}
-                {{ form_label(formContacto.observacion) }}
-                {{ form_widget(formContacto.observacion, { 'attr': { 'wrap': 'soft' } }) }}
+            {{ form_errors(formCliente.observacion) }}
+                {{ form_label(formCliente.observacion) }}
+                {{ form_widget(formCliente.observacion, { 'attr': { 'wrap': 'soft' } }) }}
             
             <a href="{{ path('alivinatu_homepage') }}"><span id="botonForm2">Cancelar</span></a>
             <input id="botonForm" type="submit" value="Crear Cuenta" />

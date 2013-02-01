@@ -94,9 +94,58 @@ class __TwigTemplate_3ff24c006303f88f4e8a83a1308f76d4 extends Twig_Template
         // line 35
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "formServicio"), "descripcion"), 'widget');
         echo "
+        
+        </div>
+        
+        <div id=\"grid0\">
+            &nbsp;
+        </div>
+        
+        <div id=\"grid2\">
             
+            <div id=\"tituloForm\"><b>Agrega</b> | Opciones Adicionales</div>
+            <label>Agrega una Sala</label>
+            <select name=\"nombreSala\">
+               <option></option>
+                ";
+        // line 49
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "salas"));
+        foreach ($context['_seq'] as $context["_key"] => $context["sala"]) {
+            // line 50
+            echo "                    <option>";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "sala"), "nombreSala"), "html", null, true);
+            echo "</option>
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['sala'], $context['_parent'], $context['loop']);
+        $context = array_merge($_parent, array_intersect_key($context, $_parent));
+        // line 52
+        echo "            </select>
+            
+            <label>Agrega una Promoción</label>
+            <select name=\"nombrePromocion\">
+                
+                 ";
+        // line 57
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "promociones"));
+        foreach ($context['_seq'] as $context["_key"] => $context["promocion"]) {
+            // line 58
+            echo "                     <option>";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "promocion"), "nombrePromocion"), "html", null, true);
+            echo "</option>
+                 ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['promocion'], $context['_parent'], $context['loop']);
+        $context = array_merge($_parent, array_intersect_key($context, $_parent));
+        // line 60
+        echo "             </select>
+                
             <a href=\"";
-        // line 37
+        // line 62
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("adminServicio"), "html", null, true);
         echo "\"><span id=\"botonForm2\">Cancelar</span></a>
             <input id=\"botonForm\" type=\"submit\" value=\"Crear Servicio\" />
@@ -133,6 +182,6 @@ class __TwigTemplate_3ff24c006303f88f4e8a83a1308f76d4 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  115 => 10,  112 => 9,  98 => 37,  93 => 35,  89 => 34,  85 => 33,  80 => 31,  76 => 30,  72 => 29,  67 => 27,  63 => 26,  59 => 25,  50 => 19,  44 => 15,  42 => 9,  37 => 6,  34 => 5,  28 => 3,);
+        return array (  164 => 10,  161 => 9,  147 => 62,  143 => 60,  134 => 58,  130 => 57,  123 => 52,  114 => 50,  110 => 49,  93 => 35,  89 => 34,  85 => 33,  80 => 31,  76 => 30,  72 => 29,  67 => 27,  63 => 26,  59 => 25,  50 => 19,  44 => 15,  42 => 9,  37 => 6,  34 => 5,  28 => 3,);
     }
 }

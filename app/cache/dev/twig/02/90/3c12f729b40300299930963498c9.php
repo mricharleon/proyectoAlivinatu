@@ -76,15 +76,15 @@ class __TwigTemplate_02903c12f729b40300299930963498c9 extends Twig_Template
             
             ";
         // line 33
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "formSala"), "nombre"), 'errors');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "formSala"), "nombreSala"), 'errors');
         echo "
                 ";
         // line 34
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "formSala"), "nombre"), 'label');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "formSala"), "nombreSala"), 'label');
         echo "
                 ";
         // line 35
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "formSala"), "nombre"), 'widget');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "formSala"), "nombreSala"), 'widget');
         echo "
            
             
@@ -119,7 +119,7 @@ class __TwigTemplate_02903c12f729b40300299930963498c9 extends Twig_Template
         // line 47
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("adminSala"), "html", null, true);
         echo "\"><span id=\"botonForm2\">Cancelar</span></a>
-            <input id=\"botonForm\" type=\"submit\" value=\"Crear Cuenta\" />
+            <input id=\"botonForm\" type=\"submit\" value=\"Crear Sala\" />
         
         </div>
 

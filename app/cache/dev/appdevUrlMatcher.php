@@ -233,6 +233,26 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::editarServicioAction',)), array('_route' => 'editarServicio'));
         }
 
+        // adminPromocion
+        if ($pathinfo === '/admin/promocion') {
+            return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::adminPromocionAction',  '_route' => 'adminPromocion',);
+        }
+
+        // registroPromocion
+        if ($pathinfo === '/admin/registroPromocion') {
+            return array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::registroPromocionAction',  '_route' => 'registroPromocion',);
+        }
+
+        // borrarPromocion
+        if (0 === strpos($pathinfo, '/admin/promocio') && preg_match('#^/admin/promocion(?<id>[^n]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::borrarPromocionAction',)), array('_route' => 'borrarPromocion'));
+        }
+
+        // editarPromocion
+        if (0 === strpos($pathinfo, '/admin/editarPromocio') && preg_match('#^/admin/editarPromocion(?<id>[^n]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Alivinatu\\AlivinatuBundle\\Controller\\AdminController::editarPromocionAction',)), array('_route' => 'editarPromocion'));
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

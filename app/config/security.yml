@@ -16,7 +16,7 @@ security:
 
     providers:
       main:
-            entity: { class: Alivinatu\AlivinatuBundle\Entity\Usuario, property: email }
+            entity: { class: Alivinatu\AlivinatuBundle\Entity\Usuario, property: usuario }    
     encoders:
         Symfony\Component\Security\Core\User\User:
             algorithm:  sha1

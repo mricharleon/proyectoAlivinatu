@@ -73,6 +73,23 @@ borrarServicio:
 editarServicio:
   pattern:  /admin/editarServicio{id}
   defaults: { _controller: 'AlivinatuBundle:Admin:editarServicio' }
+  
+  # rutas para el CU de administrar promociones
+adminPromocion:
+  pattern:  /admin/promocion
+  defaults: { _controller: 'AlivinatuBundle:Admin:adminPromocion' }
+  
+registroPromocion:
+  pattern:  /admin/registroPromocion
+  defaults: { _controller: 'AlivinatuBundle:Admin:registroPromocion' }
+  
+borrarPromocion:
+  pattern:  /admin/promocion{id}
+  defaults: { _controller: 'AlivinatuBundle:Admin:borrarPromocion' }
+  
+editarPromocion:
+  pattern:  /admin/editarPromocion{id}
+  defaults: { _controller: 'AlivinatuBundle:Admin:editarPromocion' }
 
       
 # Internal routing configuration to handle ESI

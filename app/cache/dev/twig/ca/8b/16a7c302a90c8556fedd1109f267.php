@@ -71,60 +71,57 @@ class __TwigTemplate_ca8b16a7c302a90c8556fedd1109f267 extends Twig_Template
                     <th>Apellido</th>
                     <th>Fecha de Nacimiento</th>
                     <th>Usuario</th>
-                    <th>Contraseña</th>
                     <th>Ciudad</th>
                     <th>Teléfono</th>
-                    <th>Opciones</th>
+                    <th colspan=\"2\">Opciones</th>
                 </tr>
             </thead>
 
             <tbody>
                 ";
-        // line 38
+        // line 37
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getContext($context, "cuentas"));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["cuenta"]) {
-            // line 39
+            // line 38
             echo "                    
                 <tr>
                     <td>";
-            // line 41
+            // line 40
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "cuenta"), "cedula"), "html", null, true);
             echo "</td>
                     <td>";
-            // line 42
+            // line 41
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "cuenta"), "nombre"), "html", null, true);
             echo "</td>
                     <td>";
-            // line 43
+            // line 42
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "cuenta"), "apellido"), "html", null, true);
             echo "</td>
                     <td>";
-            // line 44
+            // line 43
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "cuenta"), "fNacimiento"), "html", null, true);
             echo "</td>
                     <td>";
-            // line 45
+            // line 44
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "cuenta"), "usuario"), "html", null, true);
             echo "</td>
                     <td>";
-            // line 46
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "cuenta"), "password"), "html", null, true);
-            echo "</td>
-                    <td>";
-            // line 47
+            // line 45
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "cuenta"), "ciudad"), "html", null, true);
             echo "</td>
                     <td>";
-            // line 48
+            // line 46
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "cuenta"), "telefono"), "html", null, true);
             echo "</td>
                     <td>
                         <a href=\"";
-            // line 50
+            // line 48
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("editarCliente", array("id" => $this->getAttribute($this->getContext($context, "cuenta"), "id"))), "html", null, true);
             echo "\">Editar</a>
+                    </td>
+                    <td>
                         <a href=\"";
             // line 51
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("borrarCliente", array("id" => $this->getAttribute($this->getContext($context, "cuenta"), "id"))), "html", null, true);
@@ -169,6 +166,6 @@ class __TwigTemplate_ca8b16a7c302a90c8556fedd1109f267 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  147 => 60,  138 => 56,  128 => 51,  124 => 50,  119 => 48,  115 => 47,  111 => 46,  107 => 45,  103 => 44,  99 => 43,  95 => 42,  91 => 41,  87 => 39,  82 => 38,  60 => 19,  56 => 18,  52 => 17,  44 => 12,  35 => 7,  30 => 4,  27 => 3,);
+        return array (  144 => 60,  135 => 56,  125 => 51,  119 => 48,  114 => 46,  110 => 45,  106 => 44,  102 => 43,  98 => 42,  94 => 41,  90 => 40,  86 => 38,  81 => 37,  60 => 19,  56 => 18,  52 => 17,  44 => 12,  35 => 7,  30 => 4,  27 => 3,);
     }
 }

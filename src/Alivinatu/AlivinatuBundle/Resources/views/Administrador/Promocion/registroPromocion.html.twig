@@ -1,0 +1,86 @@
+{% extends 'AlivinatuBundle::layout.html.twig' %}
+
+{% block title %}Registro Promoción{% endblock %}
+
+{% block contenido %}
+      
+<div id="contenido">
+    
+    {% block tituloContenido %}
+        
+        <hr>
+        <div id="tituloOferta">Crea una nueva Promoción</div>
+        <hr>
+    {% endblock %}
+    
+        <div id="notaForm"><b><u>NOTA:</u></b> Bienvenido(a) al Sistema de Registro de una Nueva Promoción Alivinatu, para la 
+            correcta creación de una promoción se solicita muy comedidamente ingresar TODOS LOS CAMPOS que se exponen a continuación. </div>
+     
+    <form action="{{ path('registroServicio') }}" method="post" id="formRegistro" >
+
+        <div id="grid1">
+            
+            <div id="tituloForm"><b>Ingresa</b> | Datos de Promoción</div>
+            
+            {{ form_errors(formPromocion.nombrePromocion) }}
+                {{ form_label(formPromocion.nombrePromocion) }}
+                {{ form_widget(formPromocion.nombrePromocion) }}
+           
+            {{ form_errors(formPromocion.descuento) }}
+                {{ form_label(formPromocion.descuento) }}
+                {{ form_widget(formPromocion.descuento) }}
+
+            {{ form_errors(formPromocion.descripcion) }}
+                {{ form_label(formPromocion.descripcion) }}
+                {{ form_widget(formPromocion.descripcion) }}
+        
+        </div>
+        
+        <div id="grid0" style="width: 30px">
+            &nbsp;
+        </div>
+        
+        <div id="grid2" style="width: 500px">
+            
+            <div id="tituloForm"><b>Agrega</b> | Opciones Adicionales</div>
+            
+            <table cellspacing="0" cellpadding="0" style="width: 450px">
+            <thead>
+                <tr>
+                    <th style="text-align: center; opacity: .9">Servicio</th>
+                    <th style="text-align: center; width: 125px; opacity: .9">Agregar promoción</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            {% if servicios != 'null' %}
+            {% for servicio in servicios %}
+                <tr>           
+                    <td>
+                        {{ servicio.nombre }}
+                        <td style="text-align: center">
+                            <input type="checkbox" name="{{ servicio.nombre }}"/>
+                        </td>
+                    </td>
+                    
+                </tr>
+            {% endfor %}
+            {% else %}                    
+                <tr>
+                    <td colspan="5">No existe ninguna Promoción</td>
+                </tr>
+            {% endif %}
+ 
+            </tbody>
+        </table>
+                
+            <a href="{{ path('adminPromocion') }}"><span id="botonForm2">Cancelar</span></a>
+            <input id="botonForm" type="submit" value="Crear Servicio" />
+        
+        </div>
+
+    </form>
+    
+</div>
+
+{% endblock %}

@@ -27,10 +27,9 @@
                     <th>Apellido</th>
                     <th>Fecha de Nacimiento</th>
                     <th>Usuario</th>
-                    <th>Contraseña</th>
                     <th>Ciudad</th>
                     <th>Teléfono</th>
-                    <th>Opciones</th>
+                    <th colspan="2">Opciones</th>
                 </tr>
             </thead>
 
@@ -43,11 +42,12 @@
                     <td>{{ cuenta.apellido }}</td>
                     <td>{{ cuenta.fNacimiento }}</td>
                     <td>{{ cuenta.usuario }}</td>
-                    <td>{{ cuenta.password }}</td>
                     <td>{{ cuenta.ciudad }}</td>
                     <td>{{ cuenta.telefono }}</td>
                     <td>
                         <a href="{{ path('editarCliente', { 'id': cuenta.id }) }}">Editar</a>
+                    </td>
+                    <td>
                         <a href="{{ path('borrarCliente', { 'id': cuenta.id }) }}">Borrar</a>
                     </td>
   
