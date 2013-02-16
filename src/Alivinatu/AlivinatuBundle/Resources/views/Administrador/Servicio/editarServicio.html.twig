@@ -3,31 +3,31 @@
 {% block title %}Editar Servicio{% endblock %}
 
 {% block contenido %}
-      
+
 <div id="contenido">
-    
+
     {% block tituloContenido %}
-        
-        <hr>
-        <div id="tituloOferta">Edita el Servicio</div>
-        <hr>
+
+    <hr>
+    <div id="tituloOferta">Edita el Servicio</div>
+    <hr>
     {% endblock %}
-    
-        <div id="notaForm"><b><u>NOTA:</u></b> Bienvenido(a) al Sistema de Edición de Servicios Alivinatu, para la 
-            correcta edición del servicio se solicita muy comedidamente ingresar TODOS LOS CAMPOS que se exponen a continuación. </div>
-        
-    
-        
+
+    <div id="notaForm"><b><u>NOTA:</u></b> Bienvenido(a) al Sistema de Edición de Servicios Alivinatu, para la 
+        correcta edición del servicio se solicita muy comedidamente ingresar TODOS LOS CAMPOS que se exponen a continuación. </div>
+
+
+
     <form action="{{ path('editarServicio', { 'id':id }) }}" method="post" id="formRegistro" >
 
         <div id="grid1">
-            
+
             <div id="tituloForm"><b>Edita</b> | Datos de Servicio</div>
-            
+
             {{ form_errors(formServicio.nombre) }}
                 {{ form_label(formServicio.nombre) }}
                 {{ form_widget(formServicio.nombre) }}
-           
+
             {{ form_errors(formServicio.costo) }}
                 {{ form_label(formServicio.costo) }}
                 {{ form_widget(formServicio.costo) }}
@@ -36,27 +36,48 @@
                 {{ form_label(formServicio.descripcion) }}
                 {{ form_widget(formServicio.descripcion) }}
 
-        
+
         </div>
-        
+
         <div id="grid0">
             &nbsp;
         </div>
-        
+
         <div id="grid2">
-            
+
             <div id="tituloForm"><b>Edita</b> | Opciones Adicionales</div>
-            {{ form_errors(formSala.nombreSala) }}
-                {{ form_label(formSala.nombreSala) }}
-                {{ form_widget(formSala.nombreSala) }}
-                
+            <label>Agrega una Sala</label>
+            
+            <select name="nombreSala">
+                <option></option>
+                {% for sala in salas %}
+                    {% if sala.nombreSala != salaSelect.nombreSala %}
+                        <option>{{ sala.nombreSala }}</option>
+                        {% else %}
+                        <option selected="true">{{ salaSelect.nombreSala }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+
+            <label>Agrega una Promoción</label>
+            <select name="nombrePromocion">
+
+                 {% for promocion in promociones %}
+                    {% if promocion.nombrePromocion != promocionSelect.nombrePromocion %}
+                        <option>{{ promocion.nombrePromocion }}</option>
+                        {% else %}
+                        <option selected="true">{{ promocionSelect.nombrePromocion }}</option>
+                    {% endif %}
+                 {% endfor %}
+            </select>
+
             <a href="{{ path('adminServicio') }}"><span id="botonForm2">Cancelar</span></a>
             <input id="botonForm" type="submit" value="Actualizar" />
-        
+
         </div>
 
     </form>
-    
+
 </div>
 
 {% endblock %}

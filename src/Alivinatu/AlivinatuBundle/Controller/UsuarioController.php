@@ -45,10 +45,10 @@ class UsuarioController extends Controller
         
         if ($request->getMethod() == 'POST') {
             
-            //$formAdmin->bindRequest($request);
-            $formAdmin->bind($request);
+            $formAdmin->bindRequest($request);
+            //$formAdmin->bind($request);
             if ( $formAdmin->isValid() ) {
-                
+                 
                //  Obtenemos el usuario
                 $usuario = $formAdmin->getData();
 
