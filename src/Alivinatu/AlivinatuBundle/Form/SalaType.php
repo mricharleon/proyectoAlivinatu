@@ -12,7 +12,7 @@ class SalaType extends AbstractType
         $builder->add('numero', 'integer', array('label'=>'Número'))
                 ->add('nombreSala', 'text', array('label'=>'Nombre'))
                 ->add('estado', 'choice', array(
-                        'choices' => array('Disponible' => 'Disponible', 'Ocupado' => 'Ocupado')))
+                        'choices' => array('' => '', 'Disponible' => 'Disponible', 'Ocupado' => 'Ocupado')))
                 ->add('descripcion', 'textarea', array('label'=>'Descripción'));
     }
     

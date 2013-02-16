@@ -32,10 +32,6 @@ adminCliente:
   pattern:  /admin/cliente
   defaults: { _controller: 'AlivinatuBundle:Admin:adminCliente' }
   
-borrarCliente:
-  pattern:  /admin/cliente{id}
-  defaults: { _controller: 'AlivinatuBundle:Admin:borrarCliente' }
-  
 editarCliente:
   pattern:  /admin/editarCliente{id}
   defaults: { _controller: 'AlivinatuBundle:Admin:editarCliente' }
@@ -48,10 +44,6 @@ adminSala:
 registroSala:
   pattern:  /admin/registroSala
   defaults: { _controller: 'AlivinatuBundle:Admin:registroSala' }
-  
-borrarSala:
-  pattern:  /admin/sala{id}
-  defaults: { _controller: 'AlivinatuBundle:Admin:borrarSala' }
   
 editarSala:
   pattern:  /admin/editarSala{id}
@@ -66,10 +58,6 @@ registroServicio:
   pattern:  /admin/registroServicio
   defaults: { _controller: 'AlivinatuBundle:Admin:registroServicio' }
   
-borrarServicio:
-  pattern:  /admin/servicio{id}
-  defaults: { _controller: 'AlivinatuBundle:Admin:borrarServicio' }
-  
 editarServicio:
   pattern:  /admin/editarServicio{id}
   defaults: { _controller: 'AlivinatuBundle:Admin:editarServicio' }
@@ -82,10 +70,6 @@ adminPromocion:
 registroPromocion:
   pattern:  /admin/registroPromocion
   defaults: { _controller: 'AlivinatuBundle:Admin:registroPromocion' }
-  
-borrarPromocion:
-  pattern:  /admin/promocion{id}
-  defaults: { _controller: 'AlivinatuBundle:Admin:borrarPromocion' }
   
 editarPromocion:
   pattern:  /admin/editarPromocion{id}

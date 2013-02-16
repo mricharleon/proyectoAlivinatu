@@ -16,7 +16,7 @@
         <div id="notaForm"><b><u>NOTA:</u></b> Bienvenido(a) al Sistema de Registro de una Nueva Promoción Alivinatu, para la 
             correcta creación de una promoción se solicita muy comedidamente ingresar TODOS LOS CAMPOS que se exponen a continuación. </div>
      
-    <form action="{{ path('registroServicio') }}" method="post" id="formRegistro" >
+    <form action="{{ path('registroPromocion') }}" method="post" id="formRegistro" >
 
         <div id="grid1">
             
@@ -48,26 +48,28 @@
             <thead>
                 <tr>
                     <th style="text-align: center; opacity: .9">Servicio</th>
-                    <th style="text-align: center; width: 125px; opacity: .9">Agregar promoción</th>
+                    <th style="text-align: center; width: 125px; opacity: .9">Asignar Promoción</th>
                 </tr>
             </thead>
 
             <tbody>
             {% if servicios != 'null' %}
-            {% for servicio in servicios %}
-                <tr>           
-                    <td>
-                        {{ servicio.nombre }}
-                        <td style="text-align: center">
-                            <input type="checkbox" name="{{ servicio.nombre }}"/>
+                    {% set i=0 %}
+                {% for servicio in servicios %}
+                    <tr>           
+                        <td>
+                            {{ servicio.nombre }}
+                            <td style="text-align: center">
+                                <input type="checkbox" id="{{ i }}" name="nombreServicio[]" value="{{ servicio.nombre }}" />
+                                <label id="labelcheckbox" for="{{ i }}"><span></span></label>
+                            </td>
                         </td>
-                    </td>
-                    
-                </tr>
-            {% endfor %}
+
+                    </tr>
+                {% endfor %}
             {% else %}                    
                 <tr>
-                    <td colspan="5">No existe ninguna Promoción</td>
+                    <td>No existe ningun Servicio</td>
                 </tr>
             {% endif %}
  
@@ -75,7 +77,7 @@
         </table>
                 
             <a href="{{ path('adminPromocion') }}"><span id="botonForm2">Cancelar</span></a>
-            <input id="botonForm" type="submit" value="Crear Servicio" />
+            <input id="botonForm" type="submit" value="Crear Promoción" />
         
         </div>
 

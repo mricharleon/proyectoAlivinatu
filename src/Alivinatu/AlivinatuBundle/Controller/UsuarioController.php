@@ -45,12 +45,12 @@ class UsuarioController extends Controller
         
         if ($request->getMethod() == 'POST') {
             
-            $formAdmin->bindRequest($request);
-            
-           // if ( $formAdmin->isValid() ) {
+            //$formAdmin->bindRequest($request);
+            $formAdmin->bind($request);
+            if ( $formAdmin->isValid() ) {
                 
-//                 Obtenemos el usuario
-                //$usuario = $formAdmin->getData();
+               //  Obtenemos el usuario
+                $usuario = $formAdmin->getData();
 
                 // Codificamos el password
 //                $factory = $this->get('security.encoder_factory');
@@ -80,7 +80,9 @@ class UsuarioController extends Controller
                 }
                 return $this->redirect($this->generateURL('adminCliente'));
          
-           // }
+            }else{
+                echo "<h3>no valida...!!!</h3>";
+            }
         }
         
         

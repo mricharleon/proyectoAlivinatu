@@ -51,10 +51,8 @@
                                     </ul>
                                 </td>
                                 <td>
-                                    <a href="{{ path('editarPromocion', { 'id': promocion.id }) }}">Editar</a>
-                                </td>
-                                <td>
-                                    <a href="{{ path('borrarPromocion', { 'id': promocion.id }) }}">Borrar</a>
+                                    <a href="{{ path('editarPromocion', { 
+                                        'id': promocion.id, 'nombre': promocion.nombre }) }}">Editar</a>
                                 </td>
                             </tr>
                             {% set np = promocion.nombrePromocion %}

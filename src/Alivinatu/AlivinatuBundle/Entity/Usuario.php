@@ -37,7 +37,7 @@ class Usuario implements UserInterface
      * @var string $apellido
      *
      * @ORM\Column(name="apellido", type="string")
-     * @Assert\NotBlank()
+     * @Assert\NotBlank() (grupos = {"registro"})
      * @Assert\MinLength(4)
      * @Assert\MaxLength(12)
      */

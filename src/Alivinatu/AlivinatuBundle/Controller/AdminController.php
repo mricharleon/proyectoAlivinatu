@@ -1,21 +1,15 @@
 <?php
 
 namespace Alivinatu\AlivinatuBundle\Controller;
-
-use Alivinatu\AlivinatuBundle\Form\ContactoType;
 use Alivinatu\AlivinatuBundle\Form\UsuarioAdminType;
 use Alivinatu\AlivinatuBundle\Form\SalaType;
 use Alivinatu\AlivinatuBundle\Form\ServicioType;
-use Alivinatu\AlivinatuBundle\Form\UsuarioClienteType;
 use Alivinatu\AlivinatuBundle\Form\PromocionType;
 
 use Alivinatu\AlivinatuBundle\Entity\Usuario;
 use Alivinatu\AlivinatuBundle\Entity\Sala;
 use Alivinatu\AlivinatuBundle\Entity\Servicio;
-use Alivinatu\AlivinatuBundle\Entity\Cliente;
 use Alivinatu\AlivinatuBundle\Entity\Promocion;
-use Alivinatu\AlivinatuBundle\Entity\Administrador;
-use Alivinatu\AlivinatuBundle\Entity\Contacto;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class AdminController extends Controller
@@ -36,18 +30,12 @@ public function adminClienteAction()
         if ($request->getMethod() != 'POST'){
             
         $em = $this->getDoctrine()->getEntityManager();
-        //$q = $em->createQuery("select u from Alivinatu\AlivinatuBundle\Entity\Usuario u where u.id = 6");
-        
-        //$q = $em->createQuery("SELECT u, c FROM Alivinatu\AlivinatuBundle\Entity\Usuario u JOIN u.contacto c WHERE c.calle = 'q2'");
-        ///$q = $em->createQuery("SELECT c, u FROM Alivinatu\AlivinatuBundle\Entity\Contacto c JOIN c.usuario u WHERE u.id = c.usuario");
-        
+
         /* recupera todos los id de usuario que tienen contacto */
         $q = $em->createQuery('SELECT u.id, u.cedula, u.nombre, u.apellido,
             u.fNacimiento, u.usuario, u.ciudad, u.telefono
             FROM Alivinatu\AlivinatuBundle\Entity\Usuario u ORDER BY u.nombre ASC');
-        /* recupera algo mismo */
-        //$q = $em->createQuery("SELECT u FROM Alivinatu\AlivinatuBundle\Entity\Usuario u LEFT JOIN u.contacto c WHERE c.calle = 'q2'");
-        
+
         $users = $q->getResult();
      
         return $this->render('AlivinatuBundle:Administrador\Cliente:AdminCliente.html.twig', array(
@@ -70,17 +58,6 @@ public function adminClienteAction()
                 'cuentas' => $users2
             ));
         }
-    }
-    
-    /*
-     * Funcion Borrar Cuenta de Cliente
-     */
-    public function borrarClienteAction($id) {
-        $em = $this->getDoctrine()->getEntityManager();
-        $usuario = $em->getRepository('AlivinatuBundle:Usuario')->find($id);
-        $em->remove($usuario);
-        $em->flush();
-        return $this->redirect($this->generateUrl('adminCliente'));
     }
     
     public function editarClienteAction($id) 
@@ -209,19 +186,7 @@ public function adminClienteAction()
                 array('formSala' => $formSala->createView()
                     ));
     }
-    
-        /*
-     * Funcion Borrar sala
-     */
-    public function borrarSalaAction($id) {
-        $em = $this->getDoctrine()->getEntityManager();
-        $sala = $em->getRepository('AlivinatuBundle:Sala')->find($id);
-        $em->remove($sala);
-        $em->flush();
-        return $this->redirect($this->generateUrl('adminSala'));
-    }
-    
-    
+
     public function editarSalaAction($id) {
 
         $request = $this->getRequest();
@@ -361,28 +326,7 @@ public function adminClienteAction()
                     'salas' => $salas
                     ));
     }
-    
-    
-    
-    
-    /*
-     * Funcion Borrar sala
-     */
-    public function borrarServicioAction($id) {
-        $em = $this->getDoctrine()->getEntityManager();
-        $servicio = $em->getRepository('AlivinatuBundle:Servicio')->find($id);
-        $a = $_GET["nSala"];
-        $sal = $em->getRepository('AlivinatuBundle:Sala')->findOneByNombreSala($a);
-        $idSala = $sal->getId();
-
-        $sala = $em->getRepository('AlivinatuBundle:Sala')->find($idSala);
-        $sala->removeServicio($servicio);
-        $em->remove($servicio);
-        $em->flush();
-        return $this->redirect($this->generateUrl('adminServicio'));
-    }
-    
-    
+   
     public function editarServicioAction($id) {
 
         $request = $this->getRequest();
@@ -478,9 +422,11 @@ public function adminClienteAction()
         $promocion = new Promocion();
         
         $em = $this->getDoctrine()->getEntityManager();
-
-        $qServicios = $em->createQuery("SELECT s.id, s.nombre
-        FROM Alivinatu\AlivinatuBundle\Entity\Servicio s
+        
+        $qServicios = $em->createQuery("SELECT s.id, s.nombre, p.nombrePromocion
+        FROM Alivinatu\AlivinatuBundle\Entity\Servicio s 
+        JOIN s.promocion p
+        WHERE p.nombrePromocion = 'Ninguna'
         ORDER BY s.nombre ASC"
                 );
         $servicios = $qServicios->getResult();
@@ -489,28 +435,47 @@ public function adminClienteAction()
         
         if ($request->getMethod() == 'POST') {
             $promocion = new Promocion();
-            $formPromocion = $this->createForm(new PromcoionType(), $promocion);
+            $formPromocion = $this->createForm(new PromocionType(), $promocion);
             $formPromocion->bindRequest($request);
             
-            $qListaServicios = $em->createQuery("SELECT s.id, s.nombre
+            $qListaServicios = $em->createQuery("SELECT s.id, s.nombre, s.descripcion, p.nombrePromocion
             FROM Alivinatu\AlivinatuBundle\Entity\Servicio s
+            JOIN s.promocion p
+            WHERE p.nombrePromocion = 'Ninguna'
             ORDER BY s.nombre ASC"
                     );
             $listServicios = $qListaServicios->getResult();
-            
-            foreach ($listServicios as $s) {
-                $a = $_GET["$s->getNombre()"];
-                if ($s->getNombre() === '' ){
-                    $servicio = $em->getRepository('AlivinatuBundle:Servicio')->findOneByNombre($nombre);
-                    $promocion->addServicio($servicio);
-                }
-            }
-            $em = $this->get('doctrine')->getEntityManager();
-            $em->persist($promocion);
-            $em->flush();
+             if (isset($_POST['nombreServicio'])) {
+               $ns = $_POST['nombreServicio'];
+               $n = count($ns);               
+               $i = 0;
+               
+                    $em = $this->get('doctrine')->getEntityManager();
+                             for ($i=0; $i < $n; $i++){
+                                foreach ($listServicios as $value) {
+                                $ad= "$value[nombre]";
+                                    if($ad == "{$ns[$i]}"){
+                                       echo "{$ns[$i]}<br> ";
+                                       $servicio = $em->getRepository('AlivinatuBundle:Servicio')->findOneByNombre($ns[$i]);
+                                       $em->persist($promocion);
+                                       $em->flush();
+                                       
+                                       $query = $em->createQuery(
+                                                "UPDATE AlivinatuBundle:Servicio s SET s.promocion= :nombre
+                                                    WHERE s.id = :id"
+                                        )->setParameter('nombre', $promocion->getId())
 
-                    return $this->redirect($this->generateURL('adminServicio'));
-                //}
+                                        ->setParameter('id', $servicio->getId());
+                                       
+                                        $servicio = $query->getResult(); 
+                                    }
+                                }
+                            }
+                           $em->flush(); 
+            }else{
+                echo "<h1>no hay datos</h1>";
+            }
+                  return $this->redirect($this->generateURL('adminPromocion'));
         }
             
         return $this->render('AlivinatuBundle:Administrador\Promocion:registroPromocion.html.twig',
@@ -519,56 +484,27 @@ public function adminClienteAction()
                     ));
     }
     
-    
-    
-    
-    /*
-     * Funcion Borrar sala
-     */
-    public function borrarPromocionAction($id) {
-        $em = $this->getDoctrine()->getEntityManager();
-        $servicio = $em->getRepository('AlivinatuBundle:Servicio')->find($id);
-        $a = $_GET["nSala"];
-        $sal = $em->getRepository('AlivinatuBundle:Sala')->findOneByNombreSala($a);
-        $idSala = $sal->getId();
-
-        $sala = $em->getRepository('AlivinatuBundle:Sala')->find($idSala);
-        $sala->removeServicio($servicio);
-        $em->remove($servicio);
-        $em->flush();
-        return $this->redirect($this->generateUrl('adminServicio'));
-    }
-    
-    
     public function editarPromocionAction($id) {
-
         $request = $this->getRequest();
-
         if ($request->getMethod() == 'GET') {
-
+            
             $em = $this->getDoctrine()->getEntityManager();
-            $servicio = $em->getRepository('AlivinatuBundle:Servicio')->find($id);
+            $promocion = $em->getRepository('AlivinatuBundle:Promocion')->find($id);
+            $servicios = $promocion->getServicios();
+
+            $formPromocion = $this->createForm(new PromocionType(), $promocion);
             
-            $a = $_GET["nSala"];
-            $sala = $em->getRepository('AlivinatuBundle:Sala')->findOneByNombreSala($a);
-            
-            $formServicio = $this->createForm(new ServicioType(), $servicio);
-            $formSala = $this->createForm(new SalaType(), $sala);
-            
-            return $this->render('AlivinatuBundle:Administrador\Servicio:editarServicio.html.twig',
-                array('formServicio' => $formServicio->createView(),
-                    'formSala' => $formSala->createView(),
-                    'id' => $id)
+            return $this->render('AlivinatuBundle:Administrador\Promocion:editarPromocion.html.twig',
+                array('servicios' => $servicios,
+                    'formPromocion' => $formPromocion->createView(),
+                    'id' => $id
+                    )
                     );
         }
 
         if ($request->getMethod() == 'POST') {
-            $servicio = new Servicio();
-            $em = $this->getDoctrine()->getEntityManager();
-            $formServicio = $this->createForm(new ServicioType(), $servicio);
-            $formServicio->bindRequest($request);
-            
-                $query = $em->createQuery(
+            $promocion = new Promocion();
+            $query = $em->createQuery(
                                 "UPDATE AlivinatuBundle:Servicio s SET s.nombre= :nombre,
                                     s.costo= :costo, s.descripcion= :descripcion WHERE s.id = :id"
                         )->setParameter('nombre', $servicio->getNombre())
@@ -577,10 +513,26 @@ public function adminClienteAction()
                         
                         ->setParameter('id', $id);
                 
-                $servicio = $query->getResult(); 
+                $servicio = $query->getResult();
+                
+//            $servicio = new Servicio();
+//            $em = $this->getDoctrine()->getEntityManager();
+//            $formServicio = $this->createForm(new ServicioType(), $servicio);
+//            $formServicio->bindRequest($request);
+//            
+//                $query = $em->createQuery(
+//                                "UPDATE AlivinatuBundle:Servicio s SET s.nombre= :nombre,
+//                                    s.costo= :costo, s.descripcion= :descripcion WHERE s.id = :id"
+//                        )->setParameter('nombre', $servicio->getNombre())
+//                        ->setParameter('costo', $servicio->getCosto())
+//                        ->setParameter('descripcion', $servicio->getDescripcion())
+//                        
+//                        ->setParameter('id', $id);
+//                
+//                $servicio = $query->getResult(); 
 
                 
-                return $this->redirect($this->generateURL('adminServicio'));
+                return $this->redirect($this->generateURL('adminPromocion'));
 
         }        
     }

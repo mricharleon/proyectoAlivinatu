@@ -44,9 +44,6 @@
                         <a href="{{ path('editarServicio', { 'id': servicio.id, 
                             'nSala': servicio.nombreSala, 'nPromocion':servicio.nombrePromocion }) }}">Editar</a>
                     </td>
-                    <td>
-                        <a href="{{ path('borrarServicio', { 'id': servicio.id, 'nSala': servicio.nombreSala }) }}">Borrar</a>
-                    </td>
   
                 </tr>
                 {% else %}
